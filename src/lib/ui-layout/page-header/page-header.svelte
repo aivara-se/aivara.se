@@ -9,7 +9,7 @@
 
 <header>
 	<h1>AIVARA</h1>
-	<small>Your Hub for Software Development!</small>
+	<small>AI Things</small>
 </header>
 
 <div class="wrapper">
@@ -18,7 +18,6 @@
 	</a>
 	<nav>
 		<a class={currentPath === '/' ? 'active' : ''} href="/">Home</a>
-		<a class={currentPath === '/contact' ? 'active' : ''} href="/contact">Contact</a>
 	</nav>
 </div>
 

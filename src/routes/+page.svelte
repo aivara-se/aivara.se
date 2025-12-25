@@ -1,57 +1,20 @@
 <script lang="ts">
-	import ContactDetails from '$lib/ui-content/ContactDetails.svelte';
 	import aivaraIconUrl from './assets/aivara.png';
-	import provarIconUrl from './assets/provar.png';
 </script>
 
 <article>
-	<p>
-		Welcome to AIVARA - Your Hub for Software Development. We're dedicated to helping developers and
-		companies thrive in creating digital experiences.
-	</p>
-	<strong>Our products</strong>
-	<p>
-		Our journey began with user feedback, and we're expanding our toolkit to empower your
-		development process.
-	</p>
+	<p>Welcome to AIVARA - A collection of AI tools.</p>
 	<div class="products">
-		<a href="https://provar.se" class="item">
+		<a href="#tools" class="item">
 			<div class="product-item-content">
-				<img src={provarIconUrl} width="32px" height="32px" alt="Provar.se" />
+				<img src={aivaraIconUrl} width="32px" height="32px" alt="Aivara" />
 				<div class="text">
-					<strong>PROVAR.SE</strong><br />
-					Collect feedback from users!
-				</div>
-			</div>
-		</a>
-		<a href="#products" class="item">
-			<div class="product-item-content">
-				<img
-					src={aivaraIconUrl}
-					width="32px"
-					height="32px"
-					alt="Provar.se"
-					style="visibility:hidden"
-				/>
-				<div class="text">
-					<strong>MORE TO COME</strong><br />
-					TODO: build more apps
+					<strong>Coming Soon</strong><br />
+					More AI tools will be added here.
 				</div>
 			</div>
 		</a>
 	</div>
-	<p>
-		Unlock your software's potential with our user feedback tool. Understand users, gather insights,
-		and fine-tune your software with confidence. More tools are on the way to enhance your
-		development journey, including feature flag management and collaboration.
-	</p>
-	<strong>Talk to us</strong>
-	<p>
-		We're here to assist you every step of the way. Whether you have questions about our services,
-		want to explore custom solutions, or simply wish to discuss how we can help your business
-		thrive, we'd love to hear from you. Feel free to reach out to us:
-	</p>
-	<ContactDetails />
 </article>
 
 <style>

@@ -1,7 +1,3 @@
-<script lang="ts">
-	import ContactDetails from '$lib/ui-content/ContactDetails.svelte';
-</script>
-
 <article>
 	<h2>Privacy Policy</h2>
 	<p>
@@ -65,8 +61,8 @@
 	</p>
 	<p>
 		<strong>The right to rectification</strong> – You have the right to request that Aivara correct any
-		information you believe is inaccurate. You also have the right to request Aivara to complete the
-		information you believe is incomplete.
+		information you believe is inaccurate. You also have the right to request Aivara to complete the information
+		you believe is incomplete.
 	</p>
 	<p>
 		<strong>The right to erasure</strong> – You have the right to request that Aivara erase your personal
@@ -117,5 +113,4 @@
 		If you have any questions about Aivara’s privacy policy, the data we hold on you, or you would
 		like to exercise one of your data protection rights, please do not hesitate to contact us.
 	</p>
-	<ContactDetails />
 </article>
