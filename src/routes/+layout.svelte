@@ -1,23 +1,11 @@
-<script>
-	import './styles.css';
-	import Background from '$lib/ui-layout/background/background.svelte';
-	import PageHeader from '$lib/ui-layout/page-header/page-header.svelte';
-	import PageContent from '$lib/ui-layout/page-content/page-content.svelte';
-	import PageFooter from '../lib/ui-layout/page-footer/page-footer.svelte';
+<script lang="ts">
+	let { children } = $props();
 </script>
 
-<div class="wrapper">
-	<Background />
-	<PageHeader />
-	<PageContent><slot /></PageContent>
-	<PageFooter />
-</div>
+<svelte:head>
+	<link rel="icon" href="/favicon.png" />
+	<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+	<link rel="manifest" href="/manifest.json" />
+</svelte:head>
 
-<style>
-	.wrapper {
-		width: 100%;
-		display: flex;
-		flex: 1;
-		flex-direction: column;
-	}
-</style>
+{@render children()}
