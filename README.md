@@ -35,8 +35,12 @@ The build settings live in the Cloudflare dashboard, and per
 **Settings → Build**
 
 - Framework preset: `SvelteKit`
-- Build command: `bun run build`
+- Build command: `bun install --frozen-lockfile && bun run build`
 - Build output directory: `.svelte-kit/cloudflare`
+
+The install step belongs _inside_ the build command: Pages' current build system runs the build
+command as the only step, so without it `node_modules` never exists and the build dies with
+`vite: command not found` (exit 127).
 
 **Settings → Runtime**
 
