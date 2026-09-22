@@ -1,38 +1,69 @@
-# create-svelte
+# aivara.se
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+The Aivara website. Rebuilt from scratch on a current SvelteKit — a placeholder for now.
 
-## Creating a project
+## Stack
 
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+- SvelteKit 2 / Svelte 5 / Vite 8, TypeScript
+- Bun as package manager and runner
+- Deployed to **Cloudflare Pages** (SSR, not a static export)
 
 ## Developing
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
 ```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+bun install
+bun run dev
 ```
 
-## Building
-
-To create a production version of your app:
+## Checks
 
 ```bash
-npm run build
+bun run check        # svelte-check
+bun run format:check # prettier
+bun run build        # vite build
 ```
 
-You can preview the production build with `npm run preview`.
+## Deployment
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+Cloudflare Pages builds this repo through its own **Git integration**. There is no workflow in this
+repository and nothing deploys from GitHub Actions — pushing to `main` is what publishes the site.
+A failed build does not take the site down: Pages keeps serving the last successful deployment.
+
+The build settings live in the Cloudflare dashboard, and per
+[SvelteKit's Cloudflare adapter docs](https://svelte.dev/docs/kit/adapter-cloudflare) they need to be:
+
+**Settings → Build**
+
+- Framework preset: `SvelteKit`
+- Build command: `bun install --frozen-lockfile && bun run build`
+- Build output directory: `.svelte-kit/cloudflare`
+
+The install step belongs _inside_ the build command: Pages' current build system runs the build
+command as the only step, so without it `node_modules` never exists and the build dies with
+`vite: command not found` (exit 127).
+
+**Settings → Runtime**
+
+- Compatibility flag: `nodejs_als` — SvelteKit's server code uses `AsyncLocalStorage`, which needs
+  this flag or parts of SSR fail at runtime.
+
+### Testing the production build locally
+
+```bash
+bun run build
+bunx wrangler pages dev .svelte-kit/cloudflare
+```
+
+This runs the same worker Cloudflare serves, which is the closest local equivalent to production.
+
+### Environment variables
+
+Runtime secrets and bindings (for example anything a contact form needs to send mail) are set in the
+Cloudflare dashboard under the Pages project's settings. They are not in this repository, and
+`.dev.vars` is gitignored for local overrides.
+
+## Notes
+
+- The `static/` directory still holds the existing brand assets (favicons, app icons, `logo.svg`,
+  `manifest.json`); only the app code was replaced.
+- The previous site remains in git history.
