@@ -1,15 +1,6 @@
 {
 	"projects": [
 		{
-			"slug": "provar",
-			"name": "provar",
-			"repo": "https://github.com/aivara-se/provar",
-			"language": "Go",
-			"flow": true,
-			"status": "active",
-			"summary": "End-to-end testing that combines visual flow mapping with AI assistance."
-		},
-		{
 			"slug": "aivara",
 			"name": "aivara.se",
 			"repo": "https://github.com/aivara-se/aivara.se",

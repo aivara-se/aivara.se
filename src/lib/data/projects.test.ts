@@ -3,9 +3,9 @@ import { projects, validateProjects } from './projects';
 
 function entry(overrides: Record<string, unknown> = {}) {
 	return {
-		slug: 'provar',
-		name: 'provar',
-		repo: 'https://github.com/aivara-se/provar',
+		slug: 'example',
+		name: 'example',
+		repo: 'https://github.com/example/example',
 		language: 'Go',
 		status: 'active',
 		summary: 'Summary',
@@ -17,7 +17,7 @@ describe('validateProjects', () => {
 	test('accepts a well-formed entry', () => {
 		const result = validateProjects({ projects: [entry()] });
 		expect(result).toHaveLength(1);
-		expect(result[0].slug).toBe('provar');
+		expect(result[0].slug).toBe('example');
 	});
 
 	test('rejects an entry with a missing slug', () => {
@@ -41,7 +41,7 @@ describe('validateProjects', () => {
 
 describe('curated projects.json', () => {
 	test('loads and validates the curated entries', () => {
-		expect(projects).toHaveLength(2);
-		expect(projects.map((project) => project.slug)).toEqual(['provar', 'aivara']);
+		expect(projects).toHaveLength(1);
+		expect(projects.map((project) => project.slug)).toEqual(['aivara']);
 	});
 });

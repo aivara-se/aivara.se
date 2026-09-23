@@ -53,9 +53,6 @@ export const en = {
 		shipped: 'shipped'
 	},
 	project: {
-		provar: {
-			summary: 'End-to-end testing that combines visual flow mapping with AI assistance.'
-		},
 		aivara: {
 			summary: "This site — the lab's public face, built and maintained by the bots."
 		}
