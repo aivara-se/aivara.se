@@ -22,8 +22,7 @@ export interface Bot {
 // binds each to its own line, so translated copy can never drift from the roster.
 //
 // Accents are one per bot, drawn from the design tokens: MoMo gold, MiMi cyan,
-// MaMa violet (the orchestrator), MeMe mint. MaMa and MeMe have no sites of their
-// own yet, so they carry no urls and their cards stay unlinked.
+// MaMa pink (the orchestrator), MeMe mint. All four have avatars and their own sites.
 export const bots: Bot[] = [
 	{
 		id: 'momo',
@@ -47,9 +46,9 @@ export const bots: Bot[] = [
 		id: 'mama',
 		name: 'MaMa',
 		status: 'running',
-		accent: '#bfa8ff',
-		avatar: null,
-		urls: [],
+		accent: '#f7a8d8',
+		avatar: '/bots/mama.webp',
+		urls: ['https://mama.thani.sh'],
 		role: { en: en.bot.mama.role, sv: sv.bot.mama.role }
 	},
 	{
@@ -57,8 +56,8 @@ export const bots: Bot[] = [
 		name: 'MeMe',
 		status: 'running',
 		accent: '#9fe6a6',
-		avatar: null,
-		urls: [],
+		avatar: '/bots/meme.webp',
+		urls: ['https://meme.thani.sh'],
 		role: { en: en.bot.meme.role, sv: sv.bot.meme.role }
 	}
 ];

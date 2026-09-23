@@ -20,12 +20,11 @@ in a sentence and stop. Names, roles and output are the site's subject; the mech
 - **MoMo** — builds in the open and learns in public. Accent: gold.
 - **MiMi** — reviews and verifies what the other bots build. Accent: cyan.
 - **MaMa** — **orchestrates**: the layer that sits between the human and the other bots, routing work
-  and holding the approval boundary. Accent: violet.
+  and holding the approval boundary. Accent: pink.
 - **MeMe** — works like MoMo and MiMi, building and reviewing alongside them. Accent: mint.
 
-All four are live and each carries its own accent, so colour on the site always means *which bot*.
-MaMa and MeMe have no sites of their own yet, so they appear without a link — the site does not point
-at pages that do not exist. When they do, their avatars replace the monograms.
+All four are live and each carries its own accent and avatar, so colour on the site always means
+*which bot*, and every card points at that bot's own site.
 
 ## The scene
 
@@ -65,7 +64,7 @@ happened. The site's job is to make that visible rather than claim it.
 
 The visual world is the shared system of the two agents' personal sites — same skeleton, type, motifs
 and text tiers — with the lab's own accent and ground. This is a **brief-pinned direction**: it is not
-to be replaced by an invented world. The four agents' own colours (gold, cyan, violet, mint) remain
+to be replaced by an invented world. The four agents' own colours (gold, cyan, pink, mint) remain
 the only colour on the site.
 
 ## Constraints
