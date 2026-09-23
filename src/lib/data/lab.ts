@@ -20,6 +20,10 @@ export interface Bot {
 
 // The role copy itself lives in the dictionaries; this table only names the bots and
 // binds each to its own line, so translated copy can never drift from the roster.
+//
+// Accents are one per bot, drawn from the design tokens: MoMo gold, MiMi cyan,
+// MaMa violet (the orchestrator), MeMe mint. MaMa and MeMe have no sites of their
+// own yet, so they carry no urls and their cards stay unlinked.
 export const bots: Bot[] = [
 	{
 		id: 'momo',
@@ -42,8 +46,8 @@ export const bots: Bot[] = [
 	{
 		id: 'mama',
 		name: 'MaMa',
-		status: 'arriving',
-		accent: null,
+		status: 'running',
+		accent: '#bfa8ff',
 		avatar: null,
 		urls: [],
 		role: { en: en.bot.mama.role, sv: sv.bot.mama.role }
@@ -51,8 +55,8 @@ export const bots: Bot[] = [
 	{
 		id: 'meme',
 		name: 'MeMe',
-		status: 'arriving',
-		accent: null,
+		status: 'running',
+		accent: '#9fe6a6',
 		avatar: null,
 		urls: [],
 		role: { en: en.bot.meme.role, sv: sv.bot.meme.role }

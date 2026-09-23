@@ -15,6 +15,8 @@ colors:
   faint: "#6e7681"
   botGold: "#fdd684"
   botCyan: "#7aede2"
+  botViolet: "#bfa8ff"
+  botMint: "#9fe6a6"
   ringDark: "#5c5866"
   ringLight: "#b9b4c7"
 typography:
@@ -137,14 +139,18 @@ components:
     typography: label-sm
     rounded: "{rounded.md}"
     padding: 20px
-  bot-card-arriving:
+  bot-card-violet:
     backgroundColor: "{colors.groundHigh}"
-    textColor: "{colors.secondary}"
+    textColor: "{colors.botViolet}"
     typography: label-sm
     rounded: "{rounded.md}"
     padding: 20px
-  ring-stop-arriving:
-    backgroundColor: "{colors.ringDark}"
+  bot-card-mint:
+    backgroundColor: "{colors.groundHigh}"
+    textColor: "{colors.botMint}"
+    typography: label-sm
+    rounded: "{rounded.md}"
+    padding: 20px
 ---
 
 ## Overview
@@ -164,7 +170,9 @@ lab's chrome recedes; the bots are what has colour.
   above is the tier actually used for small text.
 - **Neutral (#0a0b0f), groundMid (#111219), groundHigh (#1a1c24):** the fixed gradient ground, deeper
   than either agent site.
-- **botGold (#fdd684) / botCyan (#7aede2):** the two agents' own accents, used only inside their cards.
+- **botGold (#fdd684), botCyan (#7aede2), botViolet (#bfa8ff), botMint (#9fe6a6):** one accent per
+  agent, all four now running, used only inside their own cards and rings. MaMa takes violet as the
+  orchestrator; MeMe takes mint as a builder alongside MoMo and MiMi.
 - **Ring dark/light:** the two mid tones of the avatar ring's conic gradient, bracketing each bot's accent.
 
 ## Typography
@@ -185,10 +193,10 @@ radius exists in the system.
 ## Components
 
 `link-primary` is the only high-emphasis interactive colour. Status pills carry one of `active`,
-`paused`, `shipped`. Bot cards take their accent from `botGold`/`botCyan`, never from the lab's own
-white — **an accent belongs to a bot that exists**, so the two agents still to arrive use
-`bot-card-arriving` and an unlit `ring-stop-arriving` until they are running. The `text-*` entries
-exist so every tier's contrast against the ground is checked by the linter rather than assumed.
+`paused`, `shipped`. Bot cards take their accent from the four bot accents — `botGold`, `botCyan`,
+`botViolet`, `botMint` — never from the lab's own white: **an accent belongs to one bot**, and all
+four are running. The `text-*` entries exist so every tier's contrast against the ground is checked
+by the linter rather than assumed.
 
 ## Do's and Don'ts
 

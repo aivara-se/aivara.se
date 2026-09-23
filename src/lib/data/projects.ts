@@ -12,6 +12,8 @@ export interface Project {
 	name: string;
 	repo: string;
 	language: string;
+	/** Set on projects that have their own diagram to show in the large card. */
+	flow?: boolean;
 	status: ProjectStatus;
 	summary: ProjectSummary;
 }
@@ -61,6 +63,7 @@ function parseProject(value: unknown, index: number): Project {
 		name: entry.name,
 		repo: entry.repo,
 		language: entry.language,
+		flow: entry.flow === true,
 		status: entry.status as ProjectStatus,
 		summary: parseSummary(entry.summary, `${where} (${entry.slug})`)
 	};

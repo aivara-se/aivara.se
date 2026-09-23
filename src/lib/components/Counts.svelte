@@ -7,7 +7,6 @@
 
 	const activeProjects = $derived(projects.filter((project) => project.status === 'active').length);
 	const runningBotsCount = $derived(bots.filter((bot) => bot.status === 'running').length);
-	const arrivingBotsCount = $derived(bots.filter((bot) => bot.status === 'arriving').length);
 
 	const projectsLabel = $derived(d.counts.projects.replace('{n}', '').trimStart());
 </script>
@@ -15,7 +14,6 @@
 <p class="counts">
 	<span><b>{activeProjects}</b> {projectsLabel}</span>
 	<span><b>{runningBotsCount}</b> {d.counts.bots}</span>
-	<span><b>{arrivingBotsCount}</b> {d.counts.arriving}</span>
 </p>
 
 <style>

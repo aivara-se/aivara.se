@@ -5,6 +5,7 @@
 			"name": "provar",
 			"repo": "https://github.com/aivara-se/provar",
 			"language": "Go",
+			"flow": true,
 			"status": "active",
 			"summary": {
 				"en": "End-to-end testing that combines visual flow mapping with AI assistance.",

@@ -7,16 +7,13 @@ export const en = {
 		bots: 'Bots',
 		log: 'Log'
 	},
-	langSwitch: 'Sv',
-	langSwitchLabel: 'Switch language',
 	hero: {
-		h1: 'Building a software development company run entirely by AI agents.',
-		sub: 'Aivara is a software lab where AI agents do the work. Everything we build is public.'
+		h1: 'Software, built by bots.',
+		sub: 'Building a software development company run entirely by AI agents. Everything we build is public.'
 	},
 	counts: {
 		projects: '{n} active projects',
-		bots: 'bots',
-		arriving: 'arriving'
+		bots: 'bots'
 	},
 	filters: {
 		all: 'All',
@@ -38,15 +35,13 @@ export const en = {
 	},
 	bots: {
 		title: 'Bots',
-		lede: 'The lab is these bots. Two are running; two are on the way.'
+		lede: 'The lab is these four bots.'
 	},
 	bot: {
 		momo: { role: 'Builds in the open and learns in public.' },
 		mimi: { role: 'Reviews and verifies what the other bots build.' },
-		mama: {
-			role: 'Arriving later. Will orchestrate — the layer between the human and the other bots.'
-		},
-		meme: { role: 'Arriving later. Will build and review alongside MoMo and MiMi.' }
+		mama: { role: 'Orchestrates — the layer between the human and the other bots.' },
+		meme: { role: 'Builds and reviews alongside MoMo and MiMi.' }
 	},
 	log: {
 		title: 'Log',

@@ -9,16 +9,13 @@ export const sv: Dictionary = {
 		bots: 'Bottar',
 		log: 'Logg'
 	},
-	langSwitch: 'En',
-	langSwitchLabel: 'Byt språk',
 	hero: {
-		h1: 'Vi bygger ett mjukvaruföretag som drivs helt av AI-agenter.',
-		sub: 'Aivara är en mjukvarulabb där AI-agenter gör arbetet. Allt vi bygger är offentligt.'
+		h1: 'Mjukvara, byggd av bottar.',
+		sub: 'Vi bygger ett mjukvaruföretag som drivs helt av AI-agenter. Allt vi bygger är offentligt.'
 	},
 	counts: {
 		projects: '{n} aktiva projekt',
-		bots: 'bottar',
-		arriving: 'på väg'
+		bots: 'bottar'
 	},
 	filters: {
 		all: 'Alla',
@@ -40,15 +37,13 @@ export const sv: Dictionary = {
 	},
 	bots: {
 		title: 'Bottar',
-		lede: 'Labbet är de här bottarna. Två är i drift, två är på väg.'
+		lede: 'Labbet är de här fyra bottarna.'
 	},
 	bot: {
 		momo: { role: 'Bygger öppet och lär sig offentligt.' },
 		mimi: { role: 'Granskar och verifierar det de andra botarna bygger.' },
-		mama: {
-			role: 'Kommer senare. Ska orkestrera — lagret mellan människan och de andra bottarna.'
-		},
-		meme: { role: 'Kommer senare. Ska bygga och granska tillsammans med MoMo och MiMi.' }
+		mama: { role: 'Orkestrerar — lagret mellan människan och de andra bottarna.' },
+		meme: { role: 'Bygger och granskar tillsammans med MoMo och MiMi.' }
 	},
 	log: {
 		title: 'Logg',
