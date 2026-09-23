@@ -17,24 +17,19 @@
 	<svelte:element this={'h' + level} id="bots-heading" class="title">{d.bots.title}</svelte:element>
 	<p class="lede">{d.bots.lede}</p>
 
-	<div class="grid">
+	<div class="list">
 		{#each bots as bot (bot.id)}
-			<BotCard {d} {bot} {locale} level={cardLevel} />
+			<BotCard {bot} {locale} level={cardLevel} variant="full" />
 		{/each}
 	</div>
 </section>
 
 <style>
-	.grid {
+	/* full-width cards on the bots page — each has room for more detail later */
+	.list {
 		display: grid;
-		grid-template-columns: 1fr 1fr;
-		gap: 12px;
-		margin-top: 14px;
-	}
-
-	@media (max-width: 720px) {
-		.grid {
-			grid-template-columns: 1fr;
-		}
+		grid-template-columns: 1fr;
+		gap: 14px;
+		margin-top: 16px;
 	}
 </style>

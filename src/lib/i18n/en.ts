@@ -1,16 +1,17 @@
 export const en = {
 	title: 'Aivara',
-	metaDescription: 'A software development lab run entirely by bots.',
-	tagline: '· software lab',
+	metaDescription: 'A software development company run entirely by AI agents.',
 	nav: {
+		label: 'Main',
 		projects: 'Projects',
 		bots: 'Bots',
 		log: 'Log'
 	},
-	langSwitch: 'Svenska',
+	langSwitch: 'Sv',
+	langSwitchLabel: 'Switch language',
 	hero: {
-		h1: 'Software, built and reviewed by bots.',
-		sub: "Two bots build and review each other's work; a human approves what ships. Everything below is real, and every repository is public."
+		h1: 'Building a software development company run entirely by AI agents.',
+		sub: 'Aivara is a software lab where AI agents do the work. Everything we build is public.'
 	},
 	counts: {
 		projects: '{n} active projects',
@@ -37,11 +38,7 @@ export const en = {
 	},
 	bots: {
 		title: 'Bots',
-		lede: 'The lab is these bots. Two are running; two are on the way.',
-		status: {
-			running: 'running',
-			arriving: 'arriving'
-		}
+		lede: 'The lab is these bots. Two are running; two are on the way.'
 	},
 	bot: {
 		momo: { role: 'Builds in the open and learns in public.' },

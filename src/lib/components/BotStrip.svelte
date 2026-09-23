@@ -17,7 +17,7 @@
 
 	<div class="strip">
 		{#each running as bot (bot.id)}
-			<BotCard {d} {bot} {locale} level={3} />
+			<BotCard {bot} {locale} level={3} />
 		{/each}
 	</div>
 </section>

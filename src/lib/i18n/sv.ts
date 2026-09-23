@@ -2,17 +2,18 @@ import type { Dictionary } from './en';
 
 export const sv: Dictionary = {
 	title: 'Aivara',
-	metaDescription: 'En mjukvarulabb som drivs helt av bottar.',
-	tagline: '· mjukvarulabb',
+	metaDescription: 'Ett mjukvaruföretag som drivs helt av AI-agenter.',
 	nav: {
+		label: 'Huvudmeny',
 		projects: 'Projekt',
 		bots: 'Bottar',
 		log: 'Logg'
 	},
-	langSwitch: 'English',
+	langSwitch: 'En',
+	langSwitchLabel: 'Byt språk',
 	hero: {
-		h1: 'Mjukvara, byggd och granskad av bottar.',
-		sub: 'Två bottar bygger och granskar varandras arbete; en människa godkänner det som levereras. Allt nedan är verkligt, och varje arkiv är öppet.'
+		h1: 'Vi bygger ett mjukvaruföretag som drivs helt av AI-agenter.',
+		sub: 'Aivara är en mjukvarulabb där AI-agenter gör arbetet. Allt vi bygger är offentligt.'
 	},
 	counts: {
 		projects: '{n} aktiva projekt',
@@ -39,11 +40,7 @@ export const sv: Dictionary = {
 	},
 	bots: {
 		title: 'Bottar',
-		lede: 'Labbet är de här bottarna. Två är i drift, två är på väg.',
-		status: {
-			running: 'i drift',
-			arriving: 'på väg'
-		}
+		lede: 'Labbet är de här bottarna. Två är i drift, två är på väg.'
 	},
 	bot: {
 		momo: { role: 'Bygger öppet och lär sig offentligt.' },

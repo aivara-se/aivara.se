@@ -1,6 +1,4 @@
 <script lang="ts">
-	import Avatar from './Avatar.svelte';
-	import { runningBots } from '$lib/data/lab';
 	import type { Dictionary, Locale } from '$lib/i18n';
 	import { counterpartHref, href, navKeys, type PageKey } from '$lib/routes';
 
@@ -11,36 +9,27 @@
 </script>
 
 <header class="bar">
-	<a class="wordmark" href={home}>
-		{d.title}
-		<em>{d.tagline}</em>
-	</a>
+	<a class="wordmark" href={home}>{d.title}</a>
 
-	<nav class="nav">
-		<div class="links">
-			{#each navKeys as key (key)}
-				<a href={href(key, locale)} aria-current={key === pageKey ? 'page' : undefined}>
-					{d.nav[key]}
-				</a>
-			{/each}
-		</div>
-
-		<div class="agents" aria-hidden="true">
-			{#each runningBots as bot (bot.id)}
-				<Avatar {bot} size={26} />
-			{/each}
-		</div>
-
-		<a class="lang" href={switchTo} data-sveltekit-reload>{d.langSwitch}</a>
+	<nav class="nav" aria-label={d.nav.label}>
+		{#each navKeys as key (key)}
+			<a href={href(key, locale)} aria-current={key === pageKey ? 'page' : undefined}>
+				{d.nav[key]}
+			</a>
+		{/each}
 	</nav>
+
+	<a class="lang" href={switchTo} data-sveltekit-reload aria-label={d.langSwitchLabel}>
+		{d.langSwitch}
+	</a>
 </header>
 
 <style>
+	/* wordmark left, main links centred, language switch right */
 	.bar {
-		display: flex;
+		display: grid;
+		grid-template-columns: 1fr auto 1fr;
 		align-items: center;
-		justify-content: space-between;
-		flex-wrap: wrap;
 		gap: 16px;
 		padding: 20px 0;
 		border-bottom: 1px solid var(--ground-high);
@@ -54,36 +43,19 @@
 		color: var(--text-strong);
 	}
 
-	.wordmark em {
-		font-style: normal;
-		font-weight: 500;
-		color: var(--tertiary);
-	}
-
 	.nav {
 		display: flex;
-		flex-wrap: wrap;
-		align-items: center;
-		gap: 16px;
+		justify-content: center;
+		gap: 20px;
 		font-size: 13.5px;
 	}
 
-	.links {
-		display: flex;
-		gap: 16px;
-	}
-
-	.links a[aria-current='page'] {
+	.nav a[aria-current='page'] {
 		color: var(--primary-hover);
 	}
 
-	.agents {
-		display: flex;
-		align-items: center;
-		gap: 6px;
-	}
-
 	.lang {
+		justify-self: end;
 		font-size: 13.5px;
 		color: var(--secondary);
 	}
@@ -96,6 +68,30 @@
 	@media (max-width: 720px) {
 		.bar {
 			padding: 16px 0;
+		}
+	}
+
+	@media (max-width: 560px) {
+		.bar {
+			grid-template-columns: auto auto;
+			grid-template-areas:
+				'mark lang'
+				'nav nav';
+			row-gap: 12px;
+		}
+
+		.wordmark {
+			grid-area: mark;
+		}
+
+		.lang {
+			grid-area: lang;
+		}
+
+		.nav {
+			grid-area: nav;
+			justify-content: flex-start;
+			gap: 18px;
 		}
 	}
 </style>

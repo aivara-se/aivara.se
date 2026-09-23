@@ -1,34 +1,34 @@
 <script lang="ts">
 	import Avatar from './Avatar.svelte';
 	import type { Bot } from '$lib/data/lab';
-	import type { Dictionary, Locale } from '$lib/i18n';
+	import type { Locale } from '$lib/i18n';
 
 	let {
-		d,
 		bot,
 		locale,
-		level = 3
-	}: { d: Dictionary; bot: Bot; locale: Locale; level?: 2 | 3 } = $props();
+		level = 3,
+		variant = 'compact'
+	}: { bot: Bot; locale: Locale; level?: 2 | 3; variant?: 'compact' | 'full' } = $props();
 
-	const statusLabel = $derived(
-		bot.status === 'running' ? d.bots.status.running : d.bots.status.arriving
-	);
+	// A bot that is running has somewhere to link to, so the whole card becomes the link.
+	// One that has not arrived yet does not, and is not made to look clickable.
+	const target = $derived(bot.urls[0]);
 	const accent = $derived(bot.accent ?? 'var(--secondary)');
 </script>
 
-<article class="botcard" class:running={bot.status === 'running'} style="--accent: {accent};">
-	<Avatar {bot} size={40} />
+<svelte:element
+	this={target ? 'a' : 'article'}
+	href={target}
+	class="botcard {variant}"
+	class:running={bot.status === 'running'}
+	style="--accent: {accent};"
+>
+	<Avatar {bot} size={variant === 'full' ? 72 : 40} />
 	<div class="who">
 		<svelte:element this={'h' + level} class="name">{bot.name}</svelte:element>
 		<p class="role">{bot.role[locale]}</p>
-		<div class="foot">
-			<span class="pill {bot.status}">{statusLabel}</span>
-			{#each bot.urls as url (url)}
-				<a href={url}>{url.replace(/^https?:\/\//, '')}</a>
-			{/each}
-		</div>
 	</div>
-</article>
+</svelte:element>
 
 <style>
 	.botcard {
@@ -39,6 +39,7 @@
 		border: 1px solid var(--ground-high);
 		border-radius: var(--radius-md);
 		background: var(--ground-high);
+		transition: border-color 0.15s;
 	}
 
 	.who {
@@ -54,6 +55,12 @@
 		font-weight: 700;
 	}
 
+	.role {
+		margin: 0;
+		font-size: 12.5px;
+		color: var(--tertiary);
+	}
+
 	.botcard.running .name {
 		color: var(--accent);
 	}
@@ -62,28 +69,29 @@
 		color: var(--secondary);
 	}
 
-	.role {
-		margin: 0;
-		font-size: 12.5px;
-		color: var(--tertiary);
-	}
-
-	.foot {
-		display: flex;
+	/* the full-width card: room for more detail later, and a larger avatar */
+	.botcard.full {
 		align-items: center;
-		flex-wrap: wrap;
-		gap: 10px;
-		margin-top: 6px;
-		font-size: 12.5px;
-		color: var(--tertiary);
+		gap: 24px;
+		padding: 28px 30px;
+		min-height: 132px;
 	}
 
-	.foot a {
-		color: var(--tertiary);
+	.botcard.full .name {
+		font-size: 20px;
 	}
 
-	.foot a:hover {
+	.botcard.full .role {
+		font-size: 14.5px;
+		color: var(--secondary);
+		max-width: 64ch;
+	}
+
+	a.botcard:hover {
+		border-color: var(--ring-dark);
+	}
+
+	a.botcard:hover .name {
 		color: var(--primary-hover);
-		border-bottom-color: var(--primary-hover);
 	}
 </style>

@@ -1,10 +1,5 @@
 <footer class="footer">
 	<span><a href="mailto:hello@aivara.se">hello@aivara.se</a></span>
-	<span>
-		<a href="https://momo.thani.sh">momo.thani.sh</a>
-		·
-		<a href="https://mimi.thani.sh">mimi.thani.sh</a>
-	</span>
 </footer>
 
 <style>
