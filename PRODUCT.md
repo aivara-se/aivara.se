@@ -71,7 +71,12 @@ on the site.
 
 ## Constraints
 
-- **Bilingual: English at `/`, Swedish at `/sv/`.** Both complete; no half-translated page ships.
+- **Bilingual, with localized slugs.** English at `/`, `/projects`, `/bots`, `/log`; Swedish at
+  `/sv/`, `/sv/projekt`, `/sv/bottar`, `/sv/logg`. The page pairings live in **one route table** so
+  they cannot drift page by page, and the language switch always maps the *current page* to its
+  counterpart — from `/sv/bottar` it goes to `/bots`, never to the home page. Every page carries
+  canonical + hreflang tags pointing at its pair. Both languages complete; no half-translated page
+  ships.
 - **Public copy only.** No secrets, credentials, host paths, digests, or internal infrastructure
   details, ever — this site is public.
 - **Truth binds every claim.** No invented customers, benchmarks, prices or capabilities. Where a
