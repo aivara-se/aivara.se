@@ -1,14 +1,9 @@
 <script lang="ts">
 	import BotCard from './BotCard.svelte';
 	import type { Bot } from '$lib/data/lab';
-	import type { Dictionary, Locale } from '$lib/i18n';
+	import type { Dictionary } from '$lib/i18n';
 
-	let {
-		d,
-		bots,
-		locale,
-		level = 1
-	}: { d: Dictionary; bots: Bot[]; locale: Locale; level?: 1 | 2 } = $props();
+	let { d, bots, level = 1 }: { d: Dictionary; bots: Bot[]; level?: 1 | 2 } = $props();
 
 	const cardLevel = $derived((level + 1) as 2 | 3);
 </script>
@@ -19,7 +14,7 @@
 
 	<div class="list">
 		{#each bots as bot (bot.id)}
-			<BotCard {bot} {locale} level={cardLevel} variant="full" />
+			<BotCard {bot} level={cardLevel} variant="full" />
 		{/each}
 	</div>
 </section>

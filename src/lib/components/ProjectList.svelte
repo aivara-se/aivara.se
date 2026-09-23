@@ -1,18 +1,16 @@
 <script lang="ts">
 	import ProjectCard from './ProjectCard.svelte';
 	import type { Project } from '$lib/data/projects';
-	import type { Dictionary, Locale } from '$lib/i18n';
+	import type { Dictionary } from '$lib/i18n';
 
 	let {
 		d,
-		locale,
 		projects,
 		layout = 'feature',
 		showFilters = true,
 		level = 2
 	}: {
 		d: Dictionary;
-		locale: Locale;
 		projects: Project[];
 		layout?: 'feature' | 'cards';
 		showFilters?: boolean;
@@ -33,7 +31,7 @@
 
 	function summary(project: Project): string {
 		const entry = (d.project as Record<string, { summary: string } | undefined>)[project.slug];
-		return entry?.summary ?? project.summary[locale];
+		return entry?.summary ?? project.summary;
 	}
 </script>
 

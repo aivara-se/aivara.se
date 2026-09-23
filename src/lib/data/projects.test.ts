@@ -8,7 +8,7 @@ function entry(overrides: Record<string, unknown> = {}) {
 		repo: 'https://github.com/aivara-se/provar',
 		language: 'Go',
 		status: 'active',
-		summary: { en: 'Summary', sv: 'Sammanfattning' },
+		summary: 'Summary',
 		...overrides
 	};
 }

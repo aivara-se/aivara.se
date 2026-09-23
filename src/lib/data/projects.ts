@@ -2,11 +2,6 @@ import raw from './projects.json';
 
 export type ProjectStatus = 'active' | 'paused' | 'shipped';
 
-export interface ProjectSummary {
-	en: string;
-	sv: string;
-}
-
 export interface Project {
 	slug: string;
 	name: string;
@@ -15,24 +10,13 @@ export interface Project {
 	/** Set on projects that have their own diagram to show in the large card. */
 	flow?: boolean;
 	status: ProjectStatus;
-	summary: ProjectSummary;
+	summary: string;
 }
 
 const STATUSES: readonly string[] = ['active', 'paused', 'shipped'];
 
 function isNonEmptyString(value: unknown): value is string {
 	return typeof value === 'string' && value.trim().length > 0;
-}
-
-function parseSummary(value: unknown, where: string): ProjectSummary {
-	if (typeof value !== 'object' || value === null) {
-		throw new Error(`${where}: missing summary`);
-	}
-	const summary = value as Record<string, unknown>;
-	if (!isNonEmptyString(summary.en) || !isNonEmptyString(summary.sv)) {
-		throw new Error(`${where}: summary must have non-empty "en" and "sv"`);
-	}
-	return { en: summary.en, sv: summary.sv };
 }
 
 function parseProject(value: unknown, index: number): Project {
@@ -57,6 +41,9 @@ function parseProject(value: unknown, index: number): Project {
 	if (typeof entry.status !== 'string' || !STATUSES.includes(entry.status)) {
 		throw new Error(`${where} (${entry.slug}): unknown status "${String(entry.status)}"`);
 	}
+	if (!isNonEmptyString(entry.summary)) {
+		throw new Error(`${where} (${entry.slug}): missing summary`);
+	}
 
 	return {
 		slug: entry.slug,
@@ -65,7 +52,7 @@ function parseProject(value: unknown, index: number): Project {
 		language: entry.language,
 		flow: entry.flow === true,
 		status: entry.status as ProjectStatus,
-		summary: parseSummary(entry.summary, `${where} (${entry.slug})`)
+		summary: entry.summary
 	};
 }
 

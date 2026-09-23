@@ -8,17 +8,17 @@
 	import Shell from './Shell.svelte';
 	import { bots } from '$lib/data/lab';
 	import { projects } from '$lib/data/projects';
-	import type { Dictionary, Locale } from '$lib/i18n';
+	import type { Dictionary } from '$lib/i18n';
 
-	let { d, locale }: { d: Dictionary; locale: Locale } = $props();
+	let { d }: { d: Dictionary } = $props();
 </script>
 
-<Seo {locale} pageKey="home" title={d.title} description={d.metaDescription} />
+<Seo pageKey="home" title={d.title} description={d.metaDescription} />
 
-<Shell {d} {locale} pageKey="home">
+<Shell {d} pageKey="home">
 	<Hero {d} />
 	<Counts {d} {projects} {bots} />
-	<ProjectList {d} {locale} {projects} />
-	<BotStrip {d} {bots} {locale} />
+	<ProjectList {d} {projects} />
+	<BotStrip {d} {bots} />
 	<Log {d} />
 </Shell>

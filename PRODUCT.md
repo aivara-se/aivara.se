@@ -69,12 +69,8 @@ the only colour on the site.
 
 ## Constraints
 
-- **Bilingual, with localized slugs.** English at `/`, `/projects`, `/bots`, `/log`; Swedish at
-  `/sv/`, `/sv/projekt`, `/sv/bottar`, `/sv/logg`. The page pairings live in **one route table** so
-  they cannot drift page by page. Every page carries canonical + hreflang tags pointing at its pair.
-  There is **no language picker**: the entry page picks the language from the browser, sending
-  Swedish-preferring visitors to `/sv/`, and deep links are left in whatever language they are in.
-  Both languages complete; no half-translated page ships.
+- **One language: English.** Pages live at `/`, `/projects`, `/bots`, `/log`, and the paths live in
+  **one route table** so they cannot drift page by page. Every page carries a canonical tag.
 - **Public copy only.** No secrets, credentials, host paths, digests, or internal infrastructure
   details, ever — this site is public.
 - **Truth binds every claim.** No invented customers, benchmarks, prices or capabilities. Where a

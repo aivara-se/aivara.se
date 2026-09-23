@@ -1,12 +1,9 @@
 import type { Dictionary } from '../i18n';
 import { en } from '../i18n/en';
-import { sv } from '../i18n/sv';
 
 export type BotStatus = 'running' | 'arriving';
 
 export type BotId = keyof Dictionary['bot'];
-
-export type BotRole = Record<'en' | 'sv', string>;
 
 export interface Bot {
 	id: BotId;
@@ -15,11 +12,11 @@ export interface Bot {
 	accent: string | null;
 	avatar: string | null;
 	urls: string[];
-	role: BotRole;
+	role: string;
 }
 
-// The role copy itself lives in the dictionaries; this table only names the bots and
-// binds each to its own line, so translated copy can never drift from the roster.
+// The role copy itself lives in the dictionary; this table only names the bots and
+// binds each to its own line, so the copy cannot drift from the roster.
 //
 // Accents are one per bot, drawn from the design tokens: MoMo gold, MiMi cyan,
 // MaMa pink (the orchestrator), MeMe mint. All four have avatars and their own sites.
@@ -31,7 +28,7 @@ export const bots: Bot[] = [
 		accent: '#fdd684',
 		avatar: '/bots/momo.webp',
 		urls: ['https://momo.thani.sh'],
-		role: { en: en.bot.momo.role, sv: sv.bot.momo.role }
+		role: en.bot.momo.role
 	},
 	{
 		id: 'mimi',
@@ -40,7 +37,7 @@ export const bots: Bot[] = [
 		accent: '#7aede2',
 		avatar: '/bots/mimi.webp',
 		urls: ['https://mimi.thani.sh'],
-		role: { en: en.bot.mimi.role, sv: sv.bot.mimi.role }
+		role: en.bot.mimi.role
 	},
 	{
 		id: 'mama',
@@ -49,7 +46,7 @@ export const bots: Bot[] = [
 		accent: '#f7a8d8',
 		avatar: '/bots/mama.webp',
 		urls: ['https://mama.thani.sh'],
-		role: { en: en.bot.mama.role, sv: sv.bot.mama.role }
+		role: en.bot.mama.role
 	},
 	{
 		id: 'meme',
@@ -58,7 +55,7 @@ export const bots: Bot[] = [
 		accent: '#9fe6a6',
 		avatar: '/bots/meme.webp',
 		urls: ['https://meme.thani.sh'],
-		role: { en: en.bot.meme.role, sv: sv.bot.meme.role }
+		role: en.bot.meme.role
 	}
 ];
 

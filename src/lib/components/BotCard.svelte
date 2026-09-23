@@ -1,14 +1,12 @@
 <script lang="ts">
 	import Avatar from './Avatar.svelte';
 	import type { Bot } from '$lib/data/lab';
-	import type { Locale } from '$lib/i18n';
 
 	let {
 		bot,
-		locale,
 		level = 3,
 		variant = 'compact'
-	}: { bot: Bot; locale: Locale; level?: 2 | 3; variant?: 'compact' | 'full' } = $props();
+	}: { bot: Bot; level?: 2 | 3; variant?: 'compact' | 'full' } = $props();
 
 	// A bot that is running has somewhere to link to, so the whole card becomes the link.
 	// One that has not arrived yet does not, and is not made to look clickable.
@@ -26,7 +24,7 @@
 	<Avatar {bot} size={variant === 'full' ? 72 : 40} />
 	<div class="who">
 		<svelte:element this={'h' + level} class="name">{bot.name}</svelte:element>
-		<p class="role">{bot.role[locale]}</p>
+		<p class="role">{bot.role}</p>
 	</div>
 </svelte:element>
 

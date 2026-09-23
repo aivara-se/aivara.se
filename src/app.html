@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="%aivara.lang%">
+<html lang="en">
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -11,27 +11,6 @@
 			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap"
 			rel="stylesheet"
 		/>
-		<script>
-			// There is no language picker: the entry page picks the language the browser asks for.
-			// Swedish-preferring browsers land on /sv/, everyone else stays on /. Deep links are
-			// left alone, so a shared /sv/projekt URL stays Swedish even in an English browser.
-			(function () {
-				try {
-					var path = location.pathname.replace(/index\.html$/, '');
-					if (path !== '/') return;
-					var langs =
-						navigator.languages && navigator.languages.length
-							? navigator.languages
-							: [navigator.language || ''];
-					var wantsSwedish = langs.some(function (lang) {
-						return String(lang).toLowerCase().indexOf('sv') === 0;
-					});
-					if (wantsSwedish) location.replace('/sv/');
-				} catch (e) {
-					/* language detection is a nicety; never break the page over it */
-				}
-			})();
-		</script>
 		%sveltekit.head%
 	</head>
 	<body data-sveltekit-preload-data="hover">

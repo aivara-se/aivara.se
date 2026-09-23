@@ -1,10 +1,10 @@
 <script lang="ts">
-	import type { Dictionary, Locale } from '$lib/i18n';
+	import type { Dictionary } from '$lib/i18n';
 	import { href, navKeys, type PageKey } from '$lib/routes';
 
-	let { d, locale, pageKey }: { d: Dictionary; locale: Locale; pageKey: PageKey } = $props();
+	let { d, pageKey }: { d: Dictionary; pageKey: PageKey } = $props();
 
-	const home = $derived(href('home', locale));
+	const home = $derived(href('home'));
 </script>
 
 <header class="bar">
@@ -12,9 +12,7 @@
 
 	<nav class="nav" aria-label={d.nav.label}>
 		{#each navKeys as key (key)}
-			<a href={href(key, locale)} aria-current={key === pageKey ? 'page' : undefined}
-				>{d.nav[key]}</a
-			>
+			<a href={href(key)} aria-current={key === pageKey ? 'page' : undefined}>{d.nav[key]}</a>
 		{/each}
 	</nav>
 </header>

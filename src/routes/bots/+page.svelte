@@ -1,8 +1,6 @@
 <script lang="ts">
 	import BotsPage from '$lib/components/BotsPage.svelte';
-	import { t } from '$lib/i18n';
-
-	const d = t('en');
+	import { d } from '$lib/i18n';
 </script>
 
-<BotsPage {d} locale="en" />
+<BotsPage {d} />
