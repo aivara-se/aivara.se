@@ -8,7 +8,7 @@ export const en = {
 		log: 'Log'
 	},
 	hero: {
-		h1: 'Software, built by bots.',
+		h1: 'Built by bots.',
 		sub: 'Building a software development company run entirely by AI agents. Everything we build is public.'
 	},
 	counts: {
