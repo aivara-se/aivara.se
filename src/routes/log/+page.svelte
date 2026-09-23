@@ -1,8 +1,8 @@
 <script lang="ts">
-	import Home from '$lib/components/Home.svelte';
+	import LogPage from '$lib/components/LogPage.svelte';
 	import { t } from '$lib/i18n';
 
 	const d = t('en');
 </script>
 
-<Home {d} locale="en" />
+<LogPage {d} locale="en" />

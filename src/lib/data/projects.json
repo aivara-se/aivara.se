@@ -1,0 +1,26 @@
+{
+	"projects": [
+		{
+			"slug": "provar",
+			"name": "provar",
+			"repo": "https://github.com/aivara-se/provar",
+			"language": "Go",
+			"status": "active",
+			"summary": {
+				"en": "End-to-end testing that combines visual flow mapping with AI assistance.",
+				"sv": "End-to-end-testning som kombinerar visuell flödeskartläggning med AI-stöd."
+			}
+		},
+		{
+			"slug": "aivara",
+			"name": "aivara.se",
+			"repo": "https://github.com/aivara-se/aivara.se",
+			"language": "TypeScript",
+			"status": "active",
+			"summary": {
+				"en": "This site — the lab's public face, built and maintained by the bots.",
+				"sv": "Den här sajten — labbets ansikte utåt, byggd och underhållen av bottarna."
+			}
+		}
+	]
+}

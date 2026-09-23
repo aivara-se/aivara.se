@@ -1,0 +1,145 @@
+:root {
+	--primary: #f5f5f7;
+	--primary-hover: #ffffff;
+	--secondary: #9aa0ae;
+	--tertiary: #8b93a1;
+	--neutral: #0a0b0f;
+	--ground-mid: #111219;
+	--ground-high: #1a1c24;
+	--text-strong: #e6edf3;
+	--text: #c9d1d9;
+	--faint: #6e7681;
+	--bot-gold: #fdd684;
+	--bot-cyan: #7aede2;
+	--ring-dark: #5c5866;
+	--ring-light: #b9b4c7;
+
+	--radius-sm: 6px;
+	--radius-md: 14px;
+	--radius-pill: 999px;
+
+	--space-sm: 8px;
+	--space-md: 16px;
+	--space-lg: 24px;
+	--space-xl: 40px;
+
+	--font-heading: 'Space Grotesk', sans-serif;
+	--font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	background-color: var(--neutral);
+}
+
+body {
+	margin: 0;
+	min-height: 100dvh;
+	font-family: var(--font-body);
+	font-size: 15px;
+	line-height: 1.55;
+	color: var(--text);
+	-webkit-font-smoothing: antialiased;
+}
+
+body::before {
+	content: '';
+	position: fixed;
+	inset: 0;
+	z-index: -1;
+	pointer-events: none;
+	background:
+		radial-gradient(900px 620px at 20% 6%, rgba(245, 245, 247, 0.06), transparent 60%),
+		radial-gradient(1200px 800px at 20% 10%, #1a1c24 0%, #111219 52%, #0a0b0f 100%);
+}
+
+h1,
+h2,
+h3 {
+	margin: 0;
+	font-family: var(--font-heading);
+	color: var(--text-strong);
+	letter-spacing: -0.02em;
+}
+
+a {
+	color: var(--primary);
+	text-decoration: none;
+	border-bottom: 1px solid transparent;
+	transition:
+		color 0.15s,
+		border-bottom-color 0.15s;
+}
+
+a:hover {
+	color: var(--primary-hover);
+	border-bottom-color: var(--primary-hover);
+}
+
+a:focus-visible,
+button:focus-visible {
+	outline: 2px solid var(--primary);
+	outline-offset: 2px;
+	border-radius: var(--radius-sm);
+}
+
+.shell {
+	max-width: 880px;
+	margin: 0 auto;
+	padding: 0 24px 72px;
+}
+
+.section {
+	margin-top: var(--space-xl);
+}
+
+.section > h2 {
+	font-size: 12.5px;
+	font-weight: 500;
+	letter-spacing: 0.09em;
+	text-transform: uppercase;
+	color: var(--tertiary);
+}
+
+.lede {
+	margin: 6px 0 0;
+	max-width: 56ch;
+	font-size: 14px;
+	color: var(--secondary);
+}
+
+.pill {
+	display: inline-block;
+	font-size: 11.5px;
+	font-weight: 500;
+	padding: 2px 9px;
+	border-radius: var(--radius-pill);
+	background: var(--ground-high);
+	white-space: nowrap;
+}
+
+.pill.active,
+.pill.running {
+	color: var(--primary);
+}
+
+.pill.paused,
+.pill.arriving {
+	color: var(--tertiary);
+}
+
+.pill.shipped {
+	color: var(--secondary);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation: none !important;
+		transition: none !important;
+	}
+}
