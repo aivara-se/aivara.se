@@ -3,3 +3,7 @@ node_modules
 build
 static
 bun.lock
+
+# Hand-authored design/product docs are not run through the code formatter.
+DESIGN.md
+PRODUCT.md
