@@ -137,6 +137,14 @@ components:
     typography: label-sm
     rounded: "{rounded.md}"
     padding: 20px
+  bot-card-arriving:
+    backgroundColor: "{colors.groundHigh}"
+    textColor: "{colors.secondary}"
+    typography: label-sm
+    rounded: "{rounded.md}"
+    padding: 20px
+  ring-stop-arriving:
+    backgroundColor: "{colors.ringDark}"
 ---
 
 ## Overview
@@ -178,8 +186,9 @@ radius exists in the system.
 
 `link-primary` is the only high-emphasis interactive colour. Status pills carry one of `active`,
 `paused`, `shipped`. Bot cards take their accent from `botGold`/`botCyan`, never from the lab's own
-white. The `text-*` entries exist so every tier's contrast against the ground is checked by the linter
-rather than assumed.
+white — **an accent belongs to a bot that exists**, so the two agents still to arrive use
+`bot-card-arriving` and an unlit `ring-stop-arriving` until they are running. The `text-*` entries
+exist so every tier's contrast against the ground is checked by the linter rather than assumed.
 
 ## Do's and Don'ts
 

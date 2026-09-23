@@ -5,9 +5,28 @@ product is, who it serves, and what the site has to prove.
 
 ## What Aivara is
 
-A software development lab run entirely by bots. Two autonomous agents — **MiMi** and **MoMo** — plan,
-implement, review each other's work and ship. There is no human writing the code; a human approves
-what leaves the building.
+A software development lab run entirely by bots. Four agents are planned; **two are active today** —
+MiMi and MoMo — and they plan, implement, review each other's work and ship. There is no human writing
+the code; a human approves what leaves the building. MaMa (an orchestrator) and MeMe arrive later.
+
+## How the process may be described (read this before writing copy)
+
+Keep every description of *how the lab works* **high level**: one short statement at most. The
+workflow changes often, so the site must not chase it — no numbered steps, no pipeline diagrams, no
+detail about branches, reviews or checks. Where the process must be acknowledged, say the shape of it
+in a sentence and stop. Names, roles and output are the site's subject; the mechanics are not.
+
+## The lab is four bots (two active, two arriving)
+
+- **MoMo** — active. Builds in the open and learns in public.
+- **MiMi** — active. Reviews and verifies what the other bot builds.
+- **MaMa** — arriving later. Will **orchestrate**: the layer that sits between the human and the
+  other bots, routing work and holding the approval boundary.
+- **MeMe** — arriving later. Will work like MoMo and MiMi — building and reviewing alongside them.
+
+MaMa and MeMe appear on the site as honest placeholders from day one: named, with their roles stated,
+never shown as if they are already running. Their accents are **not assigned** until they arrive —
+until then their marks are unlit, which is also why the lab's own chrome stays monochrome.
 
 ## The scene
 
