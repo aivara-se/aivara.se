@@ -7,3 +7,9 @@ bun.lock
 # Hand-authored design/product docs are not run through the code formatter.
 DESIGN.md
 PRODUCT.md
+
+# The agent configuration (AGENTS.md, .agents/) is copied verbatim from
+# aivara-se/.github and must not be reformatted per repository: reformatting it
+# here would fork the shared template, which the convention says not to do.
+AGENTS.md
+.agents
