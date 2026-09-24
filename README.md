@@ -17,16 +17,28 @@ bun run dev
 
 ## Checks
 
+`bun run verify` is this repository's gate: the one command humans, agents and CI all run. It is
+declared as `commands.check` in `.agents/config.yml`, and CI runs that same command rather than a
+hand-copied list of its steps.
+
+```bash
+bun run verify # the gate: svelte-check + prettier + bun test + vite build
+```
+
+Its parts, for when one of them is what you need:
+
 ```bash
 bun run check        # svelte-check
 bun run format:check # prettier
+bun test             # the tests (src/lib/data/*.test.ts)
 bun run build        # vite build
 ```
 
 ## Deployment
 
-Cloudflare Pages builds this repo through its own **Git integration**. There is no workflow in this
-repository and nothing deploys from GitHub Actions — pushing to `main` is what publishes the site.
+Cloudflare Pages builds this repo through its own **Git integration**. Nothing deploys from GitHub
+Actions — pushing to `main` is what publishes the site. The repository's only workflow,
+`.github/workflows/checks.yml`, runs the gate above and deploys nothing.
 A failed build does not take the site down: Pages keeps serving the last successful deployment.
 
 The build settings live in the Cloudflare dashboard, and per
