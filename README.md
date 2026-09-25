@@ -20,17 +20,15 @@ bun run dev
 ```bash
 bun run check        # svelte-check
 bun run format:check # prettier
+bun test             # the tests in src/lib/data
 bun run build        # vite build
 ```
 
 ## Deployment
 
-Cloudflare Pages builds this repo through its own **Git integration**. There is no workflow in this
-repository and nothing deploys from GitHub Actions — pushing to `main` is what publishes the site.
-A failed build does not take the site down: Pages keeps serving the last successful deployment.
+Cloudflare Pages builds this repo through its own **Git integration**. There is no workflow in this repository and nothing deploys from GitHub Actions — pushing to `main` is what publishes the site. A failed build does not take the site down: Pages keeps serving the last successful deployment.
 
-The build settings live in the Cloudflare dashboard, and per
-[SvelteKit's Cloudflare adapter docs](https://svelte.dev/docs/kit/adapter-cloudflare) they need to be:
+The build settings live in the Cloudflare dashboard, and per [SvelteKit's Cloudflare adapter docs](https://svelte.dev/docs/kit/adapter-cloudflare) they need to be:
 
 **Settings → Build**
 
@@ -38,9 +36,7 @@ The build settings live in the Cloudflare dashboard, and per
 - Build command: `bun install --frozen-lockfile && bun run build`
 - Build output directory: `.svelte-kit/cloudflare`
 
-The install step belongs _inside_ the build command: Pages' current build system runs the build
-command as the only step, so without it `node_modules` never exists and the build dies with
-`vite: command not found` (exit 127).
+The install step belongs _inside_ the build command: Pages' current build system runs the build command as the only step, so without it `node_modules` never exists and the build dies with `vite: command not found` (exit 127).
 
 **Settings → Runtime**
 
@@ -58,12 +54,4 @@ This runs the same worker Cloudflare serves, which is the closest local equivale
 
 ### Environment variables
 
-Runtime secrets and bindings (for example anything a contact form needs to send mail) are set in the
-Cloudflare dashboard under the Pages project's settings. They are not in this repository, and
-`.dev.vars` is gitignored for local overrides.
-
-## Notes
-
-- The `static/` directory still holds the existing brand assets (favicons, app icons, `logo.svg`,
-  `manifest.json`); only the app code was replaced.
-- The previous site remains in git history.
+Runtime secrets and bindings (for example anything a contact form needs to send mail) are set in the Cloudflare dashboard under the Pages project's settings. They are not in this repository, and `.dev.vars` is gitignored for local overrides.
