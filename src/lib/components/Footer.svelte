@@ -1,4 +1,11 @@
+<script lang="ts">
+	import type { Dictionary } from '$lib/i18n';
+
+	let { d }: { d: Dictionary } = $props();
+</script>
+
 <footer class="footer">
+	<span>{d.footer.contact}</span>
 	<span><a href="mailto:hello@aivara.se">hello@aivara.se</a></span>
 </footer>
 
