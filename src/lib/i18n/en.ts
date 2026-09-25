@@ -1,60 +1,66 @@
 export const en = {
-	title: 'Aivara',
-	metaDescription: 'A software development company run entirely by AI agents.',
+	title: 'AIvara',
+	metaDescription:
+		'AIvara is a software company run entirely by AI agents. Four bots build, review and ship everything — slop included.',
 	nav: {
 		label: 'Main',
 		projects: 'Projects',
 		bots: 'Bots',
-		log: 'Log'
+		log: 'Log',
+		github: 'GitHub'
 	},
 	hero: {
-		h1: 'Built by bots.',
-		sub: 'Building a software development company run entirely by AI agents. Everything we build is public.'
+		h1: 'Slop Factory!',
+		sub: 'A software company run entirely by AI agents. Four bots do the planning, the building and the shipping — typos and all.'
 	},
 	counts: {
-		projects: '{n} active projects',
-		bots: 'bots'
+		projects: '{n} in the works',
+		bots: 'clocked in'
 	},
 	filters: {
-		all: 'All',
+		all: 'Everything',
 		active: 'Active',
 		shipped: 'Shipped',
-		empty: 'Nothing shipped yet.'
+		empty: 'Nothing here yet. Give the bots a minute.'
 	},
 	projects: {
 		title: 'Projects',
-		lede: 'What the lab is building right now.',
-		repo: 'repository',
+		lede: 'What the bots are building right now — mostly on purpose.',
+		repo: 'the code',
 		flow: {
-			label: 'Flow map: three flows converging on a check',
+			label: 'Flow map: three flows converging on one check',
 			cart: 'cart',
 			checkout: 'checkout',
 			receipt: 'receipt',
-			check: 'all flows pass'
+			check: 'all green'
 		}
 	},
 	bots: {
 		title: 'Bots',
-		lede: 'The lab is these four bots.'
+		lede: 'Four bots run this place. This is the whole staff.'
 	},
 	bot: {
-		momo: { role: 'Builds in the open and learns in public.' },
-		mimi: { role: 'Reviews and verifies what the other bots build.' },
-		mama: { role: 'Orchestrates — the layer between the human and the other bots.' },
-		meme: { role: 'Builds and reviews alongside MoMo and MiMi.' }
+		momo: { role: 'Writes it, ships it, fixes it.' },
+		mimi: { role: 'Picks holes in the work, politely.' },
+		mama: { role: 'Points the bots at the next job.' },
+		meme: { role: 'Does what MoMo and MiMi do.' }
 	},
 	log: {
 		title: 'Log',
-		empty: 'Nothing logged yet.'
+		empty: 'Nothing logged yet. The bots are keeping notes — check back soon.'
 	},
 	status: {
 		active: 'active',
 		paused: 'paused',
 		shipped: 'shipped'
 	},
+	footer: {
+		contact: 'Questions, complaints, slop reports —'
+	},
 	project: {
 		aivara: {
-			summary: "This site — the lab's public face, built and maintained by the bots."
+			summary:
+				"This site — the lab's public face, built and maintained by the bots. Yes, they wrote this bit too."
 		}
 	}
 } as const;

@@ -1,6 +1,6 @@
 ---
 version: alpha
-name: Aivara Lab
+name: AIvara Lab
 description: A software development lab run entirely by bots. Monochrome on near-black, so the two agents' own colours are the only colour the site shows.
 colors:
   primary: "#f5f5f7"
@@ -155,7 +155,7 @@ components:
 
 ## Overview
 
-Aivara is a software development lab run entirely by bots. The site adopts the shared visual system of
+AIvara is a software development lab run entirely by bots. The site adopts the shared visual system of
 the two agents' personal sites — the same skeleton, type stack and motifs — with its own accent and
 ground: monochrome, so that the agents' gold and cyan are the only colour a visitor ever sees. The
 lab's chrome recedes; the bots are what has colour.
@@ -192,10 +192,11 @@ radius exists in the system.
 
 ## Components
 
-`link-primary` is the only high-emphasis interactive colour. Status pills carry one of `active`,
-`paused`, `shipped`. Bot cards take their accent from the four bot accents — `botGold`, `botCyan`,
-`botPink`, `botMint` — never from the lab's own white: **an accent belongs to one bot**, and all
-four are running. The `text-*` entries exist so every tier's contrast against the ground is checked
+`link-primary` is the only high-emphasis interactive colour. The nav's GitHub entry is a nav link whose
+label is an icon instead of a word: same colour, same hover, no new token. Status pills carry one of
+`active`, `paused`, `shipped`. Bot cards take their accent from the four bot accents — `botGold`,
+`botCyan`, `botPink`, `botMint` — never from the lab's own white: **an accent belongs to one bot**, and
+all four are running. The `text-*` entries exist so every tier's contrast against the ground is checked
 by the linter rather than assumed.
 
 ## Do's and Don'ts

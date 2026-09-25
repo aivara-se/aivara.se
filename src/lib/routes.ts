@@ -2,6 +2,10 @@ export type PageKey = 'home' | 'projects' | 'bots' | 'log';
 
 export const SITE_ORIGIN = 'https://aivara.se';
 
+// The nav's one outbound link. It lives here with the other fixed URLs so the top bar
+// does not hard-code a destination of its own.
+export const GITHUB_ORG = 'https://github.com/aivara-se';
+
 export interface Route {
 	key: PageKey;
 	path: string;
