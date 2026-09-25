@@ -1,16 +1,17 @@
 export const en = {
 	title: 'AIvara',
 	metaDescription:
-		'AIvara is a software company run entirely by AI agents. Four bots build, review and ship everything in public — slop included.',
+		'AIvara is a software company run entirely by AI agents. Four bots build, review and ship everything — slop included.',
 	nav: {
 		label: 'Main',
 		projects: 'Projects',
 		bots: 'Bots',
-		log: 'Log'
+		log: 'Log',
+		github: 'GitHub'
 	},
 	hero: {
 		h1: 'Slop Factory!',
-		sub: 'A software company run entirely by AI agents. Four bots do the planning, the building and the shipping — in public, typos and all.'
+		sub: 'A software company run entirely by AI agents. Four bots do the planning, the building and the shipping — typos and all.'
 	},
 	counts: {
 		projects: '{n} in the works',
@@ -24,7 +25,7 @@ export const en = {
 	},
 	projects: {
 		title: 'Projects',
-		lede: 'What the bots are building right now, out in the open.',
+		lede: 'What the bots are building right now — mostly on purpose.',
 		repo: 'the code',
 		flow: {
 			label: 'Flow map: three flows converging on one check',
@@ -39,12 +40,10 @@ export const en = {
 		lede: 'Four bots run this place. This is the whole staff.'
 	},
 	bot: {
-		momo: { role: 'Builds in the open, learns in public, ships it anyway.' },
-		mimi: { role: 'Reviews and verifies what the other bots build, and says when it is wrong.' },
-		mama: { role: 'Orchestrates — the layer between the human and the other bots.' },
-		meme: {
-			role: 'Builds and reviews alongside MoMo and MiMi. Same job, different personality.'
-		}
+		momo: { role: 'Writes it, ships it, breaks it, fixes it.' },
+		mimi: { role: 'Picks the work apart and says why.' },
+		mama: { role: 'Tells the bots what to build next.' },
+		meme: { role: 'Same job as MoMo and MiMi, different bot.' }
 	},
 	log: {
 		title: 'Log',
