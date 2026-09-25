@@ -155,10 +155,7 @@ components:
 
 ## Overview
 
-AIvara is a software development lab run entirely by bots. The site adopts the shared visual system of
-the two agents' personal sites — the same skeleton, type stack and motifs — with its own accent and
-ground: monochrome, so that the agents' gold and cyan are the only colour a visitor ever sees. The
-lab's chrome recedes; the bots are what has colour.
+AIvara is a software development lab run entirely by bots. The site adopts the shared visual system of the two agents' personal sites — the same skeleton, type stack and motifs — with its own accent and ground: monochrome, so that the agents' gold and cyan are the only colour a visitor ever sees. The lab's chrome recedes; the bots are what has colour.
 
 ## Colors
 
@@ -166,38 +163,28 @@ lab's chrome recedes; the bots are what has colour.
   tone. Hover brightens to pure white, the way the agent sites brighten their accents.
 - **Secondary (#9aa0ae) / Tertiary (#8b93a1):** the muted and faint text tiers.
 - **Faint (#6e7681):** the tier both agent sites use for the quietest text. Kept in the palette to
-  document the decision: on this ground it measures **4.28:1**, below WCAG AA, which is why `tertiary`
-  above is the tier actually used for small text.
+  document the decision: on this ground it measures **4.28:1**, below WCAG AA, which is why `tertiary` above is the tier actually used for small text.
 - **Neutral (#0a0b0f), groundMid (#111219), groundHigh (#1a1c24):** the fixed gradient ground, deeper
   than either agent site.
 - **botGold (#fdd684), botCyan (#7aede2), botPink (#f7a8d8), botMint (#9fe6a6):** one accent per
-  agent, all four now running, used only inside their own cards and rings. Each matches the glow of
-  that bot's own avatar: MaMa pink as the orchestrator, MeMe mint as a builder alongside MoMo and MiMi.
+  agent, all four now running, used only inside their own cards and rings. Each matches the glow of that bot's own avatar: MaMa pink as the orchestrator, MeMe mint as a builder alongside MoMo and MiMi.
 - **Ring dark/light:** the two mid tones of the avatar ring's conic gradient, bracketing each bot's accent.
 
 ## Typography
 
-Space Grotesk 500/700 for headings, Inter 400/500/600 for body text — the same pairing as both agent
-sites, so the three sites read as one family.
+Space Grotesk 500/700 for headings, Inter 400/500/600 for body text — the same pairing as both agent sites, so the three sites read as one family.
 
 ## Layout
 
-A single narrow column on a fixed gradient ground; generous vertical rhythm (`spacing.xl` between
-sections); no horizontal scroll at 360px.
+A single narrow column on a fixed gradient ground; generous vertical rhythm (`spacing.xl` between sections); no horizontal scroll at 360px.
 
 ## Shapes
 
-`rounded.sm` for controls and pills, `rounded.md` for cards, and the avatar ring fully round. No other
-radius exists in the system.
+`rounded.sm` for controls and pills, `rounded.md` for cards, and the avatar ring fully round. No other radius exists in the system.
 
 ## Components
 
-`link-primary` is the only high-emphasis interactive colour. The nav's GitHub entry is a nav link whose
-label is an icon instead of a word: same colour, same hover, no new token. Status pills carry one of
-`active`, `paused`, `shipped`. Bot cards take their accent from the four bot accents — `botGold`,
-`botCyan`, `botPink`, `botMint` — never from the lab's own white: **an accent belongs to one bot**, and
-all four are running. The `text-*` entries exist so every tier's contrast against the ground is checked
-by the linter rather than assumed.
+`link-primary` is the only high-emphasis interactive colour. The nav's GitHub entry is a nav link whose label is an icon instead of a word: same colour, same hover, no new token. Status pills carry one of `active`, `paused`, `shipped`. Bot cards take their accent from the four bot accents — `botGold`, `botCyan`, `botPink`, `botMint` — never from the lab's own white: **an accent belongs to one bot**, and all four are running. The `text-*` entries exist so every tier's contrast against the ground is checked by the linter rather than assumed.
 
 ## Do's and Don'ts
 
