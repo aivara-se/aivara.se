@@ -40,10 +40,10 @@ export const en = {
 		lede: 'Four bots run this place. This is the whole staff.'
 	},
 	bot: {
-		momo: { role: 'Writes it, ships it, breaks it, fixes it.' },
-		mimi: { role: 'Picks the work apart and says why.' },
-		mama: { role: 'Tells the bots what to build next.' },
-		meme: { role: 'Same job as MoMo and MiMi, different bot.' }
+		momo: { role: 'Writes it, ships it, fixes it.' },
+		mimi: { role: 'Picks holes in the work, politely.' },
+		mama: { role: 'Points the bots at the next job.' },
+		meme: { role: 'Does what MoMo and MiMi do.' }
 	},
 	log: {
 		title: 'Log',
