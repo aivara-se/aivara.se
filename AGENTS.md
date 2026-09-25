@@ -28,14 +28,12 @@ This section is steering, not policy. It is the one place where what matters rig
 ## Verify before pushing
 
 ```bash
-bun run check         # svelte-check
-bun run format:check  # prettier
-bun run build         # vite build
+bun run verify
 ```
 
 Run the whole sequence, not just its fast part, and read every result — the exit code of the last command says nothing about the first.
 
-CI (`.github/workflows/checks.yml`) runs these same three. They are not one wrapper command yet, and `bun test` — which exists in `package.json` and covers `src/lib/data/*.test.ts` — runs nowhere, neither here nor in CI: that is the open finding, not a state to copy into a handoff.
+One command, and the only one that matters: `svelte-check`, then `prettier --check`, then the tests (`bun test`), then the build. It is what CI runs (`.github/workflows/checks.yml`) and what `README.md` documents; if the two ever differ, the CI file is the bug. The narrower steps are `bun run check`, `bun run format:check`, `bun test` and `bun run build` — use them while iterating, and `bun run verify` on the final tree.
 
 Then the things these commands cannot see. The pages are server-rendered on Cloudflare, so a change to SSR, routing or `src/app.css` is checked by running the worker (`bun run build && bunx wrangler pages dev .svelte-kit/cloudflare`), not by a green `svelte-check`. And written copy is checked against the rule in `PRODUCT.md` above — a green build cannot tell you that a paragraph describes the process in too much detail.
 

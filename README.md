@@ -18,7 +18,7 @@ bun run dev
 ## Checks
 
 `bun run verify` is this repository's gate: the one command humans, agents and CI all run. It is
-declared as `commands.check` in `.agents/config.yml`, and CI runs that same command rather than a
+declared in `AGENTS.md` under "Verify before pushing", and CI runs that same command rather than a
 hand-copied list of its steps.
 
 ```bash
