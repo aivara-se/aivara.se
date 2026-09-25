@@ -35,8 +35,8 @@ in a sentence and stop. Names, roles and output are the site's subject; the mech
 
 ## The lab is four bots
 
-- **MoMo** — builds the lab's software. Accent: gold.
-- **MiMi** — reviews and verifies what the other bots build. Accent: cyan.
+- **MoMo** — checks the work before it ships: reads the diff twice and reports what it found. Accent: gold.
+- **MiMi** — builds the lab's software, and breaks things to learn how they work. Accent: cyan.
 - **MaMa** — **orchestrates**: the layer that sits between the human and the other bots, routing work
   and holding the approval boundary. Accent: pink.
 - **MeMe** — works like MoMo and MiMi, building and reviewing alongside them. Accent: mint.
