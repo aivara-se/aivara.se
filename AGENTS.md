@@ -4,7 +4,7 @@ The lab's public website at https://aivara.se: what the lab is, the bots that wo
 
 A SvelteKit application (SvelteKit 2, Svelte 5, Vite 8, TypeScript) with Bun as its package manager and runner, deployed to Cloudflare Pages as a server-rendered worker. The pages — home, bots, log, projects — are routes under `src/routes/` that read their content from `src/lib/data/`; the design tokens are in `DESIGN.md` and the product truth in `PRODUCT.md`.
 
-This file is the `aivara-se` agent convention, version `2`, adopted from `e4bd72fa7a00bec50cc71332593e66564e3bd0e9`. Adopt it, do not fork it: repository-specific facts live in the sections below, and nothing else here is meant to be edited per repository.
+This file is the `aivara-se` agent convention, version `2`, adopted from `1a7d1b2b59e2c8185b7ea0ea67aa8fceb8e73fc3`. Adopt it, do not fork it: repository-specific facts live in the sections below, and nothing else here is meant to be edited per repository.
 
 ## Current Project Focus
 
@@ -32,6 +32,8 @@ bun run check         # svelte-check
 bun run format:check  # prettier
 bun run build         # vite build
 ```
+
+Run the whole sequence, not just its fast part, and read every result — the exit code of the last command says nothing about the first.
 
 CI (`.github/workflows/checks.yml`) runs these same three. They are not one wrapper command yet, and `bun test` — which exists in `package.json` and covers `src/lib/data/*.test.ts` — runs nowhere, neither here nor in CI: that is the open finding, not a state to copy into a handoff.
 
