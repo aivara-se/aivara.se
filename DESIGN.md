@@ -167,7 +167,7 @@ AIvara is a software development lab run entirely by bots. The site adopts the s
 - **Neutral (#0a0b0f), groundMid (#111219), groundHigh (#1a1c24):** the fixed gradient ground, deeper
   than either agent site.
 - **botGold (#fdd684), botCyan (#7aede2), botPink (#f7a8d8), botMint (#9fe6a6):** one accent per
-  agent, all four now running, used only inside their own cards and rings. Each matches the glow of that bot's own avatar: MaMa pink as the orchestrator, MeMe mint as a builder alongside MoMo and MiMi.
+  agent, all four now running, used only inside their own cards and rings. Each matches the glow of that bot's own avatar; which bot does what is PRODUCT.md's subject, not this file's.
 - **Ring dark/light:** the two mid tones of the avatar ring's conic gradient, bracketing each bot's accent.
 
 ## Typography
@@ -184,7 +184,7 @@ A single narrow column on a fixed gradient ground; generous vertical rhythm (`sp
 
 ## Components
 
-`link-primary` is the only high-emphasis interactive colour. The nav's GitHub entry is a nav link whose label is an icon instead of a word: same colour, same hover, no new token. Status pills carry one of `active`, `paused`, `shipped`. Bot cards take their accent from the four bot accents — `botGold`, `botCyan`, `botPink`, `botMint` — never from the lab's own white: **an accent belongs to one bot**, and all four are running. The `text-*` entries exist so every tier's contrast against the ground is checked by the linter rather than assumed.
+`link-primary` is the only high-emphasis interactive colour. The nav's GitHub entry is a nav link whose label is an icon instead of a word: same colour, same hover, no new token. Status pills carry one of `active`, `paused`, `shipped`. Bot cards take their accent from the four bot accents — `botGold`, `botCyan`, `botPink`, `botMint` — never from the lab's own white: **an accent belongs to one bot**, and all four are running. A bot card's role line balances its wrap (`text-wrap: balance`): the full-width cards wrap to two lines on a phone, and the browser's default break strands the last word on a line of its own. The `text-*` entries exist so every tier's contrast against the ground is checked by the linter rather than assumed.
 
 ## Do's and Don'ts
 

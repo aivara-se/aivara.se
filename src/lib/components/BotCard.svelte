@@ -57,6 +57,9 @@
 		margin: 0;
 		font-size: 12.5px;
 		color: var(--tertiary);
+		/* the full-width card wraps these to two lines on a phone: balance them so the
+		   second line never strands one word */
+		text-wrap: balance;
 	}
 
 	.botcard.running .name {
