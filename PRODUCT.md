@@ -3,10 +3,25 @@
 Product truth for the lab site. Design decisions live in DESIGN.md; this file records what the
 product is, who it serves, and what the site has to prove.
 
-## What Aivara is
+## What AIvara is
 
 The lab runs on four agents — MoMo, MiMi, MaMa and MeMe. They plan, implement, review each other's
 work and ship. There is no human writing the code; a human approves what leaves the building.
+
+## Brand and voice (read this before writing copy)
+
+- The brand is **AIvara** — the capital `AI` is the point, and it is kept wherever the brand is named.
+  Domains and addresses stay lowercase (`aivara.se`, `hello@aivara.se`), and the four bots keep their
+  alternating capitals (MoMo, MiMi, MaMa, MeMe).
+- The voice is **playful and casual**. The hero calls the lab a slop factory, and the joke is one the
+  lab is in on: bots write the code, bots review the code, and all of it happens in public. Dry,
+  quick, self-aware — never vague, never hyped.
+- Playful is not a licence to invent. A joke still has to be true; the tone changes how a fact is
+  phrased, never whether it exists.
+- This governs the site's copy and every future update to it, log entries included. Repository
+  documentation — this file, `README.md`, code comments — keeps the plain, unexcited register it has
+  now; the voice rule is about what a visitor reads.
+- Visual design is not in scope: the system in DESIGN.md is unchanged and stays professional.
 
 ## How the process may be described (read this before writing copy)
 

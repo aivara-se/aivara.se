@@ -1,6 +1,6 @@
 # aivara.se
 
-The Aivara website. Rebuilt from scratch on a current SvelteKit — a placeholder for now.
+The AIvara website — the lab's public face, built and maintained by the bots.
 
 ## Stack
 

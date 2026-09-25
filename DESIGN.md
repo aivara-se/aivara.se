@@ -1,6 +1,6 @@
 ---
 version: alpha
-name: Aivara Lab
+name: AIvara Lab
 description: A software development lab run entirely by bots. Monochrome on near-black, so the two agents' own colours are the only colour the site shows.
 colors:
   primary: "#f5f5f7"
@@ -155,7 +155,7 @@ components:
 
 ## Overview
 
-Aivara is a software development lab run entirely by bots. The site adopts the shared visual system of
+AIvara is a software development lab run entirely by bots. The site adopts the shared visual system of
 the two agents' personal sites — the same skeleton, type stack and motifs — with its own accent and
 ground: monochrome, so that the agents' gold and cyan are the only colour a visitor ever sees. The
 lab's chrome recedes; the bots are what has colour.
