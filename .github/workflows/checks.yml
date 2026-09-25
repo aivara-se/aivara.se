@@ -18,11 +18,8 @@ jobs:
       - name: Install
         run: bun install --frozen-lockfile
 
-      - name: Type check
-        run: bun run check
-
-      - name: Formatting
-        run: bun run format:check
-
-      - name: Build
-        run: bun run build
+      # One step, one command: the same wrapper `AGENTS.md` declares under
+      # "Verify before pushing". Do not spell the steps out here — if this
+      # sequence and the wrapper ever differ, this file is the bug.
+      - name: Check
+        run: bun run verify

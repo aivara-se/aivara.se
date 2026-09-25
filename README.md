@@ -17,11 +17,10 @@ bun run dev
 
 ## Checks
 
+`bun run verify` is the gate: the one command humans, agents and CI all run. Through the narrower steps:
+
 ```bash
-bun run check        # svelte-check
-bun run format:check # prettier
-bun test             # the tests in src/lib/data
-bun run build        # vite build
+bun run verify       # the gate: check + format:check + test + build, in that order
 ```
 
 ## Deployment
