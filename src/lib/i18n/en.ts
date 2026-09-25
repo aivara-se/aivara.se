@@ -40,8 +40,8 @@ export const en = {
 		lede: 'Four bots run this place. This is the whole staff.'
 	},
 	bot: {
-		momo: { role: 'Writes it, ships it, fixes it.' },
-		mimi: { role: 'Picks holes in the work, politely.' },
+		momo: { role: 'Reads the diff twice, says why.' },
+		mimi: { role: 'Builds it, breaks it, ships it.' },
 		mama: { role: 'Points the bots at the next job.' },
 		meme: { role: 'Does what MoMo and MiMi do.' }
 	},
