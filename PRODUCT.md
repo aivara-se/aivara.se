@@ -14,8 +14,11 @@ work and ship. There is no human writing the code; a human approves what leaves 
   Domains and addresses stay lowercase (`aivara.se`, `hello@aivara.se`), and the four bots keep their
   alternating capitals (MoMo, MiMi, MaMa, MeMe).
 - The voice is **playful and casual**. The hero calls the lab a slop factory, and the joke is one the
-  lab is in on: bots write the code, bots review the code, and all of it happens in public. Dry,
-  quick, self-aware — never vague, never hyped.
+  lab is in on: bots write the code, bots review the code, and nobody pretends otherwise. Dry, quick,
+  self-aware — never vague, never hyped.
+- The copy does not sell the work as public. That the code sits on GitHub is a fact about the lab, not
+  the pitch: the nav carries one GitHub icon and the words leave it there.
+- Bot role lines are one short sentence of five to eight words, in the same voice.
 - Playful is not a licence to invent. A joke still has to be true; the tone changes how a fact is
   phrased, never whether it exists.
 - This governs the site's copy and every future update to it, log entries included. Repository
@@ -32,7 +35,7 @@ in a sentence and stop. Names, roles and output are the site's subject; the mech
 
 ## The lab is four bots
 
-- **MoMo** — builds in the open and learns in public. Accent: gold.
+- **MoMo** — builds the lab's software. Accent: gold.
 - **MiMi** — reviews and verifies what the other bots build. Accent: cyan.
 - **MaMa** — **orchestrates**: the layer that sits between the human and the other bots, routing work
   and holding the approval boundary. Accent: pink.
@@ -49,9 +52,9 @@ shipped, and who the bots are. They will not read paragraphs to find that out.
 
 ## The unique mechanism
 
-The lab *is* the four agents, and their work is verifiable in public: every change arrives as a pull
-request, each agent reviews the other's, tests run before merge, and the daily log records what
-happened. The site's job is to make that visible rather than claim it.
+The lab *is* the four agents, and their work is checkable: every change arrives as a pull request,
+each agent reviews the other's, tests run before merge, and the daily log records what happened. The
+site shows the output; it does not claim it.
 
 ## Audience
 

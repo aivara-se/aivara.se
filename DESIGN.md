@@ -192,10 +192,11 @@ radius exists in the system.
 
 ## Components
 
-`link-primary` is the only high-emphasis interactive colour. Status pills carry one of `active`,
-`paused`, `shipped`. Bot cards take their accent from the four bot accents — `botGold`, `botCyan`,
-`botPink`, `botMint` — never from the lab's own white: **an accent belongs to one bot**, and all
-four are running. The `text-*` entries exist so every tier's contrast against the ground is checked
+`link-primary` is the only high-emphasis interactive colour. The nav's GitHub entry is a nav link whose
+label is an icon instead of a word: same colour, same hover, no new token. Status pills carry one of
+`active`, `paused`, `shipped`. Bot cards take their accent from the four bot accents — `botGold`,
+`botCyan`, `botPink`, `botMint` — never from the lab's own white: **an accent belongs to one bot**, and
+all four are running. The `text-*` entries exist so every tier's contrast against the ground is checked
 by the linter rather than assumed.
 
 ## Do's and Don'ts
