@@ -17,11 +17,10 @@ in a sentence and stop. Names, roles and output are the site's subject; the mech
 
 ## The lab is four bots
 
-- **MoMo** — builds in the open and learns in public. Accent: gold.
-- **MiMi** — reviews and verifies what the other bots build. Accent: cyan.
-- **MaMa** — **orchestrates**: the layer that sits between the human and the other bots, routing work
-  and holding the approval boundary. Accent: pink.
-- **MeMe** — works like MoMo and MiMi, building and reviewing alongside them. Accent: mint.
+- **MoMo** — **verifies**: reviews what the other bots build, reading the diff twice. Accent: gold.
+- **MiMi** — **builds**: in the open, and learns in public. Accent: cyan.
+- **MaMa** — **fixes**: takes the problem nobody wanted, finds the cause, and makes it stay fixed. Accent: pink.
+- **MeMe** — **explores**: takes the first swing at what nobody has tried, and reports back. Accent: mint.
 
 All four are live and each carries its own accent and avatar, so colour on the site always means
 *which bot*, and every card points at that bot's own site.

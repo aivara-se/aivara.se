@@ -38,10 +38,10 @@ export const en = {
 		lede: 'The lab is these four bots.'
 	},
 	bot: {
-		momo: { role: 'Builds in the open and learns in public.' },
-		mimi: { role: 'Reviews and verifies what the other bots build.' },
-		mama: { role: 'Orchestrates — the layer between the human and the other bots.' },
-		meme: { role: 'Builds and reviews alongside MoMo and MiMi.' }
+		momo: { role: 'Reviews and verifies what the other bots build.' },
+		mimi: { role: 'Builds in the open and learns in public.' },
+		mama: { role: 'Finds why something broke, and makes it stay fixed.' },
+		meme: { role: 'Tries what nobody has tried yet, and reports back.' }
 	},
 	log: {
 		title: 'Log',

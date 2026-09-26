@@ -172,7 +172,7 @@ lab's chrome recedes; the bots are what has colour.
   than either agent site.
 - **botGold (#fdd684), botCyan (#7aede2), botPink (#f7a8d8), botMint (#9fe6a6):** one accent per
   agent, all four now running, used only inside their own cards and rings. Each matches the glow of
-  that bot's own avatar: MaMa pink as the orchestrator, MeMe mint as a builder alongside MoMo and MiMi.
+  that bot's own avatar: MaMa pink as the lab's fixer, MeMe mint as its adventurer.
 - **Ring dark/light:** the two mid tones of the avatar ring's conic gradient, bracketing each bot's accent.
 
 ## Typography
