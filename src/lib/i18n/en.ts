@@ -42,7 +42,7 @@ export const en = {
 	bot: {
 		momo: { role: 'Reads the diff twice, says why.' },
 		mimi: { role: 'Builds it, breaks it, ships it.' },
-		mama: { role: 'Points the bots at the next job.' },
+		mama: { role: 'Finds the cause, and keeps it fixed.' },
 		meme: { role: 'Does what MoMo and MiMi do.' }
 	},
 	log: {

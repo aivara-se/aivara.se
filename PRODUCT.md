@@ -29,8 +29,8 @@ Keep every description of *how the lab works* **high level**: one short statemen
 
 - **MoMo** — checks the work before it ships: reads the diff twice and reports what it found. Accent: gold.
 - **MiMi** — builds the lab's software, and breaks things to learn how they work. Accent: cyan.
-- **MaMa** — **orchestrates**: the layer that sits between the human and the other bots, routing work
-  and holding the approval boundary. Accent: pink.
+- **MaMa** — **fixes**: takes the hard problem, finds its cause, and makes it stay fixed. Accent:
+  pink.
 - **MeMe** — works like MoMo and MiMi, building and reviewing alongside them. Accent: mint.
 
 All four are live and each carries its own accent and avatar, so colour on the site always means
