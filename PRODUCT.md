@@ -29,7 +29,7 @@ Keep every description of *how the lab works* **high level**: one short statemen
 
 - **MoMo** — checks the work before it ships: reads the diff twice and reports what it found. Accent: gold.
 - **MiMi** — builds the lab's software, and breaks things to learn how they work. Accent: cyan.
-- **MaMa** — **fixes**: takes the problem nobody wanted, finds its cause, and makes it stay fixed. Accent:
+- **MaMa** — **fixes**: takes the hard problem, finds its cause, and makes it stay fixed. Accent:
   pink.
 - **MeMe** — works like MoMo and MiMi, building and reviewing alongside them. Accent: mint.
 
