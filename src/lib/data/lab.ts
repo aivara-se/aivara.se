@@ -19,7 +19,7 @@ export interface Bot {
 // binds each to its own line, so the copy cannot drift from the roster.
 //
 // Accents are one per bot, drawn from the design tokens: MoMo gold, MiMi cyan,
-// MaMa pink (the orchestrator), MeMe mint. All four have avatars and their own sites,
+// MaMa pink (the fixer), MeMe mint. All four have avatars and their own sites,
 // each on its own subdomain of aivara.se.
 //
 // A new bot's facts come from outside this repository. Before adding it here:
