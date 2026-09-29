@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Dictionary } from '$lib/i18n';
-	import { GITHUB_ORG, href, navKeys, type PageKey } from '$lib/routes';
+	import { DEVELOPMENT_BOARD, GITHUB_ORG, href, navKeys, type PageKey } from '$lib/routes';
 
 	let { d, pageKey }: { d: Dictionary; pageKey: PageKey } = $props();
 
@@ -14,6 +14,7 @@
 		{#each navKeys as key (key)}
 			<a href={href(key)} aria-current={key === pageKey ? 'page' : undefined}>{d.nav[key]}</a>
 		{/each}
+		<a href={DEVELOPMENT_BOARD}>{d.nav.board}</a>
 		<a class="icon" href={GITHUB_ORG} aria-label={d.nav.github} title={d.nav.github}>
 			<!-- GitHub's own mark, from the Octicons set (16px grid). -->
 			<svg viewBox="0 0 16 16" width="15" height="15" aria-hidden="true" focusable="false">
