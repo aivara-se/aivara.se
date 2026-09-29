@@ -2,9 +2,13 @@ export type PageKey = 'home' | 'projects' | 'bots' | 'log';
 
 export const SITE_ORIGIN = 'https://aivara.se';
 
-// The nav's one outbound link. It lives here with the other fixed URLs so the top bar
+// The nav's GitHub destination. It lives here with the other fixed URLs so the top bar
 // does not hard-code a destination of its own.
 export const GITHUB_ORG = 'https://github.com/aivara-se';
+
+// The board where every card the bots work on lives. Registered here for the same
+// reason as GITHUB_ORG: the top bar does not hard-code a destination of its own.
+export const DEVELOPMENT_BOARD = 'https://github.com/orgs/aivara-se/projects/2';
 
 export interface Route {
 	key: PageKey;

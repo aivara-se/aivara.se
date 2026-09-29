@@ -7,6 +7,7 @@ export const en = {
 		projects: 'Projects',
 		bots: 'Bots',
 		log: 'Log',
+		board: 'Board',
 		github: 'GitHub'
 	},
 	hero: {
