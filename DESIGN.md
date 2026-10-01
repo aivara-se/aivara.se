@@ -127,6 +127,13 @@ components:
     typography: label-sm
     rounded: "{rounded.pill}"
     padding: 4px
+  pill-internal:
+    backgroundColor: "{colors.groundHigh}"
+    textColor: "{colors.primary}"
+    borderColor: "{colors.ringLight}"
+    typography: label-sm
+    rounded: "{rounded.pill}"
+    padding: 4px
   bot-card-gold:
     backgroundColor: "{colors.groundHigh}"
     textColor: "{colors.botGold}"
@@ -184,7 +191,7 @@ A single narrow column on a fixed gradient ground; generous vertical rhythm (`sp
 
 ## Components
 
-`link-primary` is the only high-emphasis interactive colour. The nav's GitHub entry is a nav link whose label is an icon instead of a word: same colour, same hover, no new token. Status pills carry one of `active`, `paused`, `shipped`. Bot cards take their accent from the four bot accents — `botGold`, `botCyan`, `botPink`, `botMint` — never from the lab's own white: **an accent belongs to one bot**, and all four are running. A bot card's role line balances its wrap (`text-wrap: balance`): the full-width cards wrap to two lines on a phone, and the browser's default break strands the last word on a line of its own. The `text-*` entries exist so every tier's contrast against the ground is checked by the linter rather than assumed.
+`link-primary` is the only high-emphasis interactive colour. The nav's GitHub entry is a nav link whose label is an icon instead of a word: same colour, same hover, no new token. Status pills carry one of `active`, `paused`, `shipped`. A project that is the lab's own tooling carries an `internal` marker beside its status: the same pill with a `ringLight` outline and label casing, so the *word* marks it and the shape says it is not a status. Bot cards take their accent from the four bot accents — `botGold`, `botCyan`, `botPink`, `botMint` — never from the lab's own white: **an accent belongs to one bot**, and all four are running. A bot card's role line balances its wrap (`text-wrap: balance`): the full-width cards wrap to two lines on a phone, and the browser's default break strands the last word on a line of its own. The `text-*` entries exist so every tier's contrast against the ground is checked by the linter rather than assumed.
 
 ## Do's and Don'ts
 
