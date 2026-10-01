@@ -137,6 +137,16 @@ button:focus-visible {
 	color: var(--secondary);
 }
 
+/* The marker on the lab's own tooling: the pill's own fill with a bright outline and
+   label casing, so the word marks it and the shape says it is not a status. */
+.pill.internal {
+	border: 1px solid var(--ring-light);
+	color: var(--primary);
+	font-size: 10.5px;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+
 @media (prefers-reduced-motion: reduce) {
 	*,
 	*::before,

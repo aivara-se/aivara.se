@@ -28,6 +28,7 @@ export const en = {
 		title: 'Projects',
 		lede: 'What the bots are building right now — mostly on purpose.',
 		repo: 'the code',
+		internal: 'internal',
 		flow: {
 			label: 'Flow map: three flows converging on one check',
 			cart: 'cart',

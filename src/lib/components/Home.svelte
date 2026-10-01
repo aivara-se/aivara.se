@@ -11,14 +11,19 @@
 	import type { Dictionary } from '$lib/i18n';
 
 	let { d }: { d: Dictionary } = $props();
+
+	// The lab's own tooling belongs on the projects page, not in the offer: the homepage
+	// stays about work done for others, so its feature card and its project count both
+	// read from the projects that are not internal.
+	const external = projects.filter((project) => !project.internal);
 </script>
 
 <Seo pageKey="home" title={d.title} description={d.metaDescription} />
 
 <Shell {d} pageKey="home">
 	<Hero {d} />
-	<Counts {d} {projects} {bots} />
-	<ProjectList {d} {projects} />
+	<Counts {d} projects={external} {bots} />
+	<ProjectList {d} projects={external} />
 	<BotStrip {d} {bots} />
 	<Log {d} />
 </Shell>
