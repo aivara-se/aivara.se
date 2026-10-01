@@ -27,6 +27,9 @@
 		<svelte:element this={'h' + level} class="name">
 			{project.name}
 			<span class="pill {project.status}">{d.status[project.status]}</span>
+			{#if project.internal}
+				<span class="pill internal">{d.projects.internal}</span>
+			{/if}
 		</svelte:element>
 		<p class="summary">{summary}</p>
 		<div class="meta">
