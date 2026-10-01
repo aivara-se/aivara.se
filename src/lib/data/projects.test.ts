@@ -37,11 +37,31 @@ describe('validateProjects', () => {
 	test('rejects a payload without a projects array', () => {
 		expect(() => validateProjects({})).toThrow();
 	});
+
+	test('reads the internal marker when it is present', () => {
+		const [result] = validateProjects({ projects: [entry({ internal: true })] });
+		expect(result.internal).toBe(true);
+	});
+
+	test('defaults the internal marker to false when it is absent', () => {
+		const [result] = validateProjects({ projects: [entry()] });
+		expect(result.internal).toBe(false);
+	});
+
+	test('rejects an internal marker that is not a boolean', () => {
+		expect(() => validateProjects({ projects: [entry({ internal: 'yes' })] })).toThrow();
+	});
 });
 
 describe('curated projects.json', () => {
 	test('loads and validates the curated entries', () => {
-		expect(projects).toHaveLength(1);
-		expect(projects.map((project) => project.slug)).toEqual(['aivara']);
+		expect(projects).toHaveLength(2);
+		expect(projects.map((project) => project.slug)).toEqual(['aivara', 'dispatcher']);
+	});
+
+	test('marks the dispatcher as the only internal project', () => {
+		expect(projects.filter((project) => project.internal).map((project) => project.slug)).toEqual([
+			'dispatcher'
+		]);
 	});
 });

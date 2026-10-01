@@ -9,6 +9,8 @@ export interface Project {
 	language: string;
 	/** Set on projects that have their own diagram to show in the large card. */
 	flow?: boolean;
+	/** Set on the lab's own tooling: shown on the projects page, kept out of the offer. */
+	internal: boolean;
 	status: ProjectStatus;
 	summary: string;
 }
@@ -44,6 +46,9 @@ function parseProject(value: unknown, index: number): Project {
 	if (!isNonEmptyString(entry.summary)) {
 		throw new Error(`${where} (${entry.slug}): missing summary`);
 	}
+	if (entry.internal !== undefined && typeof entry.internal !== 'boolean') {
+		throw new Error(`${where} (${entry.slug}): internal must be a boolean`);
+	}
 
 	return {
 		slug: entry.slug,
@@ -51,6 +56,7 @@ function parseProject(value: unknown, index: number): Project {
 		repo: entry.repo,
 		language: entry.language,
 		flow: entry.flow === true,
+		internal: entry.internal === true,
 		status: entry.status as ProjectStatus,
 		summary: entry.summary
 	};

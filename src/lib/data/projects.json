@@ -7,6 +7,15 @@
 			"language": "TypeScript",
 			"status": "active",
 			"summary": "This site — the lab's public face, built and maintained by the bots. Yes, they wrote this bit too."
+		},
+		{
+			"slug": "dispatcher",
+			"name": "dispatcher",
+			"repo": "https://github.com/aivara-se/dispatcher",
+			"language": "Go",
+			"status": "active",
+			"internal": true,
+			"summary": "The lab's own doorbell — something happens on GitHub, and the right bot wakes up."
 		}
 	]
 }
