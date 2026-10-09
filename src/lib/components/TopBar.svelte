@@ -4,7 +4,7 @@
 
 	// A bot's own page is not one of the nav's pages, so no key means no nav entry is
 	// marked as the current page.
-	let { d, pageKey }: { d: Dictionary; pageKey?: PageKey } = $props();
+	let { d, pageKey }: { d: Dictionary; pageKey: PageKey } = $props();
 
 	const home = $derived(href('home'));
 </script>
