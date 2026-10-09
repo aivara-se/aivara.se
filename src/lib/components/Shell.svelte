@@ -5,7 +5,7 @@
 	import type { Dictionary } from '$lib/i18n';
 	import type { PageKey } from '$lib/routes';
 
-	let { d, pageKey, children }: { d: Dictionary; pageKey: PageKey; children: Snippet } = $props();
+	let { d, pageKey, children }: { d: Dictionary; pageKey?: PageKey; children: Snippet } = $props();
 </script>
 
 <div class="shell">

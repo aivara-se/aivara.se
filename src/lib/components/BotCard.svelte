@@ -8,9 +8,9 @@
 		variant = 'compact'
 	}: { bot: Bot; level?: 2 | 3; variant?: 'compact' | 'full' } = $props();
 
-	// A bot that is running has somewhere to link to, so the whole card becomes the link.
-	// One that has not arrived yet does not, and is not made to look clickable.
-	const target = $derived(bot.urls[0]);
+	// A bot that is running has a page of its own on this site, so the whole card becomes
+	// the link. One that has not arrived yet has no page, and is not made to look clickable.
+	const target = $derived(bot.status === 'running' ? bot.path : null);
 	const accent = $derived(bot.accent ?? 'var(--secondary)');
 </script>
 
@@ -34,9 +34,9 @@
 		align-items: flex-start;
 		gap: 14px;
 		padding: 20px;
-		border: 1px solid var(--ground-high);
+		border: 1px solid var(--border);
 		border-radius: var(--radius-md);
-		background: var(--ground-high);
+		background: var(--panel);
 		transition: border-color 0.15s;
 	}
 

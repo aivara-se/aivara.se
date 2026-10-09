@@ -1,11 +1,36 @@
+/* Two families, latin subset, self-hosted under the SIL Open Font License 1.1 (the
+   licences sit beside the files). A CDN link would be a third-party request on every
+   page load, which the bots' own pages refuse and this site does too. */
+@font-face {
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400 600;
+	font-display: swap;
+	src: url('/fonts/inter-latin.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Space Grotesk';
+	font-style: normal;
+	font-weight: 500 700;
+	font-display: swap;
+	src: url('/fonts/space-grotesk-latin.woff2') format('woff2');
+}
+
 :root {
 	--primary: #f5f5f7;
 	--primary-hover: #ffffff;
 	--secondary: #9aa0ae;
 	--tertiary: #8b93a1;
-	--neutral: #0a0b0f;
-	--ground-mid: #111219;
-	--ground-high: #1a1c24;
+	/* The ground is the bots' own: the same three stops and the same fixed layer they
+	   paint on their pages, so the lab and the agent pages are one surface. */
+	--neutral: #0c0d1d;
+	--ground-mid: #131530;
+	--ground-high: #171834;
+	/* Cards and pills: the panel the bots' log entries sit on, which composites to
+	   #161a29 over the ground's lightest stop. */
+	--panel: rgba(22, 27, 34, 0.6);
+	--border: #21262d;
 	--text-strong: #e6edf3;
 	--text: #c9d1d9;
 	--faint: #6e7681;
@@ -55,7 +80,12 @@ body::before {
 	pointer-events: none;
 	background:
 		radial-gradient(900px 620px at 20% 6%, rgba(245, 245, 247, 0.06), transparent 60%),
-		radial-gradient(1200px 800px at 20% 10%, #1a1c24 0%, #111219 52%, #0a0b0f 100%);
+		radial-gradient(
+			1200px 800px at 20% 10%,
+			var(--ground-high) 0%,
+			var(--ground-mid) 52%,
+			var(--neutral) 100%
+		);
 }
 
 h1,
@@ -119,7 +149,7 @@ button:focus-visible {
 	font-weight: 500;
 	padding: 2px 9px;
 	border-radius: var(--radius-pill);
-	background: var(--ground-high);
+	background: var(--panel);
 	white-space: nowrap;
 }
 

@@ -96,7 +96,7 @@
 		font: inherit;
 		font-size: 12.5px;
 		padding: 3px 12px;
-		border: 1px solid var(--ground-high);
+		border: 1px solid var(--border);
 		border-radius: var(--radius-pill);
 		color: var(--secondary);
 		background: none;
@@ -121,7 +121,7 @@
 		justify-content: space-between;
 		gap: 14px;
 		padding: 15px 0;
-		border-bottom: 1px solid var(--ground-high);
+		border-bottom: 1px solid var(--border);
 		font-size: 14px;
 	}
 

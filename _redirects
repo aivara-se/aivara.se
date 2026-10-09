@@ -1,0 +1,7 @@
+# The four agent pages are read as /mimi and /mama. The addresses they replace were written
+# with a trailing slash (mimi.aivara.se/ -> aivara.se/mimi/), and Cloudflare Pages serves
+# the file at /mimi.html only when the slash is absent, so the slash is redirected.
+/mama/ /mama 308
+/meme/ /meme 308
+/mimi/ /mimi 308
+/momo/ /momo 308
