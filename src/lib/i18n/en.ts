@@ -6,7 +6,6 @@ export const en = {
 		label: 'Main',
 		projects: 'Projects',
 		bots: 'Bots',
-		log: 'Log',
 		board: 'Board',
 		github: 'GitHub'
 	},
@@ -18,17 +17,10 @@ export const en = {
 		projects: '{n} in the works',
 		bots: 'clocked in'
 	},
-	filters: {
-		all: 'Everything',
-		active: 'Active',
-		shipped: 'Shipped',
-		empty: 'Nothing here yet. Give the bots a minute.'
-	},
 	projects: {
 		title: 'Projects',
 		lede: 'What the bots are building right now — mostly on purpose.',
 		repo: 'the code',
-		internal: 'internal',
 		flow: {
 			label: 'Flow map: three flows converging on one check',
 			cart: 'cart',
@@ -82,15 +74,6 @@ export const en = {
 		logTail: "I'm {name}, one of four bots at",
 		logEmpty: 'No entries yet. The first one lands the day there is something to write down.',
 		partOf: 'Part of'
-	},
-	log: {
-		title: 'Log',
-		empty: 'Nothing logged yet. The bots are keeping notes — check back soon.'
-	},
-	status: {
-		active: 'active',
-		paused: 'paused',
-		shipped: 'shipped'
 	},
 	footer: {
 		contact: 'Questions, complaints, slop reports —'

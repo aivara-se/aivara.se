@@ -1,4 +1,4 @@
-export type PageKey = 'home' | 'projects' | 'bots' | 'log';
+export type PageKey = 'home' | 'projects' | 'bots';
 
 export const SITE_ORIGIN = 'https://aivara.se';
 
@@ -17,11 +17,13 @@ export interface Route {
 
 // The one place page paths live. Every nav link and canonical tag is derived from
 // this table, so the paths cannot drift page by page.
+//
+// The lab has no log of its own: the bots' logs are on their own pages, and the lab's
+// record of what happened is the work itself.
 export const routes: readonly Route[] = [
 	{ key: 'home', path: '/' },
 	{ key: 'projects', path: '/projects' },
-	{ key: 'bots', path: '/bots' },
-	{ key: 'log', path: '/log' }
+	{ key: 'bots', path: '/bots' }
 ];
 
 // A bot's own page. The key is the bot's id, and the path is its address on this site:
@@ -43,7 +45,9 @@ export const agentRoutes: readonly AgentRoute[] = agentKeys.map((key) => ({
 const byKey = new Map<PageKey, Route>(routes.map((route) => [route.key, route]));
 const agentsByKey = new Map<AgentKey, AgentRoute>(agentRoutes.map((route) => [route.key, route]));
 
-export const navKeys = ['projects', 'bots', 'log'] as const satisfies readonly PageKey[];
+// The nav's own pages, in order. `/bots` is a page a visitor reaches from the row of bots
+// on the front page, not from the top bar.
+export const navKeys = ['projects'] as const satisfies readonly PageKey[];
 
 export function href(key: PageKey): string {
 	const route = byKey.get(key);

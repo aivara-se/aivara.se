@@ -11,7 +11,7 @@
 
 <Seo
 	path={data.bot.logPath}
-	title={`${d.log.title} · ${data.bot.name} · ${d.title}`}
+	title={`${d.agent.logTitle} · ${data.bot.name} · ${d.title}`}
 	description={d.bot[data.bot.id].logLede}
 />
 

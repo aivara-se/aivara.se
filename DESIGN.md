@@ -48,7 +48,6 @@ typography:
 rounded:
   sm: 6px
   md: 14px
-  pill: 999px
 spacing:
   sm: 8px
   md: 16px
@@ -117,59 +116,11 @@ components:
     backgroundColor: "{colors.panel}"
     textColor: "{colors.textStrong}"
     typography: h2
-  pill-active:
-    backgroundColor: "{colors.panel}"
-    textColor: "{colors.primary}"
+  bot-card:
+    backgroundColor: "{colors.neutral}"
+    textColor: "{colors.textStrong}"
     typography: label-sm
-    rounded: "{rounded.pill}"
-    padding: 4px
-  pill-paused:
-    backgroundColor: "{colors.panel}"
-    textColor: "{colors.tertiary}"
-    typography: label-sm
-    rounded: "{rounded.pill}"
-    padding: 4px
-  pill-shipped:
-    backgroundColor: "{colors.panel}"
-    textColor: "{colors.secondary}"
-    typography: label-sm
-    rounded: "{rounded.pill}"
-    padding: 4px
-  pill-internal:
-    backgroundColor: "{colors.panel}"
-    textColor: "{colors.primary}"
-    borderColor: "{colors.ringLight}"
-    typography: label-sm
-    rounded: "{rounded.pill}"
-    padding: 4px
-  bot-card-gold:
-    backgroundColor: "{colors.panel}"
-    borderColor: "{colors.border}"
-    textColor: "{colors.botGold}"
-    typography: label-sm
-    rounded: "{rounded.md}"
-    padding: 20px
-  bot-card-cyan:
-    backgroundColor: "{colors.panel}"
-    borderColor: "{colors.border}"
-    textColor: "{colors.botCyan}"
-    typography: label-sm
-    rounded: "{rounded.md}"
-    padding: 20px
-  bot-card-pink:
-    backgroundColor: "{colors.panel}"
-    borderColor: "{colors.border}"
-    textColor: "{colors.botPink}"
-    typography: label-sm
-    rounded: "{rounded.md}"
-    padding: 20px
-  bot-card-mint:
-    backgroundColor: "{colors.panel}"
-    borderColor: "{colors.border}"
-    textColor: "{colors.botMint}"
-    typography: label-sm
-    rounded: "{rounded.md}"
-    padding: 20px
+    padding: 6px
 ---
 
 ## Overview
@@ -185,7 +136,7 @@ and only the accent differs between them.
 
 ## Colors
 
-- **Primary (#f5f5f7):** soft white. The lab's accent: links, the wordmark, active pills, the avatar
+- **Primary (#f5f5f7):** soft white. The lab's accent: links, the wordmark, the avatar
   ring's light tone. Hover brightens to pure white, the way an agent page brightens its accent.
 - **Secondary (#9aa0ae) / Tertiary (#8b93a1):** the muted and faint text tiers.
 - **Faint (#6e7681):** the tier the bots' first pages used for the quietest text. Kept in the palette to
@@ -253,18 +204,22 @@ because that layout is the bot's:
 
 ## Shapes
 
-`rounded.sm` for controls and pills, `rounded.md` for cards, `rounded.pill` for status pills, and the
-avatar ring fully round. No other radius exists in the system.
+`rounded.sm` for controls, `rounded.md` for cards, and the avatar ring, the mini card's portrait and the
+agent page's boop pill fully round. No other radius exists in the system.
 
 ## Components
 
 `link-primary` is the only high-emphasis interactive colour on the lab's own pages. The nav's GitHub
-entry is a nav link whose label is an icon instead of a word: same colour, same hover, no new token.
-Status pills carry one of `active`, `paused`, `shipped`. A project that is the lab's own tooling carries
-an `internal` marker beside its status: the same pill with a `ringLight` outline and label casing, so the
-*word* marks it and the shape says it is not a status. Bot cards take their accent from the four bot
-accents — `botGold`, `botCyan`, `botPink`, `botMint` — never from the lab's own white: **an accent
-belongs to one bot**.
+entry is a nav link whose label is an icon instead of a word: same colour, same hover, no new token. A
+project is a name, a summary and a link to its repository — **no status and no internal marker**: the site
+does not sort the lab's work into active, shipped or internal, and a badge that says "active" says nothing
+the repository does not.
+
+**A bot is a mini card.** The row of bots is one horizontal row of the same element: that bot's portrait at
+64px wearing its accent ring, and its name under it on one line, in Space Grotesk 15px/700 in the lab's
+white — the front page of the bot's own site, one row high. The card takes its accent from the four bot
+accents — `botGold`, `botCyan`, `botPink`, `botMint` — never from the lab's own white: **an accent belongs
+to one bot**, and in this row the accent is the ring. The row wraps only when it runs out of width.
 
 **The accent wash.** The ground is shared and colourless; the wash over it belongs to the page. Every page
 paints one radial, 8% of its own accent, 900×620px at 18% 6%, on a viewport-fixed layer — white on the

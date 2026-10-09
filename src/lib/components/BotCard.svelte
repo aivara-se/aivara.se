@@ -2,14 +2,13 @@
 	import Avatar from './Avatar.svelte';
 	import type { Bot } from '$lib/data/lab';
 
-	let {
-		bot,
-		level = 3,
-		variant = 'compact'
-	}: { bot: Bot; level?: 2 | 3; variant?: 'compact' | 'full' } = $props();
+	// A bot, small: the portrait wearing its accent ring, and the name under it — the front
+	// page of that bot's own site, one row high. The portrait is 56px so that four of them
+	// and their gaps fit one line at 360px wide, the narrowest phone the site supports. A bot that is running has a page of its own,
+	// so the whole card is the link; one that has not arrived yet has no page and is not made
+	// to look clickable.
+	let { bot }: { bot: Bot } = $props();
 
-	// A bot that is running has a page of its own on this site, so the whole card becomes
-	// the link. One that has not arrived yet has no page, and is not made to look clickable.
 	const target = $derived(bot.status === 'running' ? bot.path : null);
 	const accent = $derived(bot.accent ?? 'var(--secondary)');
 </script>
@@ -17,82 +16,40 @@
 <svelte:element
 	this={target ? 'a' : 'article'}
 	href={target}
-	class="botcard {variant}"
-	class:running={bot.status === 'running'}
+	class="mini"
 	style="--accent: {accent};"
 >
-	<Avatar {bot} size={variant === 'full' ? 72 : 40} />
-	<div class="who">
-		<svelte:element this={'h' + level} class="name">{bot.name}</svelte:element>
-		<p class="role">{bot.role}</p>
-	</div>
+	<Avatar {bot} size={56} />
+	<span class="name">{bot.name}</span>
 </svelte:element>
 
 <style>
-	.botcard {
-		display: flex;
-		align-items: flex-start;
-		gap: 14px;
-		padding: 20px;
-		border: 1px solid var(--border);
-		border-radius: var(--radius-md);
-		background: var(--panel);
-		transition: border-color 0.15s;
-	}
-
-	.who {
+	.mini {
 		display: flex;
 		flex-direction: column;
-		gap: 4px;
-		min-width: 0;
+		align-items: center;
+		gap: 10px;
+		padding: 6px 2px;
+		/* a line under a portrait and a name reads as a mistake, not as a link cue */
+		border-bottom: none;
 	}
 
 	.name {
-		margin: 0;
+		font-family: var(--font-heading);
 		font-size: 15px;
 		font-weight: 700;
+		letter-spacing: -0.01em;
+		color: var(--text-strong);
+		white-space: nowrap;
 	}
 
-	.role {
-		margin: 0;
-		font-size: 12.5px;
-		color: var(--tertiary);
-		/* the full-width card wraps these to two lines on a phone: balance them so the
-		   second line never strands one word */
-		text-wrap: balance;
-	}
-
-	.botcard.running .name {
-		color: var(--accent);
-	}
-
-	.botcard:not(.running) .name {
-		color: var(--secondary);
-	}
-
-	/* the full-width card: room for more detail later, and a larger avatar */
-	.botcard.full {
-		align-items: center;
-		gap: 24px;
-		padding: 28px 30px;
-		min-height: 132px;
-	}
-
-	.botcard.full .name {
-		font-size: 20px;
-	}
-
-	.botcard.full .role {
-		font-size: 14.5px;
-		color: var(--secondary);
-		max-width: 64ch;
-	}
-
-	a.botcard:hover {
-		border-color: var(--ring-dark);
-	}
-
-	a.botcard:hover .name {
+	a.mini:hover .name {
 		color: var(--primary-hover);
+	}
+
+	a.mini:focus-visible {
+		outline: 2px solid var(--accent);
+		outline-offset: 4px;
+		border-radius: var(--radius-sm);
 	}
 </style>

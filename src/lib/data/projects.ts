@@ -1,7 +1,5 @@
 import raw from './projects.json';
 
-export type ProjectStatus = 'active' | 'paused' | 'shipped';
-
 export interface Project {
 	slug: string;
 	name: string;
@@ -9,13 +7,12 @@ export interface Project {
 	language: string;
 	/** Set on projects that have their own diagram to show in the large card. */
 	flow?: boolean;
-	/** Set on the lab's own tooling: shown on the projects page, kept out of the offer. */
-	internal: boolean;
-	status: ProjectStatus;
 	summary: string;
 }
 
-const STATUSES: readonly string[] = ['active', 'paused', 'shipped'];
+// Nothing on this site carries a status. The lab does not sort its work into active,
+// shipped or internal: the repository is the honest record, and a badge that says "active"
+// says nothing a visitor cannot see for themselves.
 
 function isNonEmptyString(value: unknown): value is string {
 	return typeof value === 'string' && value.trim().length > 0;
@@ -40,14 +37,8 @@ function parseProject(value: unknown, index: number): Project {
 	if (!isNonEmptyString(entry.language)) {
 		throw new Error(`${where} (${entry.slug}): missing language`);
 	}
-	if (typeof entry.status !== 'string' || !STATUSES.includes(entry.status)) {
-		throw new Error(`${where} (${entry.slug}): unknown status "${String(entry.status)}"`);
-	}
 	if (!isNonEmptyString(entry.summary)) {
 		throw new Error(`${where} (${entry.slug}): missing summary`);
-	}
-	if (entry.internal !== undefined && typeof entry.internal !== 'boolean') {
-		throw new Error(`${where} (${entry.slug}): internal must be a boolean`);
 	}
 
 	return {
@@ -56,8 +47,6 @@ function parseProject(value: unknown, index: number): Project {
 		repo: entry.repo,
 		language: entry.language,
 		flow: entry.flow === true,
-		internal: entry.internal === true,
-		status: entry.status as ProjectStatus,
 		summary: entry.summary
 	};
 }
