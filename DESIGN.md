@@ -243,9 +243,12 @@ because that layout is the bot's:
   scrolls. There is no lab wordmark and no second row on an agent page: the header is the bot's own.
 - The bot's front page, centred and filling the first screen (`min-height: 100dvh`): a 420px column with
   a 13px gap — the 92px portrait wearing the accent ring, the name, the tagline, one sentence, and the
-  `Part of AIvara · <address>` line.
-- The bot's log below, in a 620px column: `The Log`, its sentence, the entries, and a centred closing
-  line. The front page is what fits one phone screen; the log may scroll.
+  `Part of AIvara · <address>` line. It is one screen and nothing else, exactly as that site's front page
+  was.
+- The bot's log at `/<bot>/log`, its own page: a 620px column starting 72px down (the header is out of
+  the flow and sits at 20px), `The Log`, its sentence, the entry cards, and a closing line pinned to the
+  bottom of the viewport on a short page. The header's `Log` link is that page — the two pages are the
+  two pages the bot's own site had, and neither carries the other's content.
 
 ## Shapes
 

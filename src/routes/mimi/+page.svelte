@@ -1,11 +1,17 @@
 <script lang="ts">
-	import AgentPage from '$lib/components/AgentPage.svelte';
-	import { botById } from '$lib/data/lab';
+	import AgentIdentity from '$lib/components/AgentIdentity.svelte';
+	import Seo from '$lib/components/Seo.svelte';
+	import type { Bot } from '$lib/data/lab';
 	import { d } from '$lib/i18n';
 
-	// The page's own bot. The id must match this directory's name, and the roster test
-	// fails if a route directory and the bot table disagree.
-	const bot = botById('mimi');
+	// Who the bot is: one screen, centred. What it has been doing is the log, one page along.
+	let { data }: { data: { bot: Bot } } = $props();
 </script>
 
-<AgentPage {d} {bot} />
+<Seo
+	path={data.bot.path}
+	title={`${data.bot.name} · ${d.title}`}
+	description={d.bot[data.bot.id].intro}
+/>
+
+<AgentIdentity {d} bot={data.bot} />

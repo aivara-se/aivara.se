@@ -4,16 +4,17 @@
 	import type { Dictionary } from '$lib/i18n';
 
 	// The bot's log, ported from the log page of its own site: the same 620px column, the
-	// same entry cards, newest first. Nothing is published on a day when nothing happened,
-	// so the empty state is the honest one until an entry exists.
+	// same entry cards, newest first, and a footer that sits at the bottom of a short page.
+	// Nothing is published on a day when nothing happened, so the empty state is the honest
+	// one until an entry exists.
 	let { d, bot }: { d: Dictionary; bot: Bot } = $props();
 
 	const entries = $derived(logs[bot.id] ?? []);
 </script>
 
-<section id="log" class="log" aria-labelledby="agent-log-heading">
+<div class="log">
 	<header class="head">
-		<h2 id="agent-log-heading">{d.agent.logTitle}</h2>
+		<h1 id="agent-log-heading">{d.agent.logTitle}</h1>
 		<p class="sub">
 			{d.bot[bot.id].logLede}
 			{d.agent.logTail.replace('{name}', bot.name)}
@@ -21,44 +22,54 @@
 		</p>
 	</header>
 
-	{#if entries.length === 0}
-		<p class="empty">{d.agent.logEmpty}</p>
-	{:else}
-		{#each entries as entry (entry.date + entry.title)}
-			<article class="entry">
-				<h3 class="entry-title">{entry.title}</h3>
-				<p class="date">{entry.date}</p>
-				{#each entry.body as paragraph}
-					<p>{paragraph}</p>
-				{/each}
-			</article>
-		{/each}
-	{/if}
+	<section aria-labelledby="agent-log-heading" class="entries">
+		{#if entries.length === 0}
+			<p class="empty">{d.agent.logEmpty}</p>
+		{:else}
+			{#each entries as entry (entry.date + entry.title)}
+				<article class="entry">
+					<h2 class="entry-title">{entry.title}</h2>
+					<p class="date">{entry.date}</p>
+					{#each entry.body as paragraph}
+						<p>{paragraph}</p>
+					{/each}
+				</article>
+			{/each}
+		{/if}
+	</section>
 
 	<footer class="foot">
 		{d.agent.partOf}
 		<a href="https://aivara.se">{d.title}</a>
 	</footer>
-</section>
+</div>
 
 <style>
 	.log {
+		display: flex;
+		flex-direction: column;
+		min-height: 100vh;
+		min-height: 100dvh;
 		max-width: 620px;
 		margin: 0 auto;
-		padding: 24px 24px 80px;
-		scroll-margin-top: 24px;
+		/* 72px clears the header, which is out of the flow and sits at 20px */
+		padding: 72px 24px 80px;
+		/* The lab's body sets 1.55; the bot's log page had no line-height of its own, and the
+		   elements that need one set it themselves. */
+		line-height: normal;
 	}
 
 	.head {
 		margin-bottom: 36px;
 	}
 
-	h2 {
+	h1 {
 		margin-bottom: 6px;
 		font-size: clamp(28px, 7vw, 36px);
 		font-weight: 700;
 		letter-spacing: -0.02em;
-		line-height: 1.1;
+		/* No line-height of its own, as on the bot's own log page: `normal` is what makes the
+		   heading 36px tall at a phone width rather than 31px. */
 	}
 
 	.sub {
@@ -82,7 +93,7 @@
 		font-weight: 600;
 		line-height: 1.35;
 		letter-spacing: -0.01em;
-		color: var(--text);
+		color: var(--text-strong);
 	}
 
 	/* The byline is styled as `.entry .date`: a bare `p` rule wins on specificity otherwise
@@ -115,7 +126,9 @@
 		color: var(--tertiary);
 	}
 
+	/* margin-top: auto pushes it to the bottom of the viewport on a short page */
 	.foot {
+		margin-top: auto;
 		padding-top: 40px;
 		text-align: center;
 		font-size: 12.5px;

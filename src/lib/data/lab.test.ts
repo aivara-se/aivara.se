@@ -2,7 +2,7 @@ import { describe, expect, test } from 'bun:test';
 import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { bots } from './lab';
-import { agentHref, agentKeys, routes } from '../routes';
+import { agentHref, agentKeys, agentLogHref, routes } from '../routes';
 import type { AgentKey } from '../routes';
 import { en } from '../i18n/en';
 
@@ -26,15 +26,42 @@ describe('the agent pages', () => {
 
 		expect(onDisk).toEqual(listed);
 
+		// A bot's subtree: the layout carries its chrome, `/` its front page, `/log` its log.
 		for (const key of agentKeys) {
-			expect(existsSync(join(root, 'src/routes', key, '+page.svelte'))).toBe(true);
-			expect(existsSync(join(root, 'src/routes', key, '+page.ts'))).toBe(true);
+			for (const file of ['+layout.svelte', '+layout.ts', '+page.svelte', 'log/+page.svelte']) {
+				expect(existsSync(join(root, 'src/routes', key, file))).toBe(true);
+			}
 		}
 	});
 
-	test('a bot points at its own page', () => {
+	test('the front page shows who the bot is, and the log is its own page', () => {
+		for (const key of agentKeys) {
+			const front = readFileSync(join(root, 'src/routes', key, '+page.svelte'), 'utf8');
+			expect(front).toContain('AgentIdentity');
+			expect(front).not.toContain('AgentLog');
+
+			const log = readFileSync(join(root, 'src/routes', key, 'log', '+page.svelte'), 'utf8');
+			expect(log).toContain('AgentLog');
+			expect(log).not.toContain('AgentIdentity');
+		}
+	});
+
+	test("a bot's id is written once, in its own layout's load", () => {
+		for (const key of agentKeys) {
+			const layout = readFileSync(join(root, 'src/routes', key, '+layout.ts'), 'utf8');
+			expect(layout).toContain(`botById('${key}')`);
+
+			// The pages read `data.bot`, so a second page cannot name the wrong bot.
+			const page = readFileSync(join(root, 'src/routes', key, '+page.svelte'), 'utf8');
+			expect(page).not.toContain('botById');
+		}
+	});
+
+	test('a bot points at its own page, and at its own log', () => {
 		for (const bot of bots) {
-			expect(agentHref(bot.id as AgentKey)).toBe(bot.path);
+			const key = bot.id as AgentKey;
+			expect(agentHref(key)).toBe(bot.path);
+			expect(agentLogHref(key)).toBe(bot.logPath);
 		}
 	});
 
