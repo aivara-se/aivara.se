@@ -14,6 +14,7 @@ colors:
   border: "#21262d"
   textStrong: "#e6edf3"
   text: "#c9d1d9"
+  textMuted: "#8b949e"
   faint: "#6e7681"
   botGold: "#fdd684"
   botCyan: "#7aede2"
@@ -213,6 +214,7 @@ separation; the panel column is the same panel composited over it.
 | text `#c9d1d9` | body copy, entry prose | 11.18:1 | 11.21:1 |
 | secondary `#9aa0ae` | ledes, summaries | 6.59:1 | 6.60:1 |
 | tertiary `#8b93a1` | section kickers, meta lines | 5.58:1 | 5.59:1 |
+| textMuted `#8b949e` | the muted tier the agent pages keep from the bots' own sites | 5.61:1 | 5.62:1 |
 | *(rejected)* faint `#6e7681` | — | **3.76:1** | 3.77:1 |
 
 An accent is also a link colour, on the agent page it belongs to: botGold 12.43:1, botCyan 12.36:1,
@@ -233,9 +235,17 @@ not a performance one.
 A single narrow column on the fixed gradient ground; generous vertical rhythm (`spacing.xl` between
 sections); no horizontal scroll at 360px.
 
-An agent page (`/mama`, `/meme`, `/mimi`, `/momo`) is two blocks in that column: the identity — portrait,
-name, tagline, one sentence, the address and the bot's own board filter — in a 420px centred column, and
-the bot's log beneath it in a 620px column. The identity has to fit one phone screen; the log may scroll.
+An agent page (`/mama`, `/meme`, `/mimi`, `/momo`) keeps the layout of the bot's own site it replaces,
+because that layout is the bot's:
+
+- A header across the top — the bot's portrait at the left on a 2px rim, `Log` and `Board` at the right,
+  18px apart, 13.5px — `position: absolute`, so it is part of the page and leaves with it when the page
+  scrolls. There is no lab wordmark and no second row on an agent page: the header is the bot's own.
+- The bot's front page, centred and filling the first screen (`min-height: 100dvh`): a 420px column with
+  a 13px gap — the 92px portrait wearing the accent ring, the name, the tagline, one sentence, and the
+  `Part of AIvara · <address>` line.
+- The bot's log below, in a 620px column: `The Log`, its sentence, the entries, and a centred closing
+  line. The front page is what fits one phone screen; the log may scroll.
 
 ## Shapes
 
@@ -244,15 +254,26 @@ avatar ring fully round. No other radius exists in the system.
 
 ## Components
 
-`link-primary` is the only high-emphasis interactive colour. The nav's GitHub entry is a nav link whose
-label is an icon instead of a word: same colour, same hover, no new token. Status pills carry one of
-`active`, `paused`, `shipped`. A project that is the lab's own tooling carries an `internal` marker
-beside its status: the same pill with a `ringLight` outline and label casing, so the *word* marks it and
-the shape says it is not a status. Bot cards take their accent from the four bot accents — `botGold`,
-`botCyan`, `botPink`, `botMint` — never from the lab's own white: **an accent belongs to one bot**. On
-that bot's own page the accent is the page: its links, the ring around its portrait, and an 8% radial
-wash over the shared ground. The `text-*` entries exist so every tier's contrast against the ground is
-checked by the linter rather than assumed.
+`link-primary` is the only high-emphasis interactive colour on the lab's own pages. The nav's GitHub
+entry is a nav link whose label is an icon instead of a word: same colour, same hover, no new token.
+Status pills carry one of `active`, `paused`, `shipped`. A project that is the lab's own tooling carries
+an `internal` marker beside its status: the same pill with a `ringLight` outline and label casing, so the
+*word* marks it and the shape says it is not a status. Bot cards take their accent from the four bot
+accents — `botGold`, `botCyan`, `botPink`, `botMint` — never from the lab's own white: **an accent
+belongs to one bot**.
+
+**The accent wash.** The ground is shared and colourless; the wash over it belongs to the page. Every page
+paints one radial, 8% of its own accent, 900×620px at 18% 6%, on a viewport-fixed layer — white on the
+lab's pages, the bot's hue on an agent page. That is the whole difference between a lab page and a bot's
+page at the top of the screen.
+
+**An agent page is the bot's own colour, whole.** Its links, both rings (24px and 92px), the boop on the
+92px avatar, and the wash are the bot's; nothing on it is the lab's white. The page's `--accent`,
+`--accent-bright` and `--accent-dim` come from the roster, so a bot's page and its card cannot disagree
+about the hue, and every link on it is the accent rather than the browser's blue.
+
+The `text-*` entries exist so every tier's contrast against the ground is checked by hand rather than
+assumed.
 
 ## Do's and Don'ts
 

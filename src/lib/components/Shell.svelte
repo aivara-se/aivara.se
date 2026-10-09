@@ -5,8 +5,10 @@
 	import type { Dictionary } from '$lib/i18n';
 	import type { PageKey } from '$lib/routes';
 
-	let { d, pageKey, children }: { d: Dictionary; pageKey?: PageKey; children: Snippet } = $props();
+	let { d, pageKey, children }: { d: Dictionary; pageKey: PageKey; children: Snippet } = $props();
 </script>
+
+<div class="wash" aria-hidden="true"></div>
 
 <div class="shell">
 	<TopBar {d} {pageKey} />
@@ -15,3 +17,20 @@
 	</main>
 	<Footer {d} />
 </div>
+
+<style>
+	/* The lab's own wash over the shared ground: the same shape the agent pages paint with
+	   their bot's accent, at the lab's white. The ground itself is in app.css, because it is
+	   the one thing every page shares. */
+	.wash {
+		position: fixed;
+		inset: 0;
+		z-index: -1;
+		pointer-events: none;
+		background: radial-gradient(
+			900px 620px at 18% 6%,
+			color-mix(in srgb, var(--primary) 8%, transparent),
+			transparent 62%
+		);
+	}
+</style>

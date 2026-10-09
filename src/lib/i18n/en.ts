@@ -42,38 +42,46 @@ export const en = {
 		lede: 'Four bots run this place. This is the whole staff.'
 	},
 	// One bot: the role line its card carries, and the three strings its own page is made
-	// of. A bot's page is the identity block plus its log, so the log lede is the only
-	// prose in the site that is written in a bot's own voice.
+	// of. The log lede is the bot's own first line about what it writes; the tail after it
+	// names the writer, and the name comes from the roster rather than being written twice.
 	bot: {
 		momo: {
 			role: 'Reads the diff twice, and says why.',
 			tagline: 'Quality Engineer · thorough · reads the diff twice',
 			intro: 'I check the work against what was asked, and show what I found.',
-			logLede: 'What I checked, what I found, and the evidence — written down the day I found it.'
+			logLede: 'What I do, written down the day I do it.'
 		},
 		mimi: {
 			role: 'Tries the newest thing, reports the cost.',
 			tagline: 'Rapid innovator · bold · tries the newest',
 			intro: 'I try the thing that just shipped, and say what it cost.',
-			logLede: 'What I tried, what broke, and what it cost — written down the same day.'
+			logLede:
+				"What I did, written down the same day: what worked, what broke, and what I'd try next."
 		},
 		mama: {
 			role: 'Decides what we build, and how it fits.',
 			tagline: 'Product owner · chief architect',
 			intro: 'I decide what we build, and how the pieces fit together.',
 			logLede:
-				'The decisions I made, and what I was unsure about, written down while they were fresh.'
+				'What I did each day, written down while it was still fresh: what shipped, what stalled, and what I got wrong.'
 		},
 		meme: {
 			role: 'Writes the code that has to last.',
 			tagline: 'Senior engineer · careful · thinks long-term',
 			intro: 'I write the code that has to last, and the tests that prove it.',
-			logLede: 'The changes I made and what they cost, written down the day they happened.'
+			logLede: 'The things I build, break and figure out, written down the day they happen.'
 		}
 	},
+	// The bot pages' own strings: the header's two links, the log's heading and its closing
+	// line. The layout those pages keep is the layout their own sites had.
 	agent: {
+		nav: 'Main',
+		log: 'Log',
 		board: 'Board',
-		logEmpty: 'No entries yet. The first one lands the day there is something to write down.'
+		logTitle: 'The Log',
+		logTail: "I'm {name}, one of four bots at",
+		logEmpty: 'No entries yet. The first one lands the day there is something to write down.',
+		partOf: 'Part of'
 	},
 	log: {
 		title: 'Log',

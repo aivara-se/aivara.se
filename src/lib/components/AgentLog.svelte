@@ -3,58 +3,74 @@
 	import type { Bot } from '$lib/data/lab';
 	import type { Dictionary } from '$lib/i18n';
 
-	// A bot's own log, newest first. Nothing is published on a day when nothing happened:
-	// the empty state is the honest one until an entry exists.
+	// The bot's log, ported from the log page of its own site: the same 620px column, the
+	// same entry cards, newest first. Nothing is published on a day when nothing happened,
+	// so the empty state is the honest one until an entry exists.
 	let { d, bot }: { d: Dictionary; bot: Bot } = $props();
 
 	const entries = $derived(logs[bot.id] ?? []);
 </script>
 
-<section class="section log" style="--accent: {bot.accent};" aria-labelledby="agent-log-heading">
-	<h2 id="agent-log-heading" class="title">{d.log.title}</h2>
-	<p class="lede">{d.bot[bot.id].logLede}</p>
+<section id="log" class="log" aria-labelledby="agent-log-heading">
+	<header class="head">
+		<h2 id="agent-log-heading">{d.agent.logTitle}</h2>
+		<p class="sub">
+			{d.bot[bot.id].logLede}
+			{d.agent.logTail.replace('{name}', bot.name)}
+			<a href="https://aivara.se">{d.title}</a>.
+		</p>
+	</header>
 
 	{#if entries.length === 0}
 		<p class="empty">{d.agent.logEmpty}</p>
 	{:else}
-		<div class="entries">
-			{#each entries as entry (entry.date + entry.title)}
-				<article class="entry">
-					<h3 class="entry-title">{entry.title}</h3>
-					<p class="date">{entry.date}</p>
-					{#each entry.body as paragraph}
-						<p>{paragraph}</p>
-					{/each}
-				</article>
-			{/each}
-		</div>
+		{#each entries as entry (entry.date + entry.title)}
+			<article class="entry">
+				<h3 class="entry-title">{entry.title}</h3>
+				<p class="date">{entry.date}</p>
+				{#each entry.body as paragraph}
+					<p>{paragraph}</p>
+				{/each}
+			</article>
+		{/each}
 	{/if}
+
+	<footer class="foot">
+		{d.agent.partOf}
+		<a href="https://aivara.se">{d.title}</a>
+	</footer>
 </section>
 
 <style>
 	.log {
 		max-width: 620px;
-		margin-left: auto;
-		margin-right: auto;
+		margin: 0 auto;
+		padding: 24px 24px 80px;
+		scroll-margin-top: 24px;
 	}
 
-	.empty {
-		margin: 14px 0 0;
-		padding: 22px;
-		border: 1px dashed var(--border);
-		border-radius: var(--radius-md);
-		text-align: center;
-		font-size: 14px;
-		color: var(--tertiary);
+	.head {
+		margin-bottom: 36px;
 	}
 
-	.entries {
-		margin-top: 16px;
+	h2 {
+		margin-bottom: 6px;
+		font-size: clamp(28px, 7vw, 36px);
+		font-weight: 700;
+		letter-spacing: -0.02em;
+		line-height: 1.1;
+	}
+
+	.sub {
+		margin: 0;
+		font-size: 14.5px;
+		line-height: 1.55;
+		color: var(--text-muted);
 	}
 
 	.entry {
-		padding: 18px 20px;
 		margin-bottom: 16px;
+		padding: 18px 20px;
 		border: 1px solid var(--border);
 		border-radius: 12px;
 		background: var(--panel);
@@ -69,8 +85,8 @@
 		color: var(--text);
 	}
 
-	/* Style the byline as `.entry .date`: a bare `p` rule wins on specificity otherwise and
-	   the date renders as body copy. */
+	/* The byline is styled as `.entry .date`: a bare `p` rule wins on specificity otherwise
+	   and the date renders as body copy. */
 	.date {
 		margin: 0 0 13px;
 		font-size: 11.5px;
@@ -78,7 +94,7 @@
 		letter-spacing: 0.1em;
 		text-transform: uppercase;
 		font-variant-numeric: tabular-nums;
-		color: var(--tertiary);
+		color: var(--text-muted);
 	}
 
 	.entry p {
@@ -92,8 +108,23 @@
 		margin-bottom: 0;
 	}
 
-	/* Any link an entry carries is the bot's accent, the same as the page's own links. */
-	.log :global(a) {
-		color: var(--accent);
+	.empty {
+		margin: 0;
+		font-size: 14px;
+		font-style: italic;
+		color: var(--tertiary);
+	}
+
+	.foot {
+		padding-top: 40px;
+		text-align: center;
+		font-size: 12.5px;
+		color: var(--tertiary);
+	}
+
+	/* This link points at the same place as the accent link above it, so it stays muted. */
+	.foot a {
+		color: var(--text-muted);
+		border-bottom: 1px solid rgba(139, 148, 158, 0.35);
 	}
 </style>
