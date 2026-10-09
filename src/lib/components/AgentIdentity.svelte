@@ -1,20 +1,20 @@
 <script lang="ts">
-	import type { Bot } from '$lib/data/lab';
+	import type { Agent } from '$lib/data/agents';
 	import type { Dictionary } from '$lib/i18n';
 
-	// The front page of the bot's own site, ported whole: one phone screen, centred, the
+	// The front page of the agent's own site, ported whole: one phone screen, centred, the
 	// avatar above the name. The 92px avatar wears the accent ring, floats, and says
 	// "boop!" when tapped — optional personality that carries no information.
-	let { d, bot }: { d: Dictionary; bot: Bot } = $props();
+	let { d, agent }: { d: Dictionary; agent: Agent } = $props();
 
-	const copy = $derived(d.bot[bot.id]);
+	const copy = $derived(d.agent[agent.id]);
 </script>
 
 <section class="identity" aria-labelledby="agent-name">
 	<div class="avatar" title="boop!">
-		<img src={bot.avatar} alt={`${bot.name} avatar`} width="92" height="92" />
+		<img src={agent.avatar} alt={`${agent.name} avatar`} width="92" height="92" />
 	</div>
-	<h1 id="agent-name">{bot.name}</h1>
+	<h1 id="agent-name">{agent.name}</h1>
 	<p class="tagline">{copy.tagline}</p>
 	<p class="intro">{copy.intro}</p>
 </section>
@@ -32,7 +32,7 @@
 		margin: 0 auto;
 		padding: 24px 12px;
 		text-align: center;
-		/* The lab's body sets 1.55; the bot's front page had no line-height of its own, and
+		/* The lab's body sets 1.55; the agent's front page had no line-height of its own, and
 		   the elements that need one set it themselves. */
 		line-height: normal;
 	}

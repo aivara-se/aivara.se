@@ -20,7 +20,7 @@
 
 <style>
 	/* The lab's own wash over the shared ground: the same shape the agent pages paint with
-	   their bot's accent, at the lab's white. The ground itself is in app.css, because it is
+	   their agent's accent, at the lab's white. The ground itself is in app.css, because it is
 	   the one thing every page shares. */
 	.wash {
 		position: fixed;

@@ -1,6 +1,6 @@
 /* Two families, latin subset, self-hosted under the SIL Open Font License 1.1 (the
    licences sit beside the files). A CDN link would be a third-party request on every
-   page load, which the bots' own pages refuse and this site does too. */
+   page load, which the agents' own pages refuse and this site does too. */
 @font-face {
 	font-family: 'Inter';
 	font-style: normal;
@@ -22,25 +22,25 @@
 	--primary-hover: #ffffff;
 	--secondary: #9aa0ae;
 	--tertiary: #8b93a1;
-	/* The ground is the bots' own: the same three stops and the same fixed layer they
+	/* The ground is the agents' own: the same three stops and the same fixed layer they
 	   paint on their pages, so the lab and the agent pages are one surface. */
 	--neutral: #0c0d1d;
 	--ground-mid: #131530;
 	--ground-high: #171834;
-	/* Cards and pills: the panel the bots' log entries sit on, which composites to
+	/* Cards and pills: the panel the agents' log entries sit on, which composites to
 	   #161a29 over the ground's lightest stop. */
 	--panel: rgba(22, 27, 34, 0.6);
 	--border: #21262d;
 	--text-strong: #e6edf3;
 	--text: #c9d1d9;
-	/* The muted tier the agent pages carry over from the bots' own sites: 5.61:1 on the
+	/* The muted tier the agent pages carry over from the agents' own sites: 5.61:1 on the
 	   ground, 5.62:1 on a panel. The lab's own muted tier is --secondary. */
 	--text-muted: #8b949e;
 	--faint: #6e7681;
-	--bot-gold: #fdd684;
-	--bot-cyan: #7aede2;
-	--bot-pink: #f7a8d8;
-	--bot-mint: #9fe6a6;
+	--agent-gold: #fdd684;
+	--agent-cyan: #7aede2;
+	--agent-pink: #f7a8d8;
+	--agent-mint: #9fe6a6;
 	--ring-dark: #5c5866;
 	--ring-light: #b9b4c7;
 
@@ -74,9 +74,9 @@ body {
 	-webkit-font-smoothing: antialiased;
 }
 
-/* The ground every page shares: the same three stops the bots' own sites painted. The
+/* The ground every page shares: the same three stops the agents' own sites painted. The
    accent wash that goes over it belongs to the page, not to the site — Shell paints the
-   lab's, an agent page paints its bot's. */
+   lab's, an agent page paints its agent's. */
 body::before {
 	content: '';
 	position: fixed;

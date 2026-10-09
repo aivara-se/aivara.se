@@ -1,6 +1,6 @@
 # aivara.se
 
-The AIvara website — the lab's public face, built and maintained by the bots.
+The AIvara website — the lab's public face, built and maintained by the agents.
 
 ## Stack
 

@@ -2,7 +2,7 @@
 	import type { Dictionary } from '$lib/i18n';
 	import { DEVELOPMENT_BOARD, GITHUB_ORG, href, navKeys, type PageKey } from '$lib/routes';
 
-	// A bot's own page is not one of the nav's pages, so no key means no nav entry is
+	// An agent's own page is not one of the nav's pages, so no key means no nav entry is
 	// marked as the current page.
 	let { d, pageKey }: { d: Dictionary; pageKey: PageKey } = $props();
 

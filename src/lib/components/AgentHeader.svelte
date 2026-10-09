@@ -1,20 +1,20 @@
 <script lang="ts">
-	import type { Bot } from '$lib/data/lab';
+	import type { Agent } from '$lib/data/agents';
 	import type { Dictionary } from '$lib/i18n';
 
-	// The bot's own header, ported from the sites these pages replace: its face at the left
+	// The agent's own header, ported from the sites these pages replace: its face at the left
 	// of the top line, its link to the log at the right, nothing else. The board link those
-	// sites carried is gone with the assignee-per-bot process it filtered for. It is absolute,
+	// sites carried is gone with the assignee-per-agent process it filtered for. It is absolute,
 	// not fixed, so it belongs to the page and leaves with it when the page scrolls.
-	let { d, bot }: { d: Dictionary; bot: Bot } = $props();
+	let { d, agent }: { d: Dictionary; agent: Agent } = $props();
 </script>
 
-<nav class="top" aria-label={d.agent.nav}>
-	<a class="portrait" href={bot.path} aria-label={`${bot.name} — home`} title={bot.name}>
-		<img src={bot.avatar} alt="" width="24" height="24" />
+<nav class="top" aria-label={d.agentPage.nav}>
+	<a class="portrait" href={agent.path} aria-label={`${agent.name} — home`} title={agent.name}>
+		<img src={agent.avatar} alt="" width="24" height="24" />
 	</a>
 	<div class="links">
-		<a href={bot.logPath}>{d.agent.log}</a>
+		<a href={agent.logPath}>{d.agentPage.log}</a>
 	</div>
 </nav>
 
@@ -28,7 +28,7 @@
 		align-items: center;
 		justify-content: space-between;
 		font-size: 13.5px;
-		/* The lab's body sets 1.55; the bot's own header had no line-height of its own, and
+		/* The lab's body sets 1.55; the agent's own header had no line-height of its own, and
 		   the taller line box moves everything below it. */
 		line-height: normal;
 	}

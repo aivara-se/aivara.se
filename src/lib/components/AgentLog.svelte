@@ -1,30 +1,30 @@
 <script lang="ts">
 	import { logs } from '$lib/data/logs';
-	import type { Bot } from '$lib/data/lab';
+	import type { Agent } from '$lib/data/agents';
 	import type { Dictionary } from '$lib/i18n';
 
-	// The bot's log, ported from the log page of its own site: the same 620px column, the
+	// The agent's log, ported from the log page of its own site: the same 620px column, the
 	// same entry cards, newest first, and a footer that sits at the bottom of a short page.
 	// Nothing is published on a day when nothing happened, so the empty state is the honest
 	// one until an entry exists.
-	let { d, bot }: { d: Dictionary; bot: Bot } = $props();
+	let { d, agent }: { d: Dictionary; agent: Agent } = $props();
 
-	const entries = $derived(logs[bot.id] ?? []);
+	const entries = $derived(logs[agent.id] ?? []);
 </script>
 
 <div class="log">
 	<header class="head">
-		<h1 id="agent-log-heading">{d.agent.logTitle}</h1>
+		<h1 id="agent-log-heading">{d.agentPage.logTitle}</h1>
 		<p class="sub">
-			{d.bot[bot.id].logLede}
-			{d.agent.logTail.replace('{name}', bot.name)}
+			{d.agent[agent.id].logLede}
+			{d.agentPage.logTail.replace('{name}', agent.name)}
 			<a href="https://aivara.se">{d.title}</a>.
 		</p>
 	</header>
 
 	<section aria-labelledby="agent-log-heading" class="entries">
 		{#if entries.length === 0}
-			<p class="empty">{d.agent.logEmpty}</p>
+			<p class="empty">{d.agentPage.logEmpty}</p>
 		{:else}
 			{#each entries as entry (entry.date + entry.title)}
 				<article class="entry">
@@ -39,7 +39,7 @@
 	</section>
 
 	<footer class="foot">
-		{d.agent.partOf}
+		{d.agentPage.partOf}
 		<a href="https://aivara.se">{d.title}</a>
 	</footer>
 </div>
@@ -54,7 +54,7 @@
 		margin: 0 auto;
 		/* 72px clears the header, which is out of the flow and sits at 20px */
 		padding: 72px 24px 80px;
-		/* The lab's body sets 1.55; the bot's log page had no line-height of its own, and the
+		/* The lab's body sets 1.55; the agent's log page had no line-height of its own, and the
 		   elements that need one set it themselves. */
 		line-height: normal;
 	}
@@ -68,7 +68,7 @@
 		font-size: clamp(28px, 7vw, 36px);
 		font-weight: 700;
 		letter-spacing: -0.02em;
-		/* No line-height of its own, as on the bot's own log page: `normal` is what makes the
+		/* No line-height of its own, as on the agent's own log page: `normal` is what makes the
 		   heading 36px tall at a phone width rather than 31px. */
 	}
 

@@ -1,17 +1,17 @@
 <script lang="ts">
 	import Avatar from './Avatar.svelte';
-	import type { Bot } from '$lib/data/lab';
+	import type { Agent } from '$lib/data/agents';
 	import type { Dictionary } from '$lib/i18n';
 
-	// A bot, small: the portrait at the size its own front page wears it, the name under it and
-	// the role under that — that page, one row high. A bot that is running has a page of its
+	// An agent, small: the portrait at the size its own front page wears it, the name under it and
+	// the role under that — that page, one row high. An agent that is running has a page of its
 	// own, so the whole card is the link; one that has not arrived yet has no page and is not
 	// made to look clickable.
-	let { d, bot }: { d: Dictionary; bot: Bot } = $props();
+	let { d, agent }: { d: Dictionary; agent: Agent } = $props();
 
-	const target = $derived(bot.status === 'running' ? bot.path : null);
-	const accent = $derived(bot.accent ?? 'var(--secondary)');
-	const role = $derived(d.bot[bot.id].tagline);
+	const target = $derived(agent.status === 'running' ? agent.path : null);
+	const accent = $derived(agent.accent ?? 'var(--secondary)');
+	const role = $derived(d.agent[agent.id].tagline);
 </script>
 
 <svelte:element
@@ -20,8 +20,8 @@
 	class="mini"
 	style="--accent: {accent};"
 >
-	<Avatar {bot} size={92} />
-	<span class="name">{bot.name}</span>
+	<Avatar {agent} size={92} />
+	<span class="name">{agent.name}</span>
 	<span class="role">{role}</span>
 </svelte:element>
 

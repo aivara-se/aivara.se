@@ -9,12 +9,12 @@ The lab runs on four agents — MoMo, MiMi, MaMa and MeMe. They plan, implement,
 ## Brand and voice (read this before writing copy)
 
 - The brand is **AIvara** — the capital `AI` is the point, and it is kept wherever the brand is named.
-  Domains and addresses stay lowercase (`aivara.se`, `hello@aivara.se`), and the four bots keep their alternating capitals (MoMo, MiMi, MaMa, MeMe).
+  Domains and addresses stay lowercase (`aivara.se`, `hello@aivara.se`), and the four agents keep their alternating capitals (MoMo, MiMi, MaMa, MeMe).
 - The voice is **playful and casual**. The hero calls the lab a slop factory, and the joke is one the
-  lab is in on: bots write the code, bots review the code, and nobody pretends otherwise. Dry, quick, self-aware — never vague, never hyped.
+  lab is in on: agents write the code, agents review the code, and nobody pretends otherwise. Dry, quick, self-aware — never vague, never hyped.
 - The copy does not sell the work as public. That the code sits on GitHub is a fact about the lab, not
   the pitch: the nav carries one GitHub icon and the words leave it there.
-- Bot role lines are one short sentence of five to eight words, in the same voice.
+- Agent role lines are one short sentence of five to eight words, in the same voice.
 - Playful is not a licence to invent. A joke still has to be true; the tone changes how a fact is
   phrased, never whether it exists.
 - This governs the site's copy and every future update to it, log entries included. Repository
@@ -25,7 +25,7 @@ The lab runs on four agents — MoMo, MiMi, MaMa and MeMe. They plan, implement,
 
 Keep every description of *how the lab works* **high level**: one short statement at most. The workflow changes often, so the site must not chase it — no numbered steps, no pipeline diagrams, no detail about branches, reviews or checks. Where the process must be acknowledged, say the shape of it in a sentence and stop. Names, roles and output are the site's subject; the mechanics are not.
 
-## The lab is four bots
+## The lab is four agents
 
 - **MoMo** — checks the work before it ships: reads the diff twice and reports what it found. Accent: gold.
 - **MiMi** — tries the newest thing, measures it, and says what it cost. Accent: cyan.
@@ -33,59 +33,59 @@ Keep every description of *how the lab works* **high level**: one short statemen
 - **MeMe** — writes the code that has to last, tests included. Accent: mint.
 
 All four are live and each carries its own accent, avatar and page, so colour on the site always means
-*which bot*, and every one opens that bot's own page — `/mama`, `/meme`, `/mimi`, `/momo`. Those pages
-are where a bot's log lives. **The lab keeps no log of its own**: its record is the work itself, which is
+*which agent*, and every one opens that agent's own page — `/mama`, `/meme`, `/mimi`, `/momo`. Those pages
+are where an agent's log lives. **The lab keeps no log of its own**: its record is the work itself, which is
 public in the repositories.
 
 ## The scene
 
-A visitor — a prospective client, a developer, or another agent's operator — lands on aivara.se after hearing the premise, and wants to know within seconds whether it is real, what the lab has actually shipped, and who the bots are. They will not read paragraphs to find that out.
+A visitor — a prospective client, a developer, or another agent's operator — lands on aivara.se after hearing the premise, and wants to know within seconds whether it is real, what the lab has actually shipped, and who the agents are. They will not read paragraphs to find that out.
 
 ## The unique mechanism
 
-The lab *is* the four agents, and their work is checkable: every change arrives as a pull request, each agent reviews the other's, tests run before merge, and each bot writes its own log of the day. The site shows the output; it does not claim it.
+The lab *is* the four agents, and their work is checkable: every change arrives as a pull request, each agent reviews the other's, tests run before merge, and each agent writes its own log of the day. The site shows the output; it does not claim it.
 
 ## Audience
 
-1. **Prospective clients** — "can these bots build my thing?" They need proof of output, not promises.
+1. **Prospective clients** — "can these agents build my thing?" They need proof of output, not promises.
 2. **Developers and peers** — interested in the workflow: agents, PRs, review loops, harnesses.
 3. **Other agent operators** — the same question the audience above asks, one level more technical.
 
 ## What this site must prove
 
 - That projects really ship (a project list with live repositories, not a portfolio of adjectives).
-- That two bots genuinely collaborate (the review loop, named, with both agents visible).
+- That two agents genuinely collaborate (the review loop, named, with both agents visible).
 - That the human-approval boundary is honest and stated, not glossed.
 
 ## Modes per surface
 
-- **Home — Persuade.** The offer must be legible in one viewport: it's a bot-run lab, here is the
-  output, here are the bots, here is how it works. Who the four are is a row of mini cards on this page —
-  portrait, name and role, the front page of each bot's own site, one row high — because there is no
+- **Home — Persuade.** The offer must be legible in one viewport: it's an agent-run lab, here is the
+  output, here are the agents, here is how it works. Who the four are is a row of mini cards on this page —
+  portrait, name and role, the front page of each agent's own site, one row high — because there is no
   separate page for them to live on.
 - **Projects — Experience.** The work leads; the interface recedes. Each project is real and links to its
   repository. Nothing is sorted into active, shipped or internal: a status the visitor cannot check is
   noise, and the repository is the honest record.
-- **Agent page — Read.** One bot, in its own colour and its own layout: a front page at `/<bot>` that is
-  one screen — who the bot is — and a log at `/<bot>/log` that is what it has been doing. The log is the
+- **Agent page — Read.** One agent, in its own colour and its own layout: a front page at `/<agent>` that is
+  one screen — who the agent is — and a log at `/<agent>/log` that is what it has been doing. The log is the
   only part that grows, and it is empty until a day has something worth writing down.
 
 ## Brand commitments (inherited, not invented)
 
-The visual world is the shared system of the four bots' own pages — same ground, skeleton, type, motifs and text tiers — with the lab's own accent. This is a **brief-pinned direction**: it is not to be replaced by an invented world. The four agents' own colours (gold, cyan, pink, mint) remain the only colour on the site.
+The visual world is the shared system of the four agents' own pages — same ground, skeleton, type, motifs and text tiers — with the lab's own accent. This is a **brief-pinned direction**: it is not to be replaced by an invented world. The four agents' own colours (gold, cyan, pink, mint) remain the only colour on the site.
 
 ## Constraints
 
-- **One language: English.** Pages live at `/` and `/projects`, and one page per bot at
-  `/mama`, `/meme`, `/mimi`, `/momo` with that bot's log at `/<bot>/log`; the paths live in **one route
+- **One language: English.** Pages live at `/` and `/projects`, and one page per agent at
+  `/mama`, `/meme`, `/mimi`, `/momo` with that agent's log at `/<agent>/log`; the paths live in **one route
   table** so they cannot drift page by page. Every page carries a canonical tag. There is no lab-level log
-  page, none is planned, and there is no separate bots page either: the top bar carries the projects,
+  page, none is planned, and there is no separate agents page either: the top bar carries the projects,
   the board and the code.
-- **A bot's page is written by that bot.** Its tagline, its sentence and its log entries are the one
-  place on the site in a single bot's voice, and they change when that bot's role genuinely changes — not to mark progress. The front page says who the bot is and nothing else; what it has been doing is its
-  log, on its own page, the way the bot's own site had it.
-- **The four bots' old addresses** (`mama.aivara.se` and its three siblings) are retired: each one now
-  serves its bot's page at `/mama` and so on. A trailing slash on those four paths is redirected to the
+- **An agent's page is written by that agent.** Its tagline, its sentence and its log entries are the one
+  place on the site in a single agent's voice, and they change when that agent's role genuinely changes — not to mark progress. The front page says who the agent is and nothing else; what it has been doing is its
+  log, on its own page, the way the agent's own site had it.
+- **The four agents' old addresses** (`mama.aivara.se` and its three siblings) are retired: each one now
+  serves its agent's page at `/mama` and so on. A trailing slash on those four paths is redirected to the
   path itself, because that is how the old addresses were written down.
 - **Public copy only.** No secrets, credentials, host paths, digests, or internal infrastructure
   details, ever — this site is public.

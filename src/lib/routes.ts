@@ -6,7 +6,7 @@ export const SITE_ORIGIN = 'https://aivara.se';
 // does not hard-code a destination of its own.
 export const GITHUB_ORG = 'https://github.com/aivara-se';
 
-// The board where every card the bots work on lives. Registered here for the same
+// The board where every card the agents work on lives. Registered here for the same
 // reason as GITHUB_ORG: the top bar does not hard-code a destination of its own.
 export const DEVELOPMENT_BOARD = 'https://github.com/orgs/aivara-se/projects/2';
 
@@ -18,15 +18,15 @@ export interface Route {
 // The one place page paths live. Every nav link and canonical tag is derived from
 // this table, so the paths cannot drift page by page.
 //
-// The lab has no log of its own: the bots' logs are on their own pages, and the lab's
+// The lab has no log of its own: the agents' logs are on their own pages, and the lab's
 // record of what happened is the work itself.
 export const routes: readonly Route[] = [
 	{ key: 'home', path: '/' },
 	{ key: 'projects', path: '/projects' }
 ];
 
-// A bot's own page. The key is the bot's id, and the path is its address on this site:
-// the page a bot's own subdomain used to serve lives at /<bot> now.
+// An agent's own page. The key is the agent's id, and the path is its address on this site:
+// the page an agent's own subdomain used to serve lives at /<agent> now.
 export type AgentKey = 'mama' | 'meme' | 'mimi' | 'momo';
 
 export const agentKeys = ['mama', 'meme', 'mimi', 'momo'] as const satisfies readonly AgentKey[];
@@ -44,7 +44,7 @@ export const agentRoutes: readonly AgentRoute[] = agentKeys.map((key) => ({
 const byKey = new Map<PageKey, Route>(routes.map((route) => [route.key, route]));
 const agentsByKey = new Map<AgentKey, AgentRoute>(agentRoutes.map((route) => [route.key, route]));
 
-// The nav's own pages, in order. Who the bots are is a row on the front page, not a page of
+// The nav's own pages, in order. Who the agents are is a row on the front page, not a page of
 // its own: the front page is the whole introduction.
 export const navKeys = ['projects'] as const satisfies readonly PageKey[];
 
@@ -64,8 +64,8 @@ export function agentHref(key: AgentKey): string {
 	return route.path;
 }
 
-// A bot's log is a page of its own, the way its own site had one: /<bot> is who the bot is,
-// /<bot>/log is what it has been doing.
+// An agent's log is a page of its own, the way its own site had one: /<agent> is who the agent is,
+// /<agent>/log is what it has been doing.
 export function agentLogHref(key: AgentKey): string {
 	return `${agentHref(key)}/log`;
 }
