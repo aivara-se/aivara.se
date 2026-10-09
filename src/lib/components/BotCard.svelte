@@ -1,16 +1,17 @@
 <script lang="ts">
 	import Avatar from './Avatar.svelte';
 	import type { Bot } from '$lib/data/lab';
+	import type { Dictionary } from '$lib/i18n';
 
-	// A bot, small: the portrait wearing its accent ring, and the name under it — the front
-	// page of that bot's own site, one row high. The portrait is 56px so that four of them
-	// and their gaps fit one line at 360px wide, the narrowest phone the site supports. A bot that is running has a page of its own,
-	// so the whole card is the link; one that has not arrived yet has no page and is not made
-	// to look clickable.
-	let { bot }: { bot: Bot } = $props();
+	// A bot, small: the portrait at the size its own front page wears it, the name under it and
+	// the role under that — that page, one row high. A bot that is running has a page of its
+	// own, so the whole card is the link; one that has not arrived yet has no page and is not
+	// made to look clickable.
+	let { d, bot }: { d: Dictionary; bot: Bot } = $props();
 
 	const target = $derived(bot.status === 'running' ? bot.path : null);
 	const accent = $derived(bot.accent ?? 'var(--secondary)');
+	const role = $derived(d.bot[bot.id].tagline);
 </script>
 
 <svelte:element
@@ -19,8 +20,9 @@
 	class="mini"
 	style="--accent: {accent};"
 >
-	<Avatar {bot} size={56} />
+	<Avatar {bot} size={92} />
 	<span class="name">{bot.name}</span>
+	<span class="role">{role}</span>
 </svelte:element>
 
 <style>
@@ -28,8 +30,8 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		gap: 10px;
-		padding: 6px 2px;
+		gap: 7px;
+		padding: 4px 2px 6px;
 		/* a line under a portrait and a name reads as a mistake, not as a link cue */
 		border-bottom: none;
 	}
@@ -40,6 +42,13 @@
 		font-weight: 700;
 		letter-spacing: -0.01em;
 		color: var(--text-strong);
+		white-space: nowrap;
+	}
+
+	.role {
+		font-size: 12.5px;
+		line-height: 1.4;
+		color: var(--text);
 		white-space: nowrap;
 	}
 
