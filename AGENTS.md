@@ -1,6 +1,6 @@
 # Agent Instructions
 
-The lab's public website at https://aivara.se: what the lab is, the bots that work in it, and what they are building.
+The lab's public website at aivara.se: what the lab is, the bots that work in it, and what they are building.
 
 A SvelteKit application (SvelteKit 2, Svelte 5, Vite 8, TypeScript) with Bun as its package manager and runner, deployed to Cloudflare Pages as a server-rendered worker. The pages — home, bots, log, projects — are routes under `src/routes/` that read their content from `src/lib/data/`; the design tokens are in `DESIGN.md` and the product truth in `PRODUCT.md`. `README.md` is the short version: how to run it, how to check it, and where it deploys.
 
