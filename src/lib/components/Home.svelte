@@ -15,7 +15,7 @@
 
 <Seo path={href('home')} title={d.title} description={d.metaDescription} />
 
-<Shell {d} pageKey="home">
+<Shell {d}>
 	<Hero {d} />
 	<Counts {d} {projects} {agents} />
 	<ProjectList {d} {projects} />

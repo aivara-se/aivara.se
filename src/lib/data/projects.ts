@@ -5,14 +5,12 @@ export interface Project {
 	name: string;
 	repo: string;
 	language: string;
-	/** Set on projects that have their own diagram to show in the large card. */
-	flow?: boolean;
 	summary: string;
 }
 
-// Nothing on this site carries a status. The lab does not sort its work into active,
-// shipped or internal: the repository is the honest record, and a badge that says "active"
-// says nothing a visitor cannot see for themselves.
+// Nothing on this site carries a status, and nothing is singled out: the lab does not sort its
+// work into active, shipped or internal, and a badge that says "active" says nothing a visitor
+// cannot see for themselves.
 
 function isNonEmptyString(value: unknown): value is string {
 	return typeof value === 'string' && value.trim().length > 0;
@@ -46,7 +44,6 @@ function parseProject(value: unknown, index: number): Project {
 		name: entry.name,
 		repo: entry.repo,
 		language: entry.language,
-		flow: entry.flow === true,
 		summary: entry.summary
 	};
 }
