@@ -73,9 +73,9 @@
 		display: grid;
 		grid-template-columns: 1fr;
 		margin-top: 14px;
-		border: 1px solid var(--ground-high);
+		border: 1px solid var(--border);
 		border-radius: var(--radius-md);
-		background: linear-gradient(180deg, var(--ground-mid), rgba(17, 18, 25, 0.4));
+		background: linear-gradient(180deg, var(--ground-mid), rgba(19, 21, 48, 0.4));
 		overflow: hidden;
 	}
 
@@ -120,7 +120,7 @@
 		justify-content: center;
 		min-height: 190px;
 		padding: 20px;
-		border-left: 1px solid var(--ground-high);
+		border-left: 1px solid var(--border);
 		background:
 			radial-gradient(400px 240px at 70% 30%, rgba(245, 245, 247, 0.07), transparent 65%),
 			var(--neutral);
@@ -128,7 +128,7 @@
 
 	.box {
 		fill: none;
-		stroke: var(--ground-high);
+		stroke: var(--border);
 	}
 
 	.label {
@@ -173,7 +173,7 @@
 		.visual {
 			min-height: 130px;
 			border-left: 0;
-			border-top: 1px solid var(--ground-high);
+			border-top: 1px solid var(--border);
 		}
 	}
 </style>

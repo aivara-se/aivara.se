@@ -13,7 +13,7 @@
 	.empty {
 		margin: 14px 0 0;
 		padding: 22px;
-		border: 1px dashed var(--ground-high);
+		border: 1px dashed var(--border);
 		border-radius: var(--radius-md);
 		text-align: center;
 		font-size: 14px;

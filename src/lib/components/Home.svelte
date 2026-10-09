@@ -8,6 +8,7 @@
 	import Shell from './Shell.svelte';
 	import { bots } from '$lib/data/lab';
 	import { projects } from '$lib/data/projects';
+	import { href } from '$lib/routes';
 	import type { Dictionary } from '$lib/i18n';
 
 	let { d }: { d: Dictionary } = $props();
@@ -18,7 +19,7 @@
 	const external = projects.filter((project) => !project.internal);
 </script>
 
-<Seo pageKey="home" title={d.title} description={d.metaDescription} />
+<Seo path={href('home')} title={d.title} description={d.metaDescription} />
 
 <Shell {d} pageKey="home">
 	<Hero {d} />

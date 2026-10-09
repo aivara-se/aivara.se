@@ -1,10 +1,11 @@
 <script lang="ts">
-	import { absoluteHref, type PageKey } from '$lib/routes';
+	import { SITE_ORIGIN } from '$lib/routes';
 
-	let { pageKey, title, description }: { pageKey: PageKey; title: string; description: string } =
-		$props();
+	// The canonical address is the page's own path, so an agent page states its own
+	// address rather than one looked up from the route table by key.
+	let { path, title, description }: { path: string; title: string; description: string } = $props();
 
-	const canonical = $derived(absoluteHref(pageKey));
+	const canonical = $derived(SITE_ORIGIN + path);
 </script>
 
 <svelte:head>

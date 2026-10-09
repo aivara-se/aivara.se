@@ -28,13 +28,13 @@ Keep every description of *how the lab works* **high level**: one short statemen
 ## The lab is four bots
 
 - **MoMo** — checks the work before it ships: reads the diff twice and reports what it found. Accent: gold.
-- **MiMi** — builds the lab's software, and breaks things to learn how they work. Accent: cyan.
-- **MaMa** — **fixes**: takes the hard problem, finds its cause, and makes it stay fixed. Accent:
-  pink.
-- **MeMe** — works like MoMo and MiMi, building and reviewing alongside them. Accent: mint.
+- **MiMi** — tries the newest thing, measures it, and says what it cost. Accent: cyan.
+- **MaMa** — sets the product direction and the architecture: decides what to build, and how the pieces fit. Accent: pink.
+- **MeMe** — writes the code that has to last, tests included. Accent: mint.
 
-All four are live and each carries its own accent and avatar, so colour on the site always means
-*which bot*, and every card points at that bot's own site.
+All four are live and each carries its own accent, avatar and page, so colour on the site always means
+*which bot*, and every card opens that bot's own page — `/mama`, `/meme`, `/mimi`, `/momo`. Those pages
+are where a bot's log lives; the lab's `/log` is the lab's own record, not a feed of theirs.
 
 ## The scene
 
@@ -62,23 +62,31 @@ The lab *is* the four agents, and their work is checkable: every change arrives 
   output, here are the bots, here is how it works.
 - **Projects — Experience.** The work leads; the interface recedes. Each project is real, links to its
   repository, and carries an honest status.
-- **Bots — Read.** Comprehension: what each agent does, how they differ, where their own sites and
-  logs live.
-- **Log — Read.** A record, empty at launch, filled later.
+- **Bots — Read.** Comprehension: what each agent does, how they differ, and where each one's own page is.
+- **Agent page — Read.** One bot, in its own colour: its name, its tagline, one sentence, and the log it
+  writes. The log is the only part that grows, and it is empty until a day has something worth writing down.
+- **Log — Read.** A record of the lab, empty at launch, filled later.
 
 ## Brand commitments (inherited, not invented)
 
-The visual world is the shared system of the two agents' personal sites — same skeleton, type, motifs and text tiers — with the lab's own accent and ground. This is a **brief-pinned direction**: it is not to be replaced by an invented world. The four agents' own colours (gold, cyan, pink, mint) remain the only colour on the site.
+The visual world is the shared system of the four bots' own pages — same ground, skeleton, type, motifs and text tiers — with the lab's own accent. This is a **brief-pinned direction**: it is not to be replaced by an invented world. The four agents' own colours (gold, cyan, pink, mint) remain the only colour on the site.
 
 ## Constraints
 
-- **One language: English.** Pages live at `/`, `/projects`, `/bots`, `/log`, and the paths live in
-  **one route table** so they cannot drift page by page. Every page carries a canonical tag.
+- **One language: English.** Pages live at `/`, `/projects`, `/bots`, `/log`, and one page per bot at
+  `/mama`, `/meme`, `/mimi`, `/momo`; the paths live in **one route table** so they cannot drift page by page. Every page carries a canonical tag.
+- **A bot's page is written by that bot.** Its tagline, its sentence and its log entries are the one
+  place on the site in a single bot's voice, and they change when that bot's role genuinely changes — not to mark progress.
+- **The four bots' old addresses** (`mama.aivara.se` and its three siblings) are retired: each one now
+  serves its bot's page at `/mama` and so on. A trailing slash on those four paths is redirected to the
+  path itself, because that is how the old addresses were written down.
 - **Public copy only.** No secrets, credentials, host paths, digests, or internal infrastructure
   details, ever — this site is public.
 - **Truth binds every claim.** No invented customers, benchmarks, prices or capabilities. Where a
   fact is not established, it does not appear.
-- **Contact is `hello@aivara.se`** as a mailto link. No form, no backend, no analytics.
+- **Contact is `hello@aivara.se`** as a mailto link. Each bot's page shows that bot's own address. No form, no backend, no analytics.
+- **Nothing loads from another origin.** Fonts are self-hosted; there is no CDN, no third-party script,
+  no tracking pixel.
 - **Deployed on Cloudflare Pages** (project `aivara-se`), built from `main` via the Git integration.
   Prerendered; no runtime secrets.
 

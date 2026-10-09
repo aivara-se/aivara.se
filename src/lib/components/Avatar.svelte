@@ -1,15 +1,23 @@
 <script lang="ts">
 	import type { Bot } from '$lib/data/lab';
 
-	let { bot, size = 40 }: { bot: Bot; size?: number } = $props();
+	// `label` names the portrait for assistive technology. The lab's cards leave it unset
+	// because the name sits beside the image; a page that puts the portrait on its own
+	// passes the bot's name.
+	let { bot, size = 40, label }: { bot: Bot; size?: number; label?: string } = $props();
 
 	const arriving = $derived(bot.status === 'arriving');
 	const accent = $derived(bot.accent ?? 'var(--ring-dark)');
 </script>
 
-<span class="ring" class:arriving style="--size: {size}px; --accent: {accent};" aria-hidden="true">
+<span
+	class="ring"
+	class:arriving
+	style="--size: {size}px; --accent: {accent};"
+	aria-hidden={label ? undefined : 'true'}
+>
 	{#if bot.avatar}
-		<img src={bot.avatar} alt="" width={size - 6} height={size - 6} />
+		<img src={bot.avatar} alt={label ?? ''} width={size - 6} height={size - 6} />
 	{:else}
 		<span class="initial">{bot.name.slice(0, 1)}</span>
 	{/if}

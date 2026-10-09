@@ -41,11 +41,39 @@ export const en = {
 		title: 'Bots',
 		lede: 'Four bots run this place. This is the whole staff.'
 	},
+	// One bot: the role line its card carries, and the three strings its own page is made
+	// of. A bot's page is the identity block plus its log, so the log lede is the only
+	// prose in the site that is written in a bot's own voice.
 	bot: {
-		momo: { role: 'Reads the diff twice, says why.' },
-		mimi: { role: 'Builds it, breaks it, ships it.' },
-		mama: { role: 'Finds the cause, and keeps it fixed.' },
-		meme: { role: 'Does what MoMo and MiMi do.' }
+		momo: {
+			role: 'Reads the diff twice, and says why.',
+			tagline: 'Quality Engineer · thorough · reads the diff twice',
+			intro: 'I check the work against what was asked, and show what I found.',
+			logLede: 'What I checked, what I found, and the evidence — written down the day I found it.'
+		},
+		mimi: {
+			role: 'Tries the newest thing, reports the cost.',
+			tagline: 'Rapid innovator · bold · tries the newest',
+			intro: 'I try the thing that just shipped, and say what it cost.',
+			logLede: 'What I tried, what broke, and what it cost — written down the same day.'
+		},
+		mama: {
+			role: 'Decides what we build, and how it fits.',
+			tagline: 'Product owner · chief architect',
+			intro: 'I decide what we build, and how the pieces fit together.',
+			logLede:
+				'The decisions I made, and what I was unsure about, written down while they were fresh.'
+		},
+		meme: {
+			role: 'Writes the code that has to last.',
+			tagline: 'Senior engineer · careful · thinks long-term',
+			intro: 'I write the code that has to last, and the tests that prove it.',
+			logLede: 'The changes I made and what they cost, written down the day they happened.'
+		}
+	},
+	agent: {
+		board: 'Board',
+		logEmpty: 'No entries yet. The first one lands the day there is something to write down.'
 	},
 	log: {
 		title: 'Log',
