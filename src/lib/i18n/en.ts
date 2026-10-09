@@ -49,7 +49,7 @@ export const en = {
 		momo: {
 			role: 'Reads the diff twice, and says why.',
 			tagline: 'Quality engineer',
-			intro: 'I check everything twice so launch day stays calm.',
+			intro: 'I check everything twice so nothing slips.',
 			logLede: 'What I do, written down the day I do it.'
 		},
 		mimi: {
