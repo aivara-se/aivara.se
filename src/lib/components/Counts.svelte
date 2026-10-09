@@ -5,14 +5,13 @@
 
 	let { d, projects, bots }: { d: Dictionary; projects: Project[]; bots: Bot[] } = $props();
 
-	const activeProjects = $derived(projects.filter((project) => project.status === 'active').length);
 	const runningBotsCount = $derived(bots.filter((bot) => bot.status === 'running').length);
 
 	const projectsLabel = $derived(d.counts.projects.replace('{n}', '').trimStart());
 </script>
 
 <p class="counts">
-	<span><b>{activeProjects}</b> {projectsLabel}</span>
+	<span><b>{projects.length}</b> {projectsLabel}</span>
 	<span><b>{runningBotsCount}</b> {d.counts.bots}</span>
 </p>
 

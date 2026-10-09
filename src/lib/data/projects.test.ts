@@ -7,7 +7,6 @@ function entry(overrides: Record<string, unknown> = {}) {
 		name: 'example',
 		repo: 'https://github.com/example/example',
 		language: 'Go',
-		status: 'active',
 		summary: 'Summary',
 		...overrides
 	};
@@ -25,8 +24,19 @@ describe('validateProjects', () => {
 		expect(() => validateProjects({ projects: [rest] })).toThrow();
 	});
 
-	test('rejects an entry with an unknown status', () => {
-		expect(() => validateProjects({ projects: [entry({ status: 'flying' })] })).toThrow();
+	test('rejects an entry with a missing name', () => {
+		const { name: _name, ...rest } = entry();
+		expect(() => validateProjects({ projects: [rest] })).toThrow();
+	});
+
+	test('rejects an entry with a missing repo', () => {
+		const { repo: _repo, ...rest } = entry();
+		expect(() => validateProjects({ projects: [rest] })).toThrow();
+	});
+
+	test('rejects an entry with a missing language', () => {
+		const { language: _language, ...rest } = entry();
+		expect(() => validateProjects({ projects: [rest] })).toThrow();
 	});
 
 	test('rejects an entry with a missing summary', () => {
@@ -38,18 +48,8 @@ describe('validateProjects', () => {
 		expect(() => validateProjects({})).toThrow();
 	});
 
-	test('reads the internal marker when it is present', () => {
-		const [result] = validateProjects({ projects: [entry({ internal: true })] });
-		expect(result.internal).toBe(true);
-	});
-
-	test('defaults the internal marker to false when it is absent', () => {
-		const [result] = validateProjects({ projects: [entry()] });
-		expect(result.internal).toBe(false);
-	});
-
-	test('rejects an internal marker that is not a boolean', () => {
-		expect(() => validateProjects({ projects: [entry({ internal: 'yes' })] })).toThrow();
+	test('rejects an empty projects array', () => {
+		expect(() => validateProjects({ projects: [] })).toThrow();
 	});
 });
 
@@ -59,9 +59,10 @@ describe('curated projects.json', () => {
 		expect(projects.map((project) => project.slug)).toEqual(['aivara', 'dispatcher']);
 	});
 
-	test('marks the dispatcher as the only internal project', () => {
-		expect(projects.filter((project) => project.internal).map((project) => project.slug)).toEqual([
-			'dispatcher'
-		]);
+	test('carries no status and no internal marker', () => {
+		for (const project of projects) {
+			expect('status' in project).toBe(false);
+			expect('internal' in project).toBe(false);
+		}
 	});
 });

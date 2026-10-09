@@ -16,5 +16,5 @@
 />
 
 <Shell {d} pageKey="projects">
-	<ProjectList {d} {projects} layout="cards" showFilters={false} level={1} />
+	<ProjectList {d} {projects} layout="cards" level={1} />
 </Shell>

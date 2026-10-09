@@ -2,9 +2,10 @@
 	import type { Project } from '$lib/data/projects';
 	import type { Dictionary } from '$lib/i18n';
 
-	// The large project card: name, honest status, summary and repository link, with the
-	// project's own visual when it declares one. No language or stack anywhere — the lab
-	// shows what it made, not what it made it in.
+	// The large project card: name, summary and repository link, with the project's own visual
+	// when it declares one. No language or stack anywhere — the lab shows what it made, not
+	// what it made it in — and no status: nothing on this site is sorted into active,
+	// shipped or internal.
 	let {
 		d,
 		project,
@@ -24,13 +25,7 @@
 
 <article class="card" class:shot>
 	<div class="body">
-		<svelte:element this={'h' + level} class="name">
-			{project.name}
-			<span class="pill {project.status}">{d.status[project.status]}</span>
-			{#if project.internal}
-				<span class="pill internal">{d.projects.internal}</span>
-			{/if}
-		</svelte:element>
+		<svelte:element this={'h' + level} class="name">{project.name}</svelte:element>
 		<p class="summary">{summary}</p>
 		<div class="meta">
 			<a href={project.repo}>{d.projects.repo} →</a>
