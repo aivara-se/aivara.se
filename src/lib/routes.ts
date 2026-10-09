@@ -1,4 +1,4 @@
-export type PageKey = 'home' | 'projects' | 'bots';
+export type PageKey = 'home' | 'projects';
 
 export const SITE_ORIGIN = 'https://aivara.se';
 
@@ -22,8 +22,7 @@ export interface Route {
 // record of what happened is the work itself.
 export const routes: readonly Route[] = [
 	{ key: 'home', path: '/' },
-	{ key: 'projects', path: '/projects' },
-	{ key: 'bots', path: '/bots' }
+	{ key: 'projects', path: '/projects' }
 ];
 
 // A bot's own page. The key is the bot's id, and the path is its address on this site:
@@ -45,8 +44,8 @@ export const agentRoutes: readonly AgentRoute[] = agentKeys.map((key) => ({
 const byKey = new Map<PageKey, Route>(routes.map((route) => [route.key, route]));
 const agentsByKey = new Map<AgentKey, AgentRoute>(agentRoutes.map((route) => [route.key, route]));
 
-// The nav's own pages, in order. `/bots` is a page a visitor reaches from the row of bots
-// on the front page, not from the top bar.
+// The nav's own pages, in order. Who the bots are is a row on the front page, not a page of
+// its own: the front page is the whole introduction.
 export const navKeys = ['projects'] as const satisfies readonly PageKey[];
 
 export function href(key: PageKey): string {
