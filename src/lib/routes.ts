@@ -10,14 +10,6 @@ export const GITHUB_ORG = 'https://github.com/aivara-se';
 // reason as GITHUB_ORG: the top bar does not hard-code a destination of its own.
 export const DEVELOPMENT_BOARD = 'https://github.com/orgs/aivara-se/projects/2';
 
-// The board's single view. A bot's own link filters it by assignee, which is the only
-// part of the address that differs per bot.
-const BOARD_VIEW = `${DEVELOPMENT_BOARD}/views/1`;
-
-export function boardFilter(assignee: string): string {
-	return `${BOARD_VIEW}?filterQuery=assignee%3A${encodeURIComponent(assignee)}`;
-}
-
 export interface Route {
 	key: PageKey;
 	path: string;

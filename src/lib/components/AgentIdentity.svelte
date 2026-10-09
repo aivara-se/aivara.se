@@ -17,12 +17,6 @@
 	<h1 id="agent-name">{bot.name}</h1>
 	<p class="tagline">{copy.tagline}</p>
 	<p class="intro">{copy.intro}</p>
-	<p class="help">
-		{d.agent.partOf}
-		<a href="https://aivara.se">{d.title}</a>
-		&middot;
-		<a href="mailto:{bot.email}">{bot.email}</a>
-	</p>
 </section>
 
 <style>
@@ -129,12 +123,6 @@
 		font-size: clamp(13.5px, 3.6vw, 15px);
 		line-height: 1.55;
 		color: var(--text-muted);
-	}
-
-	.help {
-		margin: 0;
-		font-size: 12.5px;
-		color: var(--tertiary);
 	}
 
 	@media (prefers-reduced-motion: reduce) {

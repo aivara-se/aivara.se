@@ -3,8 +3,9 @@
 	import type { Dictionary } from '$lib/i18n';
 
 	// The bot's own header, ported from the sites these pages replace: its face at the left
-	// of the top line, its two links at the right, nothing else. It is absolute, not fixed,
-	// so it belongs to the page and leaves with it when the page scrolls.
+	// of the top line, its link to the log at the right, nothing else. The board link those
+	// sites carried is gone with the assignee-per-bot process it filtered for. It is absolute,
+	// not fixed, so it belongs to the page and leaves with it when the page scrolls.
 	let { d, bot }: { d: Dictionary; bot: Bot } = $props();
 </script>
 
@@ -14,7 +15,6 @@
 	</a>
 	<div class="links">
 		<a href={bot.logPath}>{d.agent.log}</a>
-		<a href={bot.boardUrl}>{d.agent.board}</a>
 	</div>
 </nav>
 

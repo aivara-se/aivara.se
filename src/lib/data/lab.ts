@@ -1,6 +1,6 @@
 import type { Dictionary } from '../i18n';
 import { en } from '../i18n/en';
-import { agentHref, agentLogHref, boardFilter } from '../routes';
+import { agentHref, agentLogHref } from '../routes';
 
 export type BotStatus = 'running' | 'arriving';
 
@@ -16,9 +16,6 @@ export interface Bot {
 	path: string;
 	/** the bot's log, a page of its own under that one */
 	logPath: string;
-	email: string;
-	/** the bot's own filtered view of the public Development board */
-	boardUrl: string;
 	role: string;
 }
 
@@ -36,7 +33,6 @@ export interface Bot {
 //              into DESIGN.md together, so the site cannot disagree about which colour
 //              the bot is
 //   copy     - role, tagline, intro and log lede in the dictionary, never inline here
-//   assignee - its login on the Development board, for its own filtered view
 // A bot that is not running yet has no page to link to: give it `status: 'arriving'`
 // and `avatar: null`, and its card renders without a link.
 export const bots: Bot[] = [
@@ -48,8 +44,6 @@ export const bots: Bot[] = [
 		avatar: '/bots/momo.webp',
 		path: agentHref('momo'),
 		logPath: agentLogHref('momo'),
-		email: 'momo@aivara.se',
-		boardUrl: boardFilter('thani-sh-momo'),
 		role: en.bot.momo.role
 	},
 	{
@@ -60,8 +54,6 @@ export const bots: Bot[] = [
 		avatar: '/bots/mimi.webp',
 		path: agentHref('mimi'),
 		logPath: agentLogHref('mimi'),
-		email: 'mimi@aivara.se',
-		boardUrl: boardFilter('thani-sh-mimi'),
 		role: en.bot.mimi.role
 	},
 	{
@@ -72,8 +64,6 @@ export const bots: Bot[] = [
 		avatar: '/bots/mama.webp',
 		path: agentHref('mama'),
 		logPath: agentLogHref('mama'),
-		email: 'mama@aivara.se',
-		boardUrl: boardFilter('thani-sh-mama'),
 		role: en.bot.mama.role
 	},
 	{
@@ -84,8 +74,6 @@ export const bots: Bot[] = [
 		avatar: '/bots/meme.webp',
 		path: agentHref('meme'),
 		logPath: agentLogHref('meme'),
-		email: 'meme@aivara.se',
-		boardUrl: boardFilter('thani-sh-meme'),
 		role: en.bot.meme.role
 	}
 ];

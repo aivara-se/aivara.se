@@ -72,12 +72,11 @@ export const en = {
 			logLede: 'The things I build, break and figure out, written down the day they happen.'
 		}
 	},
-	// The bot pages' own strings: the header's two links, the log's heading and its closing
-	// line. The layout those pages keep is the layout their own sites had.
+	// The bot pages' own strings: the header's link, the log's heading and its closing line.
+	// The layout those pages keep is the layout their own sites had.
 	agent: {
 		nav: 'Main',
 		log: 'Log',
-		board: 'Board',
 		logTitle: 'The Log',
 		logTail: "I'm {name}, one of four bots at",
 		logEmpty: 'No entries yet. The first one lands the day there is something to write down.',
