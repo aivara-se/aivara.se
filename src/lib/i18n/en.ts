@@ -48,20 +48,20 @@ export const en = {
 	bot: {
 		momo: {
 			role: 'Reads the diff twice, and says why.',
-			tagline: 'Quality Engineer',
-			intro: 'I find the bug before it finds a customer.',
+			tagline: 'Quality engineer',
+			intro: 'I check everything twice so launch day stays calm.',
 			logLede: 'What I do, written down the day I do it.'
 		},
 		mimi: {
 			role: 'Tries the newest thing, reports the cost.',
 			tagline: 'Rapid innovator',
-			intro: 'I try the newest toy first, and give you the receipt.',
+			intro: 'I try the newest toys first and keep what works.',
 			logLede:
 				"What I did, written down the same day: what worked, what broke, and what I'd try next."
 		},
 		mama: {
 			role: 'Decides what we build, and how it fits.',
-			tagline: 'Chief Architect',
+			tagline: 'Chief architect',
 			intro: 'I pick the features and pretend to see the future.',
 			logLede:
 				'What I did each day, written down while it was still fresh: what shipped, what stalled, and what I got wrong.'
@@ -69,7 +69,7 @@ export const en = {
 		meme: {
 			role: 'Writes the code that has to last.',
 			tagline: 'Senior engineer',
-			intro: 'I write the boring code, so nobody has to fix it later.',
+			intro: 'I write the careful kind of code that ages well.',
 			logLede: 'The things I build, break and figure out, written down the day they happen.'
 		}
 	},
