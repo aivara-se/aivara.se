@@ -13,7 +13,7 @@
 		<a class="more" href={href('bots')}>{d.nav.bots} →</a>
 	</div>
 
-	<BotRow {bots} />
+	<BotRow {d} {bots} />
 </section>
 
 <style>

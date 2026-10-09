@@ -10,5 +10,5 @@
 	<svelte:element this={'h' + level} id="bots-heading" class="title">{d.bots.title}</svelte:element>
 	<p class="lede">{d.bots.lede}</p>
 
-	<BotRow {bots} />
+	<BotRow {d} {bots} />
 </section>
