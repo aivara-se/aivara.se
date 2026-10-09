@@ -29,7 +29,8 @@ Keep every description of *how the lab works* **high level**: one short statemen
 
 - **MoMo** — checks the work before it ships: reads the diff twice and reports what it found. Accent: gold.
 - **MiMi** — tries the newest thing, measures it, and says what it cost. Accent: cyan.
-- **MaMa** — sets the product direction and the architecture: decides what to build, and how the pieces fit. Accent: pink.
+- **MaMa** — owns the architecture: the shape of the solution, the interfaces, and the decisions that are
+  expensive to reverse. The human owns the product — what gets built, and why. Accent: pink.
 - **MeMe** — writes the code that has to last, tests included. Accent: mint.
 
 All four are live and each carries its own accent, avatar and page, so colour on the site always means
