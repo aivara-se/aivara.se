@@ -63,9 +63,9 @@ The lab *is* the four agents, and their work is checkable: every change arrives 
 - **Projects — Experience.** The work leads; the interface recedes. Each project is real, links to its
   repository, and carries an honest status.
 - **Bots — Read.** Comprehension: what each agent does, how they differ, and where each one's own page is.
-- **Agent page — Read.** One bot, in its own colour and its own layout: its header, its front page, and
-  the log it writes. The log is the only part that grows, and it is empty until a day has something worth
-  writing down.
+- **Agent page — Read.** One bot, in its own colour and its own layout: a front page at `/<bot>` that is
+  one screen — who the bot is — and a log at `/<bot>/log` that is what it has been doing. The log is the
+  only part that grows, and it is empty until a day has something worth writing down.
 - **Log — Read.** A record of the lab, empty at launch, filled later.
 
 ## Brand commitments (inherited, not invented)
@@ -75,9 +75,11 @@ The visual world is the shared system of the four bots' own pages — same groun
 ## Constraints
 
 - **One language: English.** Pages live at `/`, `/projects`, `/bots`, `/log`, and one page per bot at
-  `/mama`, `/meme`, `/mimi`, `/momo`; the paths live in **one route table** so they cannot drift page by page. Every page carries a canonical tag.
+  `/mama`, `/meme`, `/mimi`, `/momo` with that bot's log at `/<bot>/log`; the paths live in **one route
+  table** so they cannot drift page by page. Every page carries a canonical tag.
 - **A bot's page is written by that bot.** Its tagline, its sentence and its log entries are the one
-  place on the site in a single bot's voice, and they change when that bot's role genuinely changes — not to mark progress.
+  place on the site in a single bot's voice, and they change when that bot's role genuinely changes — not to mark progress. The front page says who the bot is and nothing else; what it has been doing is its
+  log, on its own page, the way the bot's own site had it.
 - **The four bots' old addresses** (`mama.aivara.se` and its three siblings) are retired: each one now
   serves its bot's page at `/mama` and so on. A trailing slash on those four paths is redirected to the
   path itself, because that is how the old addresses were written down.

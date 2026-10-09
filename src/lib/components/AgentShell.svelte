@@ -1,15 +1,13 @@
 <script lang="ts">
+	import type { Snippet } from 'svelte';
 	import AgentHeader from './AgentHeader.svelte';
-	import AgentIdentity from './AgentIdentity.svelte';
-	import AgentLog from './AgentLog.svelte';
-	import Seo from './Seo.svelte';
 	import type { Bot } from '$lib/data/lab';
 	import type { Dictionary } from '$lib/i18n';
 
-	// A bot's own site, as one page of aivara.se: its own header, its front page, its log.
-	// The page carries the bot's accent — every link, both rings, and the 8% wash on the
-	// ground — so the lab's chrome stays monochrome and the colour says which bot you are on.
-	let { d, bot }: { d: Dictionary; bot: Bot } = $props();
+	// The chrome of a bot's own site, as one page of aivara.se: its accent, the wash that
+	// accent paints on the shared ground, and its header. Everything the bot's pages have in
+	// common lives here, so a second page under /<bot> costs nothing to add.
+	let { d, bot, children }: { d: Dictionary; bot: Bot; children: Snippet } = $props();
 
 	const vars = $derived(
 		[
@@ -20,14 +18,11 @@
 	);
 </script>
 
-<Seo path={bot.path} title={`${bot.name} · ${d.title}`} description={d.bot[bot.id].intro} />
-
 <div class="page" style={vars}>
 	<div class="wash" aria-hidden="true"></div>
 	<AgentHeader {d} {bot} />
 	<main>
-		<AgentIdentity {d} {bot} />
-		<AgentLog {d} {bot} />
+		{@render children()}
 	</main>
 </div>
 

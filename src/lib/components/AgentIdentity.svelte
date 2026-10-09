@@ -38,6 +38,9 @@
 		margin: 0 auto;
 		padding: 24px 12px;
 		text-align: center;
+		/* The lab's body sets 1.55; the bot's front page had no line-height of its own, and
+		   the elements that need one set it themselves. */
+		line-height: normal;
 	}
 
 	.avatar {

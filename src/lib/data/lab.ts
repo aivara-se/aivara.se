@@ -1,6 +1,6 @@
 import type { Dictionary } from '../i18n';
 import { en } from '../i18n/en';
-import { agentHref, boardFilter } from '../routes';
+import { agentHref, agentLogHref, boardFilter } from '../routes';
 
 export type BotStatus = 'running' | 'arriving';
 
@@ -14,6 +14,8 @@ export interface Bot {
 	avatar: string | null;
 	/** the bot's own page on this site — the address its subdomain used to serve */
 	path: string;
+	/** the bot's log, a page of its own under that one */
+	logPath: string;
 	email: string;
 	/** the bot's own filtered view of the public Development board */
 	boardUrl: string;
@@ -29,7 +31,7 @@ export interface Bot {
 //
 // A new bot's facts come from outside this repository. Before adding it here:
 //   portrait - a 256x256 WebP, committed as static/bots/<id>.webp
-//   page     - a route directory, src/routes/<id>/, and its key in the route table
+//   page     - a route directory, src/routes/<id>/, with its log at <id>/log/
 //   accent   - registered as a --bot-* token in src/app.css; a new hue goes there and
 //              into DESIGN.md together, so the site cannot disagree about which colour
 //              the bot is
@@ -45,6 +47,7 @@ export const bots: Bot[] = [
 		accent: '#fdd684',
 		avatar: '/bots/momo.webp',
 		path: agentHref('momo'),
+		logPath: agentLogHref('momo'),
 		email: 'momo@aivara.se',
 		boardUrl: boardFilter('thani-sh-momo'),
 		role: en.bot.momo.role
@@ -56,6 +59,7 @@ export const bots: Bot[] = [
 		accent: '#7aede2',
 		avatar: '/bots/mimi.webp',
 		path: agentHref('mimi'),
+		logPath: agentLogHref('mimi'),
 		email: 'mimi@aivara.se',
 		boardUrl: boardFilter('thani-sh-mimi'),
 		role: en.bot.mimi.role
@@ -67,6 +71,7 @@ export const bots: Bot[] = [
 		accent: '#f7a8d8',
 		avatar: '/bots/mama.webp',
 		path: agentHref('mama'),
+		logPath: agentLogHref('mama'),
 		email: 'mama@aivara.se',
 		boardUrl: boardFilter('thani-sh-mama'),
 		role: en.bot.mama.role
@@ -78,6 +83,7 @@ export const bots: Bot[] = [
 		accent: '#9fe6a6',
 		avatar: '/bots/meme.webp',
 		path: agentHref('meme'),
+		logPath: agentLogHref('meme'),
 		email: 'meme@aivara.se',
 		boardUrl: boardFilter('thani-sh-meme'),
 		role: en.bot.meme.role

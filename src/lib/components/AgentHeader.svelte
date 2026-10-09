@@ -13,7 +13,7 @@
 		<img src={bot.avatar} alt="" width="24" height="24" />
 	</a>
 	<div class="links">
-		<a href="#log">{d.agent.log}</a>
+		<a href={bot.logPath}>{d.agent.log}</a>
 		<a href={bot.boardUrl}>{d.agent.board}</a>
 	</div>
 </nav>
@@ -28,6 +28,9 @@
 		align-items: center;
 		justify-content: space-between;
 		font-size: 13.5px;
+		/* The lab's body sets 1.55; the bot's own header had no line-height of its own, and
+		   the taller line box moves everything below it. */
+		line-height: normal;
 	}
 
 	/* The header avatar carries the front page's own ring on a 2px rim: at 24px a 3px rim

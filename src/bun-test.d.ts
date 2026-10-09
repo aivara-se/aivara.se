@@ -7,7 +7,7 @@ declare module 'bun:test' {
 	export const beforeEach: (fn: TestFn) => void;
 	export const afterEach: (fn: TestFn) => void;
 
-	export const expect: (value: unknown) => {
+	interface Matchers {
 		toBe(expected: unknown): void;
 		toEqual(expected: unknown): void;
 		toThrow(expected?: string | RegExp | Error): void;
@@ -15,5 +15,7 @@ declare module 'bun:test' {
 		toContain(expected: unknown): void;
 		toBeTruthy(): void;
 		toBeFalsy(): void;
-	};
+	}
+
+	export const expect: (value: unknown) => Matchers & { not: Matchers };
 }

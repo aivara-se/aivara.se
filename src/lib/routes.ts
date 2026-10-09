@@ -69,6 +69,12 @@ export function agentHref(key: AgentKey): string {
 	return route.path;
 }
 
+// A bot's log is a page of its own, the way its own site had one: /<bot> is who the bot is,
+// /<bot>/log is what it has been doing.
+export function agentLogHref(key: AgentKey): string {
+	return `${agentHref(key)}/log`;
+}
+
 export function absoluteAgentHref(key: AgentKey): string {
 	return SITE_ORIGIN + agentHref(key);
 }
