@@ -1,18 +1,18 @@
 <script lang="ts">
-	import type { Bot } from '$lib/data/lab';
+	import type { Agent } from '$lib/data/agents';
 	import type { Project } from '$lib/data/projects';
 	import type { Dictionary } from '$lib/i18n';
 
-	let { d, projects, bots }: { d: Dictionary; projects: Project[]; bots: Bot[] } = $props();
+	let { d, projects, agents }: { d: Dictionary; projects: Project[]; agents: Agent[] } = $props();
 
-	const runningBotsCount = $derived(bots.filter((bot) => bot.status === 'running').length);
+	const runningAgentsCount = $derived(agents.filter((agent) => agent.status === 'running').length);
 
 	const projectsLabel = $derived(d.counts.projects.replace('{n}', '').trimStart());
 </script>
 
 <p class="counts">
 	<span><b>{projects.length}</b> {projectsLabel}</span>
-	<span><b>{runningBotsCount}</b> {d.counts.bots}</span>
+	<span><b>{runningAgentsCount}</b> {d.counts.agents}</span>
 </p>
 
 <style>

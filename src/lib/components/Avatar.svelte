@@ -1,20 +1,20 @@
 <script lang="ts">
-	import type { Bot } from '$lib/data/lab';
+	import type { Agent } from '$lib/data/agents';
 
 	// The portrait a card and a ring draw. The lab's cards leave the alt text empty because
-	// the bot's name sits beside the image; only a page that shows the portrait alone needs
+	// the agent's name sits beside the image; only a page that shows the portrait alone needs
 	// to name it, and those pages draw their own avatar.
-	let { bot, size = 40 }: { bot: Bot; size?: number } = $props();
+	let { agent, size = 40 }: { agent: Agent; size?: number } = $props();
 
-	const arriving = $derived(bot.status === 'arriving');
-	const accent = $derived(bot.accent ?? 'var(--ring-dark)');
+	const arriving = $derived(agent.status === 'arriving');
+	const accent = $derived(agent.accent ?? 'var(--ring-dark)');
 </script>
 
 <span class="ring" class:arriving style="--size: {size}px; --accent: {accent};" aria-hidden="true">
-	{#if bot.avatar}
-		<img src={bot.avatar} alt="" width={size - 6} height={size - 6} />
+	{#if agent.avatar}
+		<img src={agent.avatar} alt="" width={size - 6} height={size - 6} />
 	{:else}
-		<span class="initial">{bot.name.slice(0, 1)}</span>
+		<span class="initial">{agent.name.slice(0, 1)}</span>
 	{/if}
 </span>
 

@@ -1,11 +1,11 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
 	import AgentShell from '$lib/components/AgentShell.svelte';
-	import type { Bot } from '$lib/data/lab';
+	import type { Agent } from '$lib/data/agents';
 	import { d } from '$lib/i18n';
 
-	// The bot's own chrome, on every page under /meme: its accent, its wash, its header.
-	let { data, children }: { data: { bot: Bot }; children: Snippet } = $props();
+	// The agent's own chrome, on every page under /meme: its accent, its wash, its header.
+	let { data, children }: { data: { agent: Agent }; children: Snippet } = $props();
 </script>
 
-<AgentShell {d} bot={data.bot}>{@render children()}</AgentShell>
+<AgentShell {d} agent={data.agent}>{@render children()}</AgentShell>

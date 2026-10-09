@@ -1,11 +1,11 @@
 <script lang="ts">
-	import BotStrip from './BotStrip.svelte';
+	import AgentStrip from './AgentStrip.svelte';
 	import Counts from './Counts.svelte';
 	import Hero from './Hero.svelte';
 	import ProjectList from './ProjectList.svelte';
 	import Seo from './Seo.svelte';
 	import Shell from './Shell.svelte';
-	import { bots } from '$lib/data/lab';
+	import { agents } from '$lib/data/agents';
 	import { projects } from '$lib/data/projects';
 	import { href } from '$lib/routes';
 	import type { Dictionary } from '$lib/i18n';
@@ -17,7 +17,7 @@
 
 <Shell {d} pageKey="home">
 	<Hero {d} />
-	<Counts {d} {projects} {bots} />
+	<Counts {d} {projects} {agents} />
 	<ProjectList {d} {projects} />
-	<BotStrip {d} {bots} />
+	<AgentStrip {d} {agents} />
 </Shell>

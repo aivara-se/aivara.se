@@ -1,17 +1,17 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
 	import AgentHeader from './AgentHeader.svelte';
-	import type { Bot } from '$lib/data/lab';
+	import type { Agent } from '$lib/data/agents';
 	import type { Dictionary } from '$lib/i18n';
 
-	// The chrome of a bot's own site, as one page of aivara.se: its accent, the wash that
-	// accent paints on the shared ground, and its header. Everything the bot's pages have in
-	// common lives here, so a second page under /<bot> costs nothing to add.
-	let { d, bot, children }: { d: Dictionary; bot: Bot; children: Snippet } = $props();
+	// The chrome of an agent's own site, as one page of aivara.se: its accent, the wash that
+	// accent paints on the shared ground, and its header. Everything the agent's pages have in
+	// common lives here, so a second page under /<agent> costs nothing to add.
+	let { d, agent, children }: { d: Dictionary; agent: Agent; children: Snippet } = $props();
 
 	const vars = $derived(
 		[
-			`--accent: ${bot.accent}`,
+			`--accent: ${agent.accent}`,
 			'--accent-bright: color-mix(in srgb, var(--accent) 65%, #ffffff)',
 			'--accent-dim: color-mix(in srgb, var(--accent) 45%, #0c0d1d)'
 		].join('; ')
@@ -20,14 +20,14 @@
 
 <div class="page" style={vars}>
 	<div class="wash" aria-hidden="true"></div>
-	<AgentHeader {d} {bot} />
+	<AgentHeader {d} {agent} />
 	<main>
 		{@render children()}
 	</main>
 </div>
 
 <style>
-	/* Every link on the page is the bot's accent, the way that bot's own site styled them:
+	/* Every link on the page is the agent's accent, the way that agent's own site styled them:
 	   an anchor with no rule of its own falls through to the browser's default blue, which
 	   is far below AA on this ground. */
 	.page :global(a) {
@@ -53,8 +53,8 @@
 		border-bottom: none;
 	}
 
-	/* The bot's own wash over the shared ground: the same shape the lab paints on its own
-	   pages, at 8% of the bot's accent. */
+	/* The agent's own wash over the shared ground: the same shape the lab paints on its own
+	   pages, at 8% of the agent's accent. */
 	.wash {
 		position: fixed;
 		inset: 0;
