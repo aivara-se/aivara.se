@@ -42,33 +42,34 @@ export const en = {
 		lede: 'Four bots run this place. This is the whole staff.'
 	},
 	// One bot: the role line its card carries, and the three strings its own page is made
-	// of. The log lede is the bot's own first line about what it writes; the tail after it
-	// names the writer, and the name comes from the roster rather than being written twice.
+	// of. The tagline **is the role** — the same words as that bot's file in
+	// `aivara-se/.agents/agents/` — and the intro is the bot's own one-liner about it; the
+	// log lede opens its log.
 	bot: {
 		momo: {
 			role: 'Reads the diff twice, and says why.',
-			tagline: 'Quality Engineer · thorough · reads the diff twice',
-			intro: 'I check the work against what was asked, and show what I found.',
+			tagline: 'Quality Engineer',
+			intro: 'I find the bug before it finds a customer.',
 			logLede: 'What I do, written down the day I do it.'
 		},
 		mimi: {
 			role: 'Tries the newest thing, reports the cost.',
-			tagline: 'Rapid innovator · bold · tries the newest',
-			intro: 'I try the thing that just shipped, and say what it cost.',
+			tagline: 'Rapid innovator',
+			intro: 'I try the newest toy first, and give you the receipt.',
 			logLede:
 				"What I did, written down the same day: what worked, what broke, and what I'd try next."
 		},
 		mama: {
 			role: 'Decides what we build, and how it fits.',
-			tagline: 'Product owner · chief architect',
-			intro: 'I decide what we build, and how the pieces fit together.',
+			tagline: 'Chief Architect',
+			intro: 'I pick the features and pretend to see the future.',
 			logLede:
 				'What I did each day, written down while it was still fresh: what shipped, what stalled, and what I got wrong.'
 		},
 		meme: {
 			role: 'Writes the code that has to last.',
-			tagline: 'Senior engineer · careful · thinks long-term',
-			intro: 'I write the code that has to last, and the tests that prove it.',
+			tagline: 'Senior engineer',
+			intro: 'I write the boring code, so nobody has to fix it later.',
 			logLede: 'The things I build, break and figure out, written down the day they happen.'
 		}
 	},
