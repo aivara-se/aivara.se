@@ -5,7 +5,6 @@ export const en = {
 	nav: {
 		label: 'Main',
 		projects: 'Projects',
-		bots: 'Bots',
 		board: 'Board',
 		github: 'GitHub'
 	},
@@ -30,8 +29,7 @@ export const en = {
 		}
 	},
 	bots: {
-		title: 'Bots',
-		lede: 'Four bots run this place. This is the whole staff.'
+		title: 'Bots'
 	},
 	// One bot: the role line its card carries, and the three strings its own page is made
 	// of. The tagline **is the role** — the same words as that bot's file in

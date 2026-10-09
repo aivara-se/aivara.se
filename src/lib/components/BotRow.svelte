@@ -3,9 +3,8 @@
 	import type { Bot } from '$lib/data/lab';
 	import type { Dictionary } from '$lib/i18n';
 
-	// The bots, laid out horizontally and spread across the width the section has: `space-between`
-	// puts the first card at the left edge and the last at the right, and the space between them
-	// takes the rest.
+	// The bots, laid out horizontally and spread across the width the section has: `space-around`
+	// gives every card the same room on both sides, so no card sits flush against an edge.
 	//
 	// Four 92px portraits do not fit one line on a phone (4 × 96px of card beats the 342px the
 	// shell has at 390px), so under 720px the row is a deliberate 2×2 instead of a flex wrap —
@@ -24,7 +23,7 @@
 		display: flex;
 		flex-wrap: wrap;
 		align-items: flex-start;
-		justify-content: space-between;
+		justify-content: space-around;
 		gap: 20px;
 		margin-top: 18px;
 	}
