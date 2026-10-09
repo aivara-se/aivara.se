@@ -3,15 +3,14 @@
 	import Footer from './Footer.svelte';
 	import TopBar from './TopBar.svelte';
 	import type { Dictionary } from '$lib/i18n';
-	import type { PageKey } from '$lib/routes';
 
-	let { d, pageKey, children }: { d: Dictionary; pageKey: PageKey; children: Snippet } = $props();
+	let { d, children }: { d: Dictionary; children: Snippet } = $props();
 </script>
 
 <div class="wash" aria-hidden="true"></div>
 
 <div class="shell">
-	<TopBar {d} {pageKey} />
+	<TopBar {d} />
 	<main>
 		{@render children()}
 	</main>

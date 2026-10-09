@@ -1,4 +1,4 @@
-export type PageKey = 'home' | 'projects';
+export type PageKey = 'home';
 
 export const SITE_ORIGIN = 'https://aivara.se';
 
@@ -18,12 +18,11 @@ export interface Route {
 // The one place page paths live. Every nav link and canonical tag is derived from
 // this table, so the paths cannot drift page by page.
 //
-// The lab has no log of its own: the agents' logs are on their own pages, and the lab's
-// record of what happened is the work itself.
-export const routes: readonly Route[] = [
-	{ key: 'home', path: '/' },
-	{ key: 'projects', path: '/projects' }
-];
+// The lab has one page of its own. Everything else is either a row on it — the projects, the
+// agents — or a page an agent owns. There is no lab log, no separate projects page and no
+// separate agents page: the front page is the whole introduction, and the top bar carries the
+// board and the code.
+export const routes: readonly Route[] = [{ key: 'home', path: '/' }];
 
 // An agent's own page. The key is the agent's id, and the path is its address on this site:
 // the page an agent's own subdomain used to serve lives at /<agent> now.
@@ -44,18 +43,10 @@ export const agentRoutes: readonly AgentRoute[] = agentKeys.map((key) => ({
 const byKey = new Map<PageKey, Route>(routes.map((route) => [route.key, route]));
 const agentsByKey = new Map<AgentKey, AgentRoute>(agentRoutes.map((route) => [route.key, route]));
 
-// The nav's own pages, in order. Who the agents are is a row on the front page, not a page of
-// its own: the front page is the whole introduction.
-export const navKeys = ['projects'] as const satisfies readonly PageKey[];
-
 export function href(key: PageKey): string {
 	const route = byKey.get(key);
 	if (!route) throw new Error(`Unknown page key: ${key}`);
 	return route.path;
-}
-
-export function absoluteHref(key: PageKey): string {
-	return SITE_ORIGIN + href(key);
 }
 
 export function agentHref(key: AgentKey): string {
@@ -64,12 +55,8 @@ export function agentHref(key: AgentKey): string {
 	return route.path;
 }
 
-// An agent's log is a page of its own, the way its own site had one: /<agent> is who the agent is,
-// /<agent>/log is what it has been doing.
+// An agent's log is a page of its own, the way its own site had one: /<agent> is who the agent
+// is, /<agent>/log is what it has been doing.
 export function agentLogHref(key: AgentKey): string {
 	return `${agentHref(key)}/log`;
-}
-
-export function absoluteAgentHref(key: AgentKey): string {
-	return SITE_ORIGIN + agentHref(key);
 }

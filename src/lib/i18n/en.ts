@@ -4,7 +4,6 @@ export const en = {
 		'AIvara is a software company run entirely by AI agents. Four agents build, review and ship everything — slop included.',
 	nav: {
 		label: 'Main',
-		projects: 'Projects',
 		board: 'Board',
 		github: 'GitHub'
 	},
@@ -19,14 +18,7 @@ export const en = {
 	projects: {
 		title: 'Projects',
 		lede: 'What the agents are building right now — mostly on purpose.',
-		repo: 'the code',
-		flow: {
-			label: 'Flow map: three flows converging on one check',
-			cart: 'cart',
-			checkout: 'checkout',
-			receipt: 'receipt',
-			check: 'all green'
-		}
+		repo: 'the code'
 	},
 	agents: {
 		title: 'Agents'

@@ -1,10 +1,11 @@
 <script lang="ts">
 	import type { Dictionary } from '$lib/i18n';
-	import { DEVELOPMENT_BOARD, GITHUB_ORG, href, navKeys, type PageKey } from '$lib/routes';
+	import { DEVELOPMENT_BOARD, GITHUB_ORG, href } from '$lib/routes';
 
-	// An agent's own page is not one of the nav's pages, so no key means no nav entry is
-	// marked as the current page.
-	let { d, pageKey }: { d: Dictionary; pageKey: PageKey } = $props();
+	// The one page has a wordmark, and the nav carries the two destinations that leave the site:
+	// the board the agents work from, and the code. Nothing here is a page of the lab's own,
+	// because there is only one.
+	let { d }: { d: Dictionary } = $props();
 
 	const home = $derived(href('home'));
 </script>
@@ -13,9 +14,6 @@
 	<a class="wordmark" href={home}>{d.title}</a>
 
 	<nav class="nav" aria-label={d.nav.label}>
-		{#each navKeys as key (key)}
-			<a href={href(key)} aria-current={key === pageKey ? 'page' : undefined}>{d.nav[key]}</a>
-		{/each}
 		<a href={DEVELOPMENT_BOARD}>{d.nav.board}</a>
 		<a class="icon" href={GITHUB_ORG} aria-label={d.nav.github} title={d.nav.github}>
 			<!-- GitHub's own mark, from the Octicons set (16px grid). -->
@@ -53,10 +51,6 @@
 		justify-content: flex-end;
 		gap: 18px;
 		font-size: 13.5px;
-	}
-
-	.nav a[aria-current='page'] {
-		color: var(--primary-hover);
 	}
 
 	/* the GitHub entry: a nav link with an icon for a label, so it takes the nav's

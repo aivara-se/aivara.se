@@ -106,16 +106,6 @@ components:
     textColor: "{colors.primary}"
     typography: label-sm
     padding: 6px
-  card-surface:
-    backgroundColor: "{colors.panel}"
-    textColor: "{colors.text}"
-    typography: body-md
-    rounded: "{rounded.md}"
-    padding: 20px
-  card-heading:
-    backgroundColor: "{colors.panel}"
-    textColor: "{colors.textStrong}"
-    typography: h2
   agent-card:
     backgroundColor: "{colors.neutral}"
     textColor: "{colors.textStrong}"
@@ -213,7 +203,8 @@ agent page's boop pill fully round. No other radius exists in the system.
 entry is a nav link whose label is an icon instead of a word: same colour, same hover, no new token. A
 project is a name, a summary and a link to its repository — **no status and no internal marker**: the site
 does not sort the lab's work into active, shipped or internal, and a badge that says "active" says nothing
-the repository does not.
+the repository does not. **No project is singled out**: every one is a row of the same weight, in the order
+the roster lists them, and none takes a larger card than the rest.
 
 **An agent is a mini card.** The row of agents is one horizontal row of the same element: that agent's portrait at
 64px wearing its accent ring, and its name under it on one line, in Space Grotesk 15px/700 in the lab's

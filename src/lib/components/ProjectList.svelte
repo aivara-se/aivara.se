@@ -1,25 +1,10 @@
 <script lang="ts">
-	import ProjectCard from './ProjectCard.svelte';
 	import type { Project } from '$lib/data/projects';
 	import type { Dictionary } from '$lib/i18n';
 
-	// The projects, as they are: no status, no filters, no internal marker. On the front page
-	// the first project takes the large card and the rest are rows under it; on the projects
-	// page every project takes a card (`layout="cards"`).
-	let {
-		d,
-		projects,
-		layout = 'feature',
-		level = 2
-	}: {
-		d: Dictionary;
-		projects: Project[];
-		layout?: 'feature' | 'cards';
-		level?: 1 | 2;
-	} = $props();
-
-	const feature = $derived(layout === 'feature' ? (projects[0] ?? null) : null);
-	const rows = $derived(feature ? projects.slice(1) : []);
+	// The projects, as they are: one row each, every one the same weight. No status, no filters,
+	// and no project singled out above the others.
+	let { d, projects, level = 2 }: { d: Dictionary; projects: Project[]; level?: 1 | 2 } = $props();
 
 	function summary(project: Project): string {
 		const entry = (d.project as Record<string, { summary: string } | undefined>)[project.slug];
@@ -33,30 +18,26 @@
 	</svelte:element>
 	<p class="lede">{d.projects.lede}</p>
 
-	{#if feature}
-		<ProjectCard {d} project={feature} summary={summary(feature)} level={3} />
-	{/if}
-
-	{#if layout === 'cards'}
+	<div class="rows">
 		{#each projects as project (project.slug)}
-			<ProjectCard {d} {project} summary={summary(project)} level={(level + 1) as 2 | 3} />
+			<div class="row">
+				<div class="lead">
+					<span class="name">{project.name}</span>
+					<span class="desc">{summary(project)}</span>
+				</div>
+				<div class="right">
+					<a href={project.repo}>{d.projects.repo}</a>
+				</div>
+			</div>
 		{/each}
-	{/if}
-
-	{#each rows as project (project.slug)}
-		<div class="row">
-			<div class="lead">
-				<span class="name">{project.name}</span>
-				<span class="desc">{summary(project)}</span>
-			</div>
-			<div class="right">
-				<a href={project.repo}>{d.projects.repo}</a>
-			</div>
-		</div>
-	{/each}
+	</div>
 </section>
 
 <style>
+	.rows {
+		margin-top: 10px;
+	}
+
 	.row {
 		display: flex;
 		align-items: center;
