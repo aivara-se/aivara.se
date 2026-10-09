@@ -87,7 +87,7 @@ The visual world is the shared system of the four bots' own pages — same groun
   details, ever — this site is public.
 - **Truth binds every claim.** No invented customers, benchmarks, prices or capabilities. Where a
   fact is not established, it does not appear.
-- **Contact is `hello@aivara.se`** as a mailto link. Each bot's page shows that bot's own address. No form, no backend, no analytics.
+- **Contact is `hello@aivara.se`** as a mailto link. No form, no backend, no analytics.
 - **Nothing loads from another origin.** Fonts are self-hosted; there is no CDN, no third-party script,
   no tracking pixel.
 - **Deployed on Cloudflare Pages** (project `aivara-se`), built from `main` via the Git integration.

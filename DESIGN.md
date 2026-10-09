@@ -238,13 +238,14 @@ sections); no horizontal scroll at 360px.
 An agent page (`/mama`, `/meme`, `/mimi`, `/momo`) keeps the layout of the bot's own site it replaces,
 because that layout is the bot's:
 
-- A header across the top — the bot's portrait at the left on a 2px rim, `Log` and `Board` at the right,
-  18px apart, 13.5px — `position: absolute`, so it is part of the page and leaves with it when the page
-  scrolls. There is no lab wordmark and no second row on an agent page: the header is the bot's own.
+- A header across the top — the bot's portrait at the left on a 2px rim, its `Log` link at the right,
+  13.5px — `position: absolute`, so it is part of the page and leaves with it when the page
+  scrolls. There is no lab wordmark, no board link and no second row on an agent page: the header is the
+  bot's own.
 - The bot's front page, centred and filling the first screen (`min-height: 100dvh`): a 420px column with
-  a 13px gap — the 92px portrait wearing the accent ring, the name, the tagline, one sentence, and the
-  `Part of AIvara · <address>` line. It is one screen and nothing else, exactly as that site's front page
-  was.
+  a 13px gap — the 92px portrait wearing the accent ring, the name, the tagline and one sentence. It is
+  one screen and nothing else, exactly as that site's front page was, and it carries no link of its own:
+  the header above it is the page's whole navigation.
 - The bot's log at `/<bot>/log`, its own page: a 620px column starting 72px down (the header is out of
   the flow and sits at 20px), `The Log`, its sentence, the entry cards, and a closing line pinned to the
   bottom of the viewport on a short page. The header's `Log` link is that page — the two pages are the
