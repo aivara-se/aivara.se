@@ -57,7 +57,7 @@ Then the things these commands cannot see. The pages are server-rendered on Clou
 - `static/`: files served as-is — icons, bot portraits, `manifest.json`, `robots.txt`
 - `DESIGN.md`, `PRODUCT.md`: the authoritative design and product documents
 - `.github/workflows/checks.yml`: CI
-- `AGENTS.md`, `.agents/skills/`: this file, and the convention's skills
+- `AGENTS.md`: the entry file an agent reads first
 - `README.md`: how to run and check the site, and where it deploys
 
 New markdown goes in the directory that already owns its subject, and a fact has exactly one home. Never add a second copy of something a document already says; link to it. If a path in the map above stops being true, fix the map in the same pull request. A map that lies is worse than no map.
