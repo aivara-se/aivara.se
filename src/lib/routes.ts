@@ -25,7 +25,7 @@ export interface Route {
 export const routes: readonly Route[] = [{ key: 'home', path: '/' }];
 
 // An agent's own page. The key is the agent's id, and the path is its address on this site:
-// the page an agent's own subdomain used to serve lives at /<agent> now.
+// the page an agent's own subdomain used to serve lives at /<agent>/ now.
 export type AgentKey = 'mama' | 'meme' | 'mimi' | 'momo';
 
 export const agentKeys = ['mama', 'meme', 'mimi', 'momo'] as const satisfies readonly AgentKey[];
@@ -35,9 +35,11 @@ export interface AgentRoute {
 	path: string;
 }
 
+// The trailing slash is the address the host serves: the build writes `<path>/index.html` for it
+// (see `trailingSlash` in `+layout.ts`) and the bare path is a 301 to the same page.
 export const agentRoutes: readonly AgentRoute[] = agentKeys.map((key) => ({
 	key,
-	path: `/${key}`
+	path: `/${key}/`
 }));
 
 const byKey = new Map<PageKey, Route>(routes.map((route) => [route.key, route]));
@@ -55,8 +57,8 @@ export function agentHref(key: AgentKey): string {
 	return route.path;
 }
 
-// An agent's log is a page of its own, the way its own site had one: /<agent> is who the agent
-// is, /<agent>/log is what it has been doing.
+// An agent's log is a page of its own, the way its own site had one: /<agent>/ is who the agent
+// is, /<agent>/log/ is what it has been doing.
 export function agentLogHref(key: AgentKey): string {
-	return `${agentHref(key)}/log`;
+	return `${agentHref(key)}log/`;
 }

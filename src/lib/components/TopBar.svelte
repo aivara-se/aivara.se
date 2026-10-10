@@ -1,6 +1,5 @@
 <script lang="ts">
 	import type { Dictionary } from '#lib/i18n/index.js';
-	import { link } from '#lib/links.js';
 	import { DEVELOPMENT_BOARD, GITHUB_ORG, href } from '#lib/routes.js';
 
 	// The one page has a wordmark, and the nav carries the two destinations that leave the site:
@@ -8,7 +7,7 @@
 	// because there is only one.
 	let { d }: { d: Dictionary } = $props();
 
-	const home = $derived(link(href('home')));
+	const home = $derived(href('home'));
 </script>
 
 <header class="bar">

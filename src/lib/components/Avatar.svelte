@@ -1,6 +1,5 @@
 <script lang="ts">
 	import type { Agent } from '#lib/data/agents.js';
-	import { file } from '#lib/links.js';
 
 	// The portrait a card and a ring draw. The lab's cards leave the alt text empty because
 	// the agent's name sits beside the image; only a page that shows the portrait alone needs
@@ -13,7 +12,7 @@
 
 <span class="ring" class:arriving style="--size: {size}px; --accent: {accent};" aria-hidden="true">
 	{#if agent.avatar}
-		<img src={file(agent.avatar)} alt="" width={size - 6} height={size - 6} />
+		<img src={agent.avatar} alt="" width={size - 6} height={size - 6} />
 	{:else}
 		<span class="initial">{agent.name.slice(0, 1)}</span>
 	{/if}
