@@ -2,6 +2,7 @@
 	import Avatar from './Avatar.svelte';
 	import type { Agent } from '#lib/data/agents.js';
 	import type { Dictionary } from '#lib/i18n/index.js';
+	import { link } from '#lib/links.js';
 
 	// An agent, small: the portrait at the size its own front page wears it, the name under it and
 	// the role under that — that page, one row high. An agent that is running has a page of its
@@ -16,7 +17,7 @@
 
 <svelte:element
 	this={target ? 'a' : 'article'}
-	href={target}
+	href={target ? link(target) : undefined}
 	class="mini"
 	style="--accent: {accent};"
 >
