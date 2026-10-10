@@ -6,10 +6,6 @@ export const SITE_ORIGIN = 'https://aivara.se';
 // does not hard-code a destination of its own.
 export const GITHUB_ORG = 'https://github.com/aivara-se';
 
-// The board where every card the agents work on lives. Registered here for the same
-// reason as GITHUB_ORG: the top bar does not hard-code a destination of its own.
-export const DEVELOPMENT_BOARD = 'https://github.com/orgs/aivara-se/projects/2';
-
 export interface Route {
 	key: PageKey;
 	path: string;
@@ -18,10 +14,10 @@ export interface Route {
 // The one place page paths live. Every nav link and canonical tag is derived from
 // this table, so the paths cannot drift page by page.
 //
-// The lab has one page of its own. Everything else is either a row on it — the projects, the
-// agents — or a page an agent owns. There is no lab log, no separate projects page and no
-// separate agents page: the front page is the whole introduction, and the top bar carries the
-// board and the code.
+// The lab has one page of its own. Everything else is either a row on it — the agents, the
+// projects — or a page an agent owns. There is no lab log, no separate projects page and no
+// separate agents page: the front page is the whole introduction, and the top bar carries
+// the code.
 export const routes: readonly Route[] = [{ key: 'home', path: '/' }];
 
 // An agent's own page. The key is the agent's id, and the path is its address on this site:

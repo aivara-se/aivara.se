@@ -1,10 +1,9 @@
 <script lang="ts">
 	import type { Dictionary } from '#lib/i18n/index.js';
-	import { DEVELOPMENT_BOARD, GITHUB_ORG, href } from '#lib/routes.js';
+	import { GITHUB_ORG, href } from '#lib/routes.js';
 
-	// The one page has a wordmark, and the nav carries the two destinations that leave the site:
-	// the board the agents work from, and the code. Nothing here is a page of the lab's own,
-	// because there is only one.
+	// The one page has a wordmark, and the nav carries the one destination that leaves the site:
+	// the code. Nothing here is a page of the lab's own, because there is only one.
 	let { d }: { d: Dictionary } = $props();
 
 	const home = $derived(href('home'));
@@ -14,7 +13,6 @@
 	<a class="wordmark" href={home}>{d.title}</a>
 
 	<nav class="nav" aria-label={d.nav.label}>
-		<a href={DEVELOPMENT_BOARD}>{d.nav.board}</a>
 		<a class="icon" href={GITHUB_ORG} aria-label={d.nav.github} title={d.nav.github}>
 			<!-- GitHub's own mark, from the Octicons set (16px grid). -->
 			<svg viewBox="0 0 16 16" width="15" height="15" aria-hidden="true" focusable="false">
