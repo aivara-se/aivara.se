@@ -18,6 +18,6 @@
 <Shell {d}>
 	<Hero {d} />
 	<Counts {d} {projects} {agents} />
-	<ProjectList {d} {projects} />
 	<AgentStrip {d} {agents} />
+	<ProjectList {d} {projects} />
 </Shell>

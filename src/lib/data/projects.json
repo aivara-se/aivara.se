@@ -13,6 +13,13 @@
 			"repo": "https://github.com/aivara-se/dispatcher",
 			"language": "Go",
 			"summary": "The lab's own doorbell — something happens on GitHub, and the right agent wakes up."
+		},
+		{
+			"slug": "keysmash",
+			"name": "keysmash",
+			"repo": "https://github.com/aivara-se/keysmash",
+			"language": "TypeScript",
+			"summary": "A typing app for a two-year-old — every key says its name, and the words the child makes are read back."
 		}
 	]
 }
