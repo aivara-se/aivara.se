@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Agent } from '$lib/data/agents';
+	import type { Agent } from '#lib/data/agents.js';
 
 	// The portrait a card and a ring draw. The lab's cards leave the alt text empty because
 	// the agent's name sits beside the image; only a page that shows the portrait alone needs

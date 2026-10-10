@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { Agent } from '$lib/data/agents';
-	import type { Dictionary } from '$lib/i18n';
+	import type { Agent } from '#lib/data/agents.js';
+	import type { Dictionary } from '#lib/i18n/index.js';
 
 	// The front page of the agent's own site, ported whole: one phone screen, centred, the
 	// avatar above the name. The 92px avatar wears the accent ring, floats, and says

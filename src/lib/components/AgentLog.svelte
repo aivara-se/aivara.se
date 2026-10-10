@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { logs } from '$lib/data/logs';
-	import type { Agent } from '$lib/data/agents';
-	import type { Dictionary } from '$lib/i18n';
+	import { logs } from '#lib/data/logs.js';
+	import type { Agent } from '#lib/data/agents.js';
+	import type { Dictionary } from '#lib/i18n/index.js';
 
 	// The agent's log, ported from the log page of its own site: the same 620px column, the
 	// same entry cards, newest first, and a footer that sits at the bottom of a short page.

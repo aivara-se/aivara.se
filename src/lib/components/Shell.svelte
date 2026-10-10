@@ -2,7 +2,7 @@
 	import type { Snippet } from 'svelte';
 	import Footer from './Footer.svelte';
 	import TopBar from './TopBar.svelte';
-	import type { Dictionary } from '$lib/i18n';
+	import type { Dictionary } from '#lib/i18n/index.js';
 
 	let { d, children }: { d: Dictionary; children: Snippet } = $props();
 </script>

@@ -5,10 +5,10 @@
 	import ProjectList from './ProjectList.svelte';
 	import Seo from './Seo.svelte';
 	import Shell from './Shell.svelte';
-	import { agents } from '$lib/data/agents';
-	import { projects } from '$lib/data/projects';
-	import { href } from '$lib/routes';
-	import type { Dictionary } from '$lib/i18n';
+	import { agents } from '#lib/data/agents.js';
+	import { projects } from '#lib/data/projects.js';
+	import { href } from '#lib/routes.js';
+	import type { Dictionary } from '#lib/i18n/index.js';
 
 	let { d }: { d: Dictionary } = $props();
 </script>

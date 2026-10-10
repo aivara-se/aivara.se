@@ -1,7 +1,7 @@
 <script lang="ts">
 	import AgentCard from './AgentCard.svelte';
-	import type { Agent } from '$lib/data/agents';
-	import type { Dictionary } from '$lib/i18n';
+	import type { Agent } from '#lib/data/agents.js';
+	import type { Dictionary } from '#lib/i18n/index.js';
 
 	// The agents, laid out horizontally and spread across the width the section has: `space-around`
 	// gives every card the same room on both sides, so no card sits flush against an edge.

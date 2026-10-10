@@ -1,8 +1,8 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
 	import AgentHeader from './AgentHeader.svelte';
-	import type { Agent } from '$lib/data/agents';
-	import type { Dictionary } from '$lib/i18n';
+	import type { Agent } from '#lib/data/agents.js';
+	import type { Dictionary } from '#lib/i18n/index.js';
 
 	// The chrome of an agent's own site, as one page of aivara.se: its accent, the wash that
 	// accent paints on the shared ground, and its header. Everything the agent's pages have in

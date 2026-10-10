@@ -1,7 +1,7 @@
 <script lang="ts">
 	import AgentRow from './AgentRow.svelte';
-	import type { Agent } from '$lib/data/agents';
-	import type { Dictionary } from '$lib/i18n';
+	import type { Agent } from '#lib/data/agents.js';
+	import type { Dictionary } from '#lib/i18n/index.js';
 
 	let { d, agents }: { d: Dictionary; agents: Agent[] } = $props();
 </script>
