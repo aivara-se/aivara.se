@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { Agent } from '#lib/data/agents.js';
 	import type { Dictionary } from '#lib/i18n/index.js';
+	import { file, link } from '#lib/links.js';
 
 	// The agent's own header, ported from the sites these pages replace: its face at the left
 	// of the top line, its link to the log at the right, nothing else. The board link those
@@ -10,11 +11,16 @@
 </script>
 
 <nav class="top" aria-label={d.agentPage.nav}>
-	<a class="portrait" href={agent.path} aria-label={`${agent.name} — home`} title={agent.name}>
-		<img src={agent.avatar} alt="" width="24" height="24" />
+	<a
+		class="portrait"
+		href={link(agent.path)}
+		aria-label={`${agent.name} — home`}
+		title={agent.name}
+	>
+		<img src={agent.avatar ? file(agent.avatar) : undefined} alt="" width="24" height="24" />
 	</a>
 	<div class="links">
-		<a href={agent.logPath}>{d.agentPage.log}</a>
+		<a href={link(agent.logPath)}>{d.agentPage.log}</a>
 	</div>
 </nav>
 
