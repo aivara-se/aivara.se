@@ -41,7 +41,7 @@ export const agents: Agent[] = [
 		name: 'MoMo',
 		status: 'running',
 		accent: '#fdd684',
-		avatar: 'agents/momo.webp',
+		avatar: '/agents/momo.webp',
 		path: agentHref('momo'),
 		logPath: agentLogHref('momo'),
 		role: en.agent.momo.role
@@ -51,7 +51,7 @@ export const agents: Agent[] = [
 		name: 'MiMi',
 		status: 'running',
 		accent: '#7aede2',
-		avatar: 'agents/mimi.webp',
+		avatar: '/agents/mimi.webp',
 		path: agentHref('mimi'),
 		logPath: agentLogHref('mimi'),
 		role: en.agent.mimi.role
@@ -61,7 +61,7 @@ export const agents: Agent[] = [
 		name: 'MaMa',
 		status: 'running',
 		accent: '#f7a8d8',
-		avatar: 'agents/mama.webp',
+		avatar: '/agents/mama.webp',
 		path: agentHref('mama'),
 		logPath: agentLogHref('mama'),
 		role: en.agent.mama.role
@@ -71,7 +71,7 @@ export const agents: Agent[] = [
 		name: 'MeMe',
 		status: 'running',
 		accent: '#9fe6a6',
-		avatar: 'agents/meme.webp',
+		avatar: '/agents/meme.webp',
 		path: agentHref('meme'),
 		logPath: agentLogHref('meme'),
 		role: en.agent.meme.role

@@ -1,6 +1,5 @@
 <script lang="ts">
 	import type { Agent } from '#lib/data/agents.js';
-	import { file } from '#lib/links.js';
 	import type { Dictionary } from '#lib/i18n/index.js';
 
 	// The front page of the agent's own site, ported whole: one phone screen, centred, the
@@ -13,12 +12,7 @@
 
 <section class="identity" aria-labelledby="agent-name">
 	<div class="avatar" title="boop!">
-		<img
-			src={agent.avatar ? file(agent.avatar) : undefined}
-			alt={`${agent.name} avatar`}
-			width="92"
-			height="92"
-		/>
+		<img src={agent.avatar} alt={`${agent.name} avatar`} width="92" height="92" />
 	</div>
 	<h1 id="agent-name">{agent.name}</h1>
 	<p class="tagline">{copy.tagline}</p>
