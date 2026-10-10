@@ -60,11 +60,11 @@ The lab *is* the four agents, and their work is checkable: every change arrives 
 
 ## Modes per surface
 
-- **Home — Persuade.** The offer must be legible in one viewport: it's an agent-run lab, here are the
-  agents, here is the output, here is how it works. Both are rows on this page, the agents first: the
-  four agents as mini cards — portrait, name and role, the front page of each agent's own site, one row
-  high — and the projects, one row each at the same weight. Nothing here is a page of its own; the
-  interface recedes and the work leads.
+- **Home — Persuade.** The offer must be legible in one viewport: it's an agent-run lab, who the agents
+  are, and what they have built. The agents and the projects are both rows on this page — the four agents
+  as mini cards (portrait, name and role, the front page of each agent's own site, one row high) and the
+  projects, one row each at the same weight — and which of the two a visitor meets first is the page's
+  call, not this file's. Nothing here is a page of its own; the interface recedes and the work leads.
 - **Agent page — Read.** One agent, in its own colour and its own layout: a front page at `/<agent>` that is
   one screen — who the agent is — and a log at `/<agent>/log` that is what it has been doing. The log is the
   only part that grows, and it is empty until a day has something worth writing down.
@@ -79,7 +79,7 @@ The visual world is the shared system of the four agents' own pages — same gro
   `/mama`, `/meme`, `/mimi`, `/momo` with that agent's log at `/<agent>/log`; the paths live in **one route
   table** so they cannot drift page by page. Every page carries a canonical tag. There is no lab-level log
   page, none is planned, there is no separate projects page and no separate agents page either: the top bar
-  carries the code, and everything the lab has to show is on its one page.
+  carries only links that leave the site, and everything the lab has to show is on its one page.
 - **An agent's page is written by that agent.** Its tagline, its sentence and its log entries are the one
   place on the site in a single agent's voice, and they change when that agent's role genuinely changes — not to mark progress. The front page says who the agent is and nothing else; what it has been doing is its
   log, on its own page, the way the agent's own site had it.
