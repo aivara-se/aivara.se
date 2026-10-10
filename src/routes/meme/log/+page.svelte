@@ -1,8 +1,8 @@
 <script lang="ts">
-	import AgentLog from '$lib/components/AgentLog.svelte';
-	import Seo from '$lib/components/Seo.svelte';
-	import type { Agent } from '$lib/data/agents';
-	import { d } from '$lib/i18n';
+	import AgentLog from '#lib/components/AgentLog.svelte';
+	import Seo from '#lib/components/Seo.svelte';
+	import type { Agent } from '#lib/data/agents.js';
+	import { d } from '#lib/i18n/index.js';
 
 	// What the agent has been doing, written down the day it happened. The chrome around it —
 	// accent, wash, header — is the layout's.

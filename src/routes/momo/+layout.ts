@@ -1,4 +1,4 @@
-import { agentById } from '$lib/data/agents';
+import { agentById } from '#lib/data/agents.js';
 
 export const prerender = true;
 

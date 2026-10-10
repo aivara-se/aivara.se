@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { Project } from '$lib/data/projects';
-	import type { Dictionary } from '$lib/i18n';
+	import type { Project } from '#lib/data/projects.js';
+	import type { Dictionary } from '#lib/i18n/index.js';
 
 	// The projects, as they are: one row each, every one the same weight. No status, no filters,
 	// and no project singled out above the others.

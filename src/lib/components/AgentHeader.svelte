@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { Agent } from '$lib/data/agents';
-	import type { Dictionary } from '$lib/i18n';
+	import type { Agent } from '#lib/data/agents.js';
+	import type { Dictionary } from '#lib/i18n/index.js';
 
 	// The agent's own header, ported from the sites these pages replace: its face at the left
 	// of the top line, its link to the log at the right, nothing else. The board link those

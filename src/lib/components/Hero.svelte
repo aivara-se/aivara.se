@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Dictionary } from '$lib/i18n';
+	import type { Dictionary } from '#lib/i18n/index.js';
 
 	let { d }: { d: Dictionary } = $props();
 </script>

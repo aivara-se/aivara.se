@@ -1,7 +1,7 @@
 <script lang="ts">
-	import type { Agent } from '$lib/data/agents';
-	import type { Project } from '$lib/data/projects';
-	import type { Dictionary } from '$lib/i18n';
+	import type { Agent } from '#lib/data/agents.js';
+	import type { Project } from '#lib/data/projects.js';
+	import type { Dictionary } from '#lib/i18n/index.js';
 
 	let { d, projects, agents }: { d: Dictionary; projects: Project[]; agents: Agent[] } = $props();
 

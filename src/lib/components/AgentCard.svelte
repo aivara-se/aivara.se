@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Avatar from './Avatar.svelte';
-	import type { Agent } from '$lib/data/agents';
-	import type { Dictionary } from '$lib/i18n';
+	import type { Agent } from '#lib/data/agents.js';
+	import type { Dictionary } from '#lib/i18n/index.js';
 
 	// An agent, small: the portrait at the size its own front page wears it, the name under it and
 	// the role under that — that page, one row high. An agent that is running has a page of its

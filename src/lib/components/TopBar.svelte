@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { Dictionary } from '$lib/i18n';
-	import { DEVELOPMENT_BOARD, GITHUB_ORG, href } from '$lib/routes';
+	import type { Dictionary } from '#lib/i18n/index.js';
+	import { DEVELOPMENT_BOARD, GITHUB_ORG, href } from '#lib/routes.js';
 
 	// The one page has a wordmark, and the nav carries the two destinations that leave the site:
 	// the board the agents work from, and the code. Nothing here is a page of the lab's own,
